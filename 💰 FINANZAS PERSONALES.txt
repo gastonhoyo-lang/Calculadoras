@@ -1,0 +1,42 @@
+💰 FINANZAS PERSONALES
+
+Aquí entran herramientas para administrar dinero en general:
+
+✅ Calculadora de porcentaje
+(para aumentos, descuentos, impuestos, variaciones)
+
+✅ Calculadora de préstamo
+(cuotas, interés, monto total a pagar)
+
+✅ Calculadora de interés compuesto
+(crecimiento del dinero en el tiempo)
+
+✅ Calculadora de ahorro
+
+✅ Calculadora de inflación
+
+🧾 IMPUESTOS
+
+Herramientas más específicas relacionadas con tributos:
+
+✅ Calculadora de IVA
+
+✅ Calculadora de retenciones
+
+✅ Cálculo de impuesto a las ganancias
+
+✅ Cálculo de monotributo (si aplica en tu país)
+
+👉 La calculadora de porcentaje también puede usarse acá (por ejemplo para calcular un 21% de IVA).
+
+📈 INVERSIONES
+
+Enfocado en crecimiento del dinero:
+
+✅ Calculadora de interés compuesto
+
+✅ Calculadora de rendimiento anual (ROI)
+
+✅ Simulador de inversión mensual
+
+✅ Comparador de tasas

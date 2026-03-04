@@ -1,0 +1,3 @@
+git add .
+git commit -m "un mensaje descriptivo"
+git push origin main
