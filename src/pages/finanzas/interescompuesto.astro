@@ -1,19 +1,36 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import Layout from "../../layouts/Layout.astro";
 import InputField from "../components/InputField.astro";
 import ResultBox from "../components/ResultBox.astro";
 ---
 
 <Layout title="Calculadora de Interés Compuesto">
-  <div class="max-w-md mx-auto p-6 bg-white rounded-3xl shadow-sm border border-slate-100">
+  <div
+    class="max-w-md mx-auto p-6 bg-white rounded-3xl shadow-sm border border-slate-100"
+  >
     <h1 class="text-2xl font-bold text-slate-900 mb-6">Interés Compuesto</h1>
-    
+
     <div class="grid gap-4">
-      <InputField id="capital" label="Capital Inicial" placeholder="1000" unit="$" />
-      <InputField id="interes" label="Tasa de Interés Anual" placeholder="5" unit="%" />
-      <InputField id="tiempo" label="Tiempo (Años)" placeholder="10" unit="años" />
-      
-      <button 
+      <InputField
+        id="capital"
+        label="Capital Inicial"
+        placeholder="1000"
+        unit="$"
+      />
+      <InputField
+        id="interes"
+        label="Tasa de Interés Anual"
+        placeholder="5"
+        unit="%"
+      />
+      <InputField
+        id="tiempo"
+        label="Tiempo (Años)"
+        placeholder="10"
+        unit="años"
+      />
+
+      <button
         onclick="calcular()"
         class="w-full bg-slate-900 text-white py-4 rounded-xl font-bold hover:bg-slate-800 transition-colors mt-2"
       >
@@ -26,16 +43,19 @@ import ResultBox from "../components/ResultBox.astro";
 
   <script is:inline>
     function calcular() {
-      const p = parseFloat(document.getElementById('capital').value);
-      const r = parseFloat(document.getElementById('interes').value) / 100;
-      const t = parseFloat(document.getElementById('tiempo').value);
+      const p = parseFloat(document.getElementById("capital").value);
+      const r = parseFloat(document.getElementById("interes").value) / 100;
+      const t = parseFloat(document.getElementById("tiempo").value);
 
       if (p && r && t) {
         // Fórmula: A = P(1 + r)^t
-        const res = p * Math.pow((1 + r), t);
-        
-        document.getElementById('total').innerText = res.toLocaleString('es-ES', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-        document.getElementById('total-container').classList.remove('hidden');
+        const res = p * Math.pow(1 + r, t);
+
+        document.getElementById("total").innerText = res.toLocaleString(
+          "es-ES",
+          { minimumFractionDigits: 2, maximumFractionDigits: 2 },
+        );
+        document.getElementById("total-container").classList.remove("hidden");
       }
     }
   </script>
