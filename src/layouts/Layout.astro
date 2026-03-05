@@ -27,18 +27,118 @@ const {
         <a href="/" class="text-2xl font-black tracking-tight text-blue-600">
           CHIEFFIN<span class="text-slate-400">.com</span>
         </a>
+
         <div class="hidden md:flex gap-6 text-sm font-medium text-slate-600">
-          <a href="/finanzas/prestamo" class="hover:text-blue-600 transition"
-            >Finanzas</a
-          >
-          <a
-            href="/inversiones/interescompuesto"
-            class="hover:text-blue-600 transition">Inversiones</a
-          >
-          <a href="/impuestos/porcentaje" class="hover:text-blue-600 transition"
-            >Impuestos</a
-          >
+          <div class="relative group">
+            <button
+              class="flex items-center gap-1 hover:text-blue-600 transition py-5 font-medium"
+            >
+              Finanzas
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-4 h-4 text-slate-400 group-hover:text-blue-600 transition"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <div
+              class="absolute left-0 mt-0 w-64 bg-white border border-slate-200 rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:mt-2 transition-all duration-200 z-[60]"
+            >
+              <div class="p-2">
+                <a
+                  href="/finanzas/prestamo"
+                  class="block px-4 py-3 text-sm text-slate-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition"
+                >
+                  <span class="block font-bold">Simulador de Préstamos</span>
+                  <span class="text-xs text-slate-500 italic"
+                    >Calculá tus cuotas mensuales</span
+                  >
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="relative group">
+            <button
+              class="flex items-center gap-1 hover:text-blue-600 transition py-5 font-medium"
+            >
+              Inversiones
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-4 h-4 text-slate-400 group-hover:text-blue-600 transition"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <div
+              class="absolute left-0 mt-0 w-64 bg-white border border-slate-200 rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:mt-2 transition-all duration-200 z-[60]"
+            >
+              <div class="p-2">
+                <a
+                  href="/finanzas/interescompuesto"
+                  class="block px-4 py-3 text-sm text-slate-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition"
+                >
+                  <span class="block font-bold">Interés Compuesto</span>
+                  <span class="text-xs text-slate-500 italic"
+                    >Proyectá tus ganancias futuras</span
+                  >
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="relative group">
+            <button
+              class="flex items-center gap-1 hover:text-blue-600 transition py-5 font-medium"
+            >
+              Herramientas
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-4 h-4 text-slate-400 group-hover:text-blue-600 transition"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <div
+              class="absolute left-0 mt-0 w-64 bg-white border border-slate-200 rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:mt-2 transition-all duration-200 z-[60]"
+            >
+              <div class="p-2">
+                <a
+                  href="/finanzas/porcentaje"
+                  class="block px-4 py-3 text-sm text-slate-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition"
+                >
+                  <span class="block font-bold">Calculadora de Porcentajes</span
+                  >
+                  <span class="text-xs text-slate-500 italic"
+                    >IVA, descuentos y aumentos</span
+                  >
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
+
         <button
           class="bg-slate-900 text-white px-4 py-2 rounded-lg text-sm font-bold hover:bg-slate-800 transition"
         >
@@ -46,7 +146,6 @@ const {
         </button>
       </nav>
     </header>
-
     <main class="max-w-4xl mx-auto px-4 py-12 min-h-[calc(100vh-160px)]">
       <slot />
     </main>
