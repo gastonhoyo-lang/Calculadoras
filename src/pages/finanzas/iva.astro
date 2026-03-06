@@ -1,0 +1,87 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import InputField from "/src/components/InputField.astro";
+import ResultBox from "../../components/ResultBox.astro";
+---
+
+<Layout title="Calculadora de IVA Argentina (21%)">
+  <div class="max-w-2xl mx-auto px-4">
+    <h1 class="text-3xl font-black mb-6 text-slate-800 tracking-tight">
+      Calculadora de IVA
+    </h1>
+
+    <div
+      class="bg-white p-8 rounded-[2.5rem] border border-slate-100 shadow-sm space-y-8"
+    >
+      <div>
+        <label
+          class="block text-sm font-bold text-slate-400 uppercase mb-2 ml-1"
+          >Monto ($)</label
+        >
+        <input
+          type="number"
+          id="montoIva"
+          placeholder="Ej: 1000"
+          class="w-full p-4 bg-slate-50 border-none rounded-2xl focus:ring-2 focus:ring-blue-500 outline-none font-bold text-xl"
+        />
+      </div>
+
+      <div class="grid grid-cols-2 gap-4">
+        <button
+          id="btnSumarIva"
+          class="bg-blue-600 text-white p-4 rounded-2xl font-bold hover:bg-blue-700 transition-all"
+        >
+          Sumar IVA (21%)
+        </button>
+        <button
+          id="btnQuitarIva"
+          class="bg-slate-800 text-white p-4 rounded-2xl font-bold hover:bg-slate-900 transition-all"
+        >
+          Quitar IVA
+        </button>
+      </div>
+
+      <div
+        id="resIva"
+        class="hidden p-6 bg-slate-50 rounded-3xl border border-slate-100"
+      >
+        <div class="flex justify-between mb-2">
+          <span class="text-slate-500">Neto:</span>
+          <span id="netoRes" class="font-bold text-slate-800"></span>
+        </div>
+        <div class="flex justify-between mb-2">
+          <span class="text-slate-500">IVA (21%):</span>
+          <span id="ivaRes" class="font-bold text-blue-600"></span>
+        </div>
+        <div class="border-t border-slate-200 mt-4 pt-4 flex justify-between">
+          <span class="font-bold text-slate-800">Total:</span>
+          <span id="totalRes" class="text-2xl font-black text-slate-900"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const input = document.getElementById("montoIva") as HTMLInputElement;
+    const resBox = document.getElementById("resIva");
+
+    const mostrar = (neto: number, iva: number, total: number) => {
+      const f = (n: number) =>
+        n.toLocaleString("es-AR", { style: "currency", currency: "ARS" });
+      document.getElementById("netoRes")!.innerText = f(neto);
+      document.getElementById("ivaRes")!.innerText = f(iva);
+      document.getElementById("totalRes")!.innerText = f(total);
+      resBox?.classList.remove("hidden");
+    };
+
+    document.getElementById("btnSumarIva")?.addEventListener("click", () => {
+      const val = parseFloat(input.value);
+      if (val) mostrar(val, val * 0.21, val * 1.21);
+    });
+
+    document.getElementById("btnQuitarIva")?.addEventListener("click", () => {
+      const val = parseFloat(input.value);
+      if (val) mostrar(val / 1.21, val - val / 1.21, val);
+    });
+  </script>
+</Layout>
