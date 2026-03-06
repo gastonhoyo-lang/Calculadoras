@@ -62,7 +62,7 @@ import ResultBox from "../../components/ResultBox.astro";
     <article class="prose prose-slate max-w-none border-t border-slate-200 pt-16 pb-20 text-slate-600">
       <h2 class="text-3xl font-black text-slate-800 mb-6">¿Cómo se calcula el área de un triángulo?</h2>
       <p>
-        Para hallar la superficie de un triángulo, la fórmula matemática universal que relaciona la base y la altura es:
+        Para hallar la superficie de un triángulo, sin importar si es isósceles, equilátero o escaleno, la fórmula matemática universal es:
       </p>
 
       <div class="bg-orange-50 p-8 rounded-3xl text-center my-8 border border-orange-100">
@@ -72,30 +72,15 @@ import ResultBox from "../../components/ResultBox.astro";
       </div>
 
       <h3 class="text-2xl font-bold text-slate-800 mb-4">Ejemplo paso a paso:</h3>
-      <p>Si tenemos un triángulo con una base de 10 y una altura de 15:</p>
-      <ol class="space-y-3 bg-slate-50 p-6 rounded-2xl border border-slate-100">
-        <li><strong>Multiplicamos:</strong> $10 \times 15 = 150$.</li>
-        <li><strong>Dividimos por 2:</strong> $150 / 2 = 75$.</li>
-        <li><strong>Resultado:</strong> El área es 75.</li>
-      </ol>
+      <p>Si tenés un triángulo con una <strong>base de 10 cm</strong> y una <strong>altura de 15 cm</strong>, el cálculo sería:</p>
+      <ul class="space-y-3 bg-slate-50 p-6 rounded-2xl border border-slate-100 list-none">
+        <li>1. Multiplicar base por altura: $10 \times 15 = 150$.</li>
+        <li>2. Dividir por dos: $150 / 2 = 75$.</li>
+        <li><strong>Resultado:</strong> $75 \text{ cm}^2$.</li>
+      </ul>
+
+      <h3 class="text-2xl font-bold text-slate-800 mt-10 mb-4">¿Por qué se divide por 2?</h3>
+      <p>
+        Es simple: cualquier triángulo puede verse como la mitad de un paralelogramo (como un rectángulo o un cuadrado) que tenga su misma base y altura. Al calcular $b \times h$ obtenés el área del rectángulo completo, por eso la dividimos para obtener solo la del triángulo.
+      </p>
     </article>
-  </div>
-
-  <script>
-    const btn = document.getElementById("btnTriangulo");
-    btn?.addEventListener("click", () => {
-      const bInput = document.getElementById("baseT") as HTMLInputElement;
-      const hInput = document.getElementById("alturaT") as HTMLInputElement;
-      
-      const b = parseFloat(bInput.value);
-      const h = parseFloat(hInput.value);
-
-      if (b > 0 && h > 0) {
-        const area = (b * h) / 2;
-        const resElement = document.getElementById("areaTVal");
-        if (resElement) resElement.innerText = area.toString();
-        document.getElementById("resTriContainer")?.classList.remove("hidden");
-      }
-    });
-  </script>
-</Layout>
