@@ -435,4 +435,11 @@ export const calculadoras = [
     icon: "⏱️",
     color: "purple"
   },
+  {
+    titulo: "Calculadora de Ecuaciones",
+    descripcion: "Resolvé ecuaciones de primer grado al instante con el procedimiento paso a paso.",
+    link: "/utiles/ecuaciones",
+    icon: "🧮",
+    color: "indigo"
+  },
 ];
