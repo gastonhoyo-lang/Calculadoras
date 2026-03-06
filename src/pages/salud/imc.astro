@@ -1,0 +1,116 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import InputField from "/src/components/InputField.astro";
+import ResultBox from "../../components/ResultBox.astro";
+---
+
+<Layout
+  title="Calculadora de IMC | Índice de Masa Corporal"
+  description="Calculá tu IMC de forma rápida y gratuita. Descubrí si estás en tu peso ideal según los estándares de la OMS."
+>
+  <div class="max-w-4xl mx-auto px-4">
+    <header class="text-center mb-12">
+      <h1
+        class="text-4xl md:text-6xl font-black text-slate-900 tracking-tight mb-4"
+      >
+        Calculadora de <span class="text-emerald-500">IMC</span>
+      </h1>
+      <p class="text-slate-500 text-lg font-medium">
+        Tu salud empieza por conocer tu composición corporal.
+      </p>
+    </header>
+
+    <div class="grid md:grid-cols-2 gap-8 mb-16">
+      <div
+        class="bg-white p-8 rounded-[2.5rem] border border-slate-100 shadow-sm space-y-6"
+      >
+        <div>
+          <label class="block text-xs font-bold text-slate-400 uppercase mb-3"
+            >Peso (kg)</label
+          >
+          <input
+            type="number"
+            id="peso"
+            placeholder="Ej: 75"
+            class="w-full p-4 bg-slate-50 rounded-2xl border-none font-bold text-xl outline-none focus:ring-2 focus:ring-emerald-500"
+          />
+        </div>
+        <div>
+          <label class="block text-xs font-bold text-slate-400 uppercase mb-3"
+            >Altura (cm)</label
+          >
+          <input
+            type="number"
+            id="altura"
+            placeholder="Ej: 175"
+            class="w-full p-4 bg-slate-50 rounded-2xl border-none font-bold text-xl outline-none focus:ring-2 focus:ring-emerald-500"
+          />
+        </div>
+        <button
+          id="btnIMC"
+          class="w-full bg-emerald-600 text-white p-5 rounded-2xl font-bold hover:bg-emerald-700 transition-all shadow-lg shadow-emerald-100"
+          >Calcular mi IMC</button
+        >
+      </div>
+
+      <div
+        id="resIMC"
+        class="hidden bg-slate-900 text-white p-10 rounded-[2.5rem] text-center flex flex-col justify-center animate-in zoom-in"
+      >
+        <p
+          class="text-emerald-400 text-xs font-bold uppercase mb-2 tracking-widest"
+        >
+          Tu resultado es
+        </p>
+        <h2 id="valIMC" class="text-6xl font-black text-white mb-2"></h2>
+        <p id="descIMC" class="text-slate-400 text-xl font-medium"></p>
+      </div>
+    </div>
+
+    <article
+      class="prose prose-slate max-w-none border-t border-slate-200 pt-16 pb-20 text-slate-600"
+    >
+      <h2 class="text-3xl font-black text-slate-800 mb-6">¿Qué es el IMC?</h2>
+      <p>
+        El Índice de Masa Corporal (IMC) es una medida que asocia el peso y la
+        altura de una persona. Es utilizado internacionalmente por médicos para
+        determinar si un adulto se encuentra en un rango de peso saludable.
+      </p>
+
+      <h3 class="text-xl font-bold text-slate-800 mt-8 mb-4">
+        Rangos de la OMS:
+      </h3>
+      <ul class="list-disc pl-5 space-y-2">
+        <li><strong>Bajo peso:</strong> Menos de 18.5</li>
+        <li><strong>Peso normal:</strong> 18.5 – 24.9</li>
+        <li><strong>Sobrepeso:</strong> 25.0 – 29.9</li>
+        <li><strong>Obesidad:</strong> 30.0 o más</li>
+      </ul>
+    </article>
+  </div>
+
+  <script>
+    document.getElementById("btnIMC")?.addEventListener("click", () => {
+      const p = parseFloat(
+        (document.getElementById("peso") as HTMLInputElement).value,
+      );
+      const a =
+        parseFloat(
+          (document.getElementById("altura") as HTMLInputElement).value,
+        ) / 100;
+
+      if (p > 0 && a > 0) {
+        const imc = p / (a * a);
+        let desc = "";
+        if (imc < 18.5) desc = "Bajo peso";
+        else if (imc < 25) desc = "Peso Saludable";
+        else if (imc < 30) desc = "Sobrepeso";
+        else desc = "Obesidad";
+
+        document.getElementById("valIMC")!.innerText = imc.toFixed(1);
+        document.getElementById("descIMC")!.innerText = desc;
+        document.getElementById("resIMC")?.classList.remove("hidden");
+      }
+    });
+  </script>
+</Layout>

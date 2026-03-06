@@ -149,10 +149,31 @@ export const calculadoras = [
     color: "orange"
   },
   {
-    titulo: "Contraseñas",
-    descripcion: "Generá claves aleatorias y seguras al instante.",
-    link: "/utiles/password",
-    icon: "🔐",
-    color: "slate"
+    titulo: "Comprar vs Alquilar",
+    descripcion: "Comparativa financiera para decidir tu próximo hogar.",
+    link: "/finanzas/comprar-vs-alquilar",
+    icon: "🏠",
+    color: "blue"
+  },
+  {
+    titulo: "Inflación Personal",
+    descripcion: "Calculá cuánto poder adquisitivo perdiste este año.",
+    link: "/finanzas/inflacion",
+    icon: "📉",
+    color: "red"
+  }
+{
+    titulo: "Calculadora de IMC",
+    descripcion: "Descubrí si estás en tu peso ideal en segundos.",
+    link: "/salud/imc",
+    icon: "⚖️",
+    color: "emerald"
+  },
+  {
+    titulo: "Gasto Calórico",
+    descripcion: "Calculá tu tasa metabólica basal y quemado diario.",
+    link: "/salud/calorias",
+    icon: "🔥",
+    color: "orange"
   },
 ];
