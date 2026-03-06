@@ -379,4 +379,60 @@ export const calculadoras = [
     icon: "📈",
     color: "indigo"
   },
+  {
+    titulo: "Calculadora de Ladrillos",
+    descripcion: "Calculá cuántos ladrillos necesitás para construir tu pared según las medidas.",
+    link: "/hogar/ladrillos",
+    icon: "🧱",
+    color: "orange"
+  },
+  {
+    titulo: "Retención de Ganancias",
+    descripcion: "Calculá cuánto te descuentan de Impuesto a las Ganancias según tu sueldo bruto.",
+    link: "/finanzas/ganancias",
+    icon: "💸",
+    color: "red"
+  },
+  {
+    titulo: "Calculadora de Hormigón",
+    descripcion: "Calculá el volumen en m³ y los materiales necesarios para tu obra.",
+    link: "/hogar/hormigon",
+    icon: "🏗️",
+    color: "slate"
+  },
+  {
+    titulo: "Consumo Eléctrico",
+    descripcion: "Calculá cuánto gasta cada electrodoméstico y estimá el costo de tu factura de luz.",
+    link: "/hogar/consumo-electrico",
+    icon: "⚡",
+    color: "yellow"
+  },
+  {
+    titulo: "Gastos Compartidos",
+    descripcion: "Registrá quién pagó cada cosa y calculá cómo saldar deudas en el grupo.",
+    link: "/utiles/gastos-compartidos",
+    icon: "🤝",
+    color: "indigo"
+  },
+  {
+    titulo: "Calculadora de Metros Cuadrados",
+    descripcion: "Calculá la superficie de cualquier habitación o terreno de forma rápida.",
+    link: "/hogar/metros-cuadrados",
+    icon: "📐",
+    color: "blue"
+  },
+  {
+    titulo: "Calculadora de Fracciones",
+    descripcion: "Sumá, restá, multiplicá y dividí fracciones de forma simple y rápida.",
+    link: "/utiles/fracciones",
+    icon: "➗",
+    color: "orange"
+  },
+  {
+    titulo: "Calculadora de Tiempo",
+    descripcion: "Sumá o restá horas, minutos y segundos de forma sencilla.",
+    link: "/utiles/tiempo",
+    icon: "⏱️",
+    color: "purple"
+  },
 ];

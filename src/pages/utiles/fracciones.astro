@@ -1,0 +1,153 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import InputField from "/src/components/InputField.astro";
+import ResultBox from "../../components/ResultBox.astro";
+---
+
+<Layout
+  title="Calculadora de Fracciones Online | Chieffin"
+  description="Resolvé operaciones con fracciones: suma, resta, multiplicación y división con simplificación automática."
+>
+  <div class="max-w-4xl mx-auto px-4">
+    <header class="text-center mb-12">
+      <span
+        class="bg-orange-100 text-orange-700 px-4 py-1.5 rounded-full text-xs font-black uppercase tracking-widest"
+        >Matemática</span
+      >
+      <h1
+        class="text-4xl md:text-6xl font-black text-slate-900 mt-6 mb-4 tracking-tight"
+      >
+        Calculadora de <span class="text-orange-600">Fracciones</span>
+      </h1>
+    </header>
+
+    <div
+      class="bg-white p-8 md:p-10 rounded-[2.5rem] border border-slate-100 shadow-sm max-w-2xl mx-auto"
+    >
+      <div
+        class="flex flex-col md:flex-row items-center justify-center gap-4 mb-8"
+      >
+        <div class="flex flex-col gap-2">
+          <input
+            type="number"
+            id="num1"
+            placeholder="Num"
+            class="w-20 p-3 bg-slate-50 rounded-xl border-2 border-transparent focus:border-orange-500 text-center font-bold"
+          />
+          <div class="h-1 bg-slate-300 w-full rounded-full"></div>
+          <input
+            type="number"
+            id="den1"
+            placeholder="Den"
+            class="w-20 p-3 bg-slate-50 rounded-xl border-2 border-transparent focus:border-orange-500 text-center font-bold"
+          />
+        </div>
+
+        <select
+          id="operacionFrac"
+          class="p-3 bg-slate-900 text-white rounded-xl font-black outline-none"
+        >
+          <option value="+">+</option>
+          <option value="-">-</option>
+          <option value="*">×</option>
+          <option value="/">÷</option>
+        </select>
+
+        <div class="flex flex-col gap-2">
+          <input
+            type="number"
+            id="num2"
+            placeholder="Num"
+            class="w-20 p-3 bg-slate-50 rounded-xl border-2 border-transparent focus:border-orange-500 text-center font-bold"
+          />
+          <div class="h-1 bg-slate-300 w-full rounded-full"></div>
+          <input
+            type="number"
+            id="den2"
+            placeholder="Den"
+            class="w-20 p-3 bg-slate-50 rounded-xl border-2 border-transparent focus:border-orange-500 text-center font-bold"
+          />
+        </div>
+
+        <span class="text-3xl font-black text-slate-300">=</span>
+
+        <div id="resFrac" class="flex flex-col gap-2 opacity-30">
+          <div
+            id="resNum"
+            class="w-20 p-3 bg-orange-50 text-orange-700 rounded-xl text-center font-black text-xl"
+          >
+            -
+          </div>
+          <div class="h-1 bg-orange-200 w-full rounded-full"></div>
+          <div
+            id="resDen"
+            class="w-20 p-3 bg-orange-50 text-orange-700 rounded-xl text-center font-black text-xl"
+          >
+            -
+          </div>
+        </div>
+      </div>
+
+      <button
+        id="btnCalcFrac"
+        class="w-full bg-orange-600 text-white p-5 rounded-2xl font-black text-lg hover:scale-[1.02] transition-all shadow-xl shadow-orange-100"
+        >Calcular y Simplificar</button
+      >
+    </div>
+  </div>
+
+  <script>
+    function mcd(a: number, b: number): number {
+      return b === 0 ? a : mcd(b, a % b);
+    }
+
+    document.getElementById("btnCalcFrac")?.addEventListener("click", () => {
+      const n1 = parseInt(
+        (document.getElementById("num1") as HTMLInputElement).value,
+      );
+      const d1 = parseInt(
+        (document.getElementById("den1") as HTMLInputElement).value,
+      );
+      const n2 = parseInt(
+        (document.getElementById("num2") as HTMLInputElement).value,
+      );
+      const d2 = parseInt(
+        (document.getElementById("den2") as HTMLInputElement).value,
+      );
+      const op = (document.getElementById("operacionFrac") as HTMLSelectElement)
+        .value;
+
+      if (!n1 || !d1 || !n2 || !d2) return alert("Completá todos los campos");
+      if (d1 === 0 || d2 === 0) return alert("El denominador no puede ser 0");
+
+      let finalNum = 0,
+        finalDen = 0;
+
+      if (op === "+") {
+        finalNum = n1 * d2 + n2 * d1;
+        finalDen = d1 * d2;
+      } else if (op === "-") {
+        finalNum = n1 * d2 - n2 * d1;
+        finalDen = d1 * d2;
+      } else if (op === "*") {
+        finalNum = n1 * n2;
+        finalDen = d1 * d2;
+      } else if (op === "/") {
+        finalNum = n1 * d2;
+        finalDen = d1 * n2;
+      }
+
+      const divisor = Math.abs(mcd(finalNum, finalDen));
+
+      const resDiv = document.getElementById("resFrac");
+      const numSpan = document.getElementById("resNum");
+      const denSpan = document.getElementById("resDen");
+
+      if (resDiv && numSpan && denSpan) {
+        numSpan.textContent = (finalNum / divisor).toString();
+        denSpan.textContent = (finalDen / divisor).toString();
+        resDiv.classList.remove("opacity-30");
+      }
+    });
+  </script>
+</Layout>
