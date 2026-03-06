@@ -1,19 +1,137 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
-import { calculadoras } from "../data/calculadoras"; // Importamos la lista
+import { calculadoras } from "../data/calculadoras";
+
+// Agrupamos las categorías para el diseño
+const categoriasMap: Record<string, string> = {
+  finanzas: "💰 Finanzas y Dinero",
+  salud: "🏥 Salud y Bienestar",
+  matematica: "📐 Matemáticas",
+  negocios: "💼 Negocios y Emprendimiento",
+  utiles: "🛠️ Utilidades Diarias",
+  hogar: "🏠 Hogar y Consumo",
+  varios: "✨ Otros",
+};
+
+// Extraemos las categorías presentes en tu data/calculadoras.ts
+const categoriasUnicas = [
+  ...new Set(calculadoras.map((c) => c.link.split("/")[1] || "varios")),
+];
 ---
 
-<Layout title="Chieffin - Calculadoras Inteligentes">
-  <div class="text-center py-16 px-4">
-    <h1 class="text-5xl font-black text-slate-900 tracking-tight">
-      Todas las <span class="text-blue-600">Calculadoras</span>
-    </h1>
-  </div>
+<Layout
+  title="Chieffin | Todas las Calculadoras Online"
+  description="Más de 30 herramientas gratuitas: IVA, IMC, Interés Compuesto, Asado y más."
+>
+  <main class="max-w-6xl mx-auto px-4">
+    <header class="text-center py-16 md:py-24">
+      <h1
+        class="text-5xl md:text-7xl font-black text-slate-900 tracking-tight mb-6"
+      >
+        Herramientas <span class="text-blue-600">Inteligentes</span> 🧮
+      </h1>
 
-  <div
-    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-4 max-w-6xl mx-auto mb-20"
-  >
-    {calculadoras.map((calc) => <Card {...calc} />)}
-  </div>
+      <div class="max-w-xl mx-auto mt-8 relative">
+        <input
+          type="text"
+          id="buscador"
+          placeholder="Buscar calculadora (ej: IVA, Asado, IMC...)"
+          class="w-full p-5 pl-12 bg-white border-2 border-slate-100 rounded-3xl shadow-sm focus:border-blue-500 focus:ring-4 focus:ring-blue-50 outline-none transition-all font-medium text-lg"
+        />
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-6 w-6 text-slate-400 absolute left-4 top-1/2 -translate-y-1/2"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+        </svg>
+      </div>
+    </header>
+
+    <div id="contenedor-calculadoras">
+      {
+        categoriasUnicas.map((catKey) => (
+          <section class="mb-16 seccion-categoria" data-categoria={catKey}>
+            <div class="flex items-center gap-4 mb-8">
+              <h2 class="text-2xl md:text-3xl font-black text-slate-800">
+                {categoriasMap[catKey] || catKey.toUpperCase()}
+              </h2>
+              <div class="h-px bg-slate-200 flex-grow" />
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {calculadoras
+                .filter((c) => (c.link.split("/")[1] || "varios") === catKey)
+                .map((calc) => (
+                  <div
+                    class="card-wrapper"
+                    data-titulo={calc.titulo.toLowerCase()}
+                    data-desc={calc.descripcion.toLowerCase()}
+                  >
+                    <Card {...calc} />
+                  </div>
+                ))}
+            </div>
+          </section>
+        ))
+      }
+    </div>
+
+    <div id="sin-resultados" class="hidden text-center py-20">
+      <span class="text-6xl mb-4 block">🔍</span>
+      <h3 class="text-2xl font-bold text-slate-800">
+        No encontramos esa calculadora
+      </h3>
+      <p class="text-slate-500">Intentá con otra palabra o categoría.</p>
+    </div>
+  </main>
+
+  <script>
+    const buscador = document.getElementById("buscador") as HTMLInputElement;
+    const cards = document.querySelectorAll(".card-wrapper");
+    const secciones = document.querySelectorAll(".seccion-categoria");
+    const mensajeSinResultados = document.getElementById("sin-resultados");
+
+    buscador?.addEventListener("input", () => {
+      const term = buscador.value.toLowerCase();
+      let hayResultadosGlobales = false;
+
+      secciones.forEach((seccion) => {
+        let hayResultadosEnSeccion = false;
+        const cardsDeSeccion = seccion.querySelectorAll(".card-wrapper");
+
+        cardsDeSeccion.forEach((card) => {
+          const titulo = (card as HTMLElement).dataset.titulo || "";
+          const desc = (card as HTMLElement).dataset.desc || "";
+
+          if (titulo.includes(term) || desc.includes(term)) {
+            (card as HTMLElement).style.display = "block";
+            hayResultadosEnSeccion = true;
+            hayResultadosGlobales = true;
+          } else {
+            (card as HTMLElement).style.display = "none";
+          }
+        });
+
+        // Ocultar sección completa si no tiene cards visibles
+        (seccion as HTMLElement).style.display = hayResultadosEnSeccion
+          ? "block"
+          : "none";
+      });
+
+      // Mostrar mensaje de "no encontrado"
+      if (mensajeSinResultados) {
+        mensajeSinResultados.style.display = hayResultadosGlobales
+          ? "none"
+          : "block";
+      }
+    });
+  </script>
 </Layout>
