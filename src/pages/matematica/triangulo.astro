@@ -57,13 +57,13 @@ import ResultBox from "../../components/ResultBox.astro";
       </div>
     </div>
 
+    
+
     <article class="prose prose-slate max-w-none border-t border-slate-200 pt-16 pb-20 text-slate-600">
       <h2 class="text-3xl font-black text-slate-800 mb-6">¿Cómo se calcula el área de un triángulo?</h2>
       <p>
-        Para hallar la superficie de un triángulo, sin importar si es isósceles, equilátero o escaleno, la fórmula matemática universal es:
+        Para hallar la superficie de un triángulo, la fórmula matemática universal que relaciona la base y la altura es:
       </p>
-
-      
 
       <div class="bg-orange-50 p-8 rounded-3xl text-center my-8 border border-orange-100">
         <p class="text-2xl font-mono font-bold text-orange-700">
@@ -72,35 +72,29 @@ import ResultBox from "../../components/ResultBox.astro";
       </div>
 
       <h3 class="text-2xl font-bold text-slate-800 mb-4">Ejemplo paso a paso:</h3>
-      <p>Supongamos que tenemos un triángulo con una <strong>base de 10 cm</strong> y una <strong>altura de 15 cm</strong>:</p>
+      <p>Si tenemos un triángulo con una base de 10 y una altura de 15:</p>
       <ol class="space-y-3 bg-slate-50 p-6 rounded-2xl border border-slate-100">
-        <li><strong>Multiplicamos la base por la altura:</strong> $10 \times 15 = 150$.</li>
-        <li><strong>Dividimos el resultado por dos:</strong> $150 / 2 = 75$.</li>
-        <li><strong>Resultado final:</strong> El área es de $75 \text{ cm}^2$.</li>
+        <li><strong>Multiplicamos:</strong> $10 \times 15 = 150$.</li>
+        <li><strong>Dividimos por 2:</strong> $150 / 2 = 75$.</li>
+        <li><strong>Resultado:</strong> El área es 75.</li>
       </ol>
-
-      <h3 class="text-2xl font-bold text-slate-800 mt-10 mb-4">Tipos de triángulos</h3>
-      <p>Aunque existen diferentes tipos, esta fórmula funciona para todos:</p>
-      <ul class="list-disc pl-5 space-y-2">
-        <li><strong>Equilátero:</strong> Tres lados iguales.</li>
-        <li><strong>Isósceles:</strong> Dos lados iguales.</li>
-        <li><strong>Escaleno:</strong> Todos los lados diferentes.</li>
-        <li><strong>Rectángulo:</strong> Tiene un ángulo de 90°.</li>
-      </ul>
     </article>
   </div>
 
   <script>
-    document.getElementById("btnTriangulo")?.addEventListener("click", () => {
-      const b = parseFloat((document.getElementById("baseT") as HTMLInputElement).value);
-      const h = parseFloat((document.getElementById("alturaT") as HTMLInputElement).value);
+    const btn = document.getElementById("btnTriangulo");
+    btn?.addEventListener("click", () => {
+      const bInput = document.getElementById("baseT") as HTMLInputElement;
+      const hInput = document.getElementById("alturaT") as HTMLInputElement;
+      
+      const b = parseFloat(bInput.value);
+      const h = parseFloat(hInput.value);
 
       if (b > 0 && h > 0) {
         const area = (b * h) / 2;
-        document.getElementById("areaTVal")!.innerText = area.toLocaleString('es-AR', { maximumFractionDigits: 2 });
+        const resElement = document.getElementById("areaTVal");
+        if (resElement) resElement.innerText = area.toString();
         document.getElementById("resTriContainer")?.classList.remove("hidden");
-      } else {
-        alert("Por favor, ingresá valores válidos mayores a cero.");
       }
     });
   </script>
