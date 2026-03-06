@@ -255,7 +255,7 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
       { nombre: "Calculadora de Aguinaldo", link: "/finanzas/aguinaldo" },
       { nombre: "Impuesto a las Ganancias", link: "/finanzas/impuesto-ganancias" },
       { nombre: "Interés Compuesto", link: "/finanzas/interes-compuesto" }
-    ]
+    ] 
   },
   "calculadora-inflacion": {
     faqs: [
