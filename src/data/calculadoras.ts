@@ -442,4 +442,5 @@ export const calculadoras = [
     icon: "🧮",
     color: "indigo"
   },
+
 ];
