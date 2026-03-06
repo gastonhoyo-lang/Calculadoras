@@ -1,7 +1,7 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import InputField from "/src/components/InputField.astro";
-import ResultBox from "../../components/ResultBox.astro";---
+import ResultBox from "../../components/ResultBox.astro";
 ---
 
 <Layout
@@ -10,72 +10,107 @@ import ResultBox from "../../components/ResultBox.astro";---
 >
   <div class="max-w-4xl mx-auto px-4">
     <header class="text-center mb-12">
-      <h1 class="text-4xl md:text-6xl font-black text-slate-900 tracking-tight mb-4">
+      <h1
+        class="text-4xl md:text-6xl font-black text-slate-900 tracking-tight mb-4"
+      >
         Gasto <span class="text-orange-500">Calórico</span> 🔥
       </h1>
-      <p class="text-slate-500 text-lg font-medium">Descubrí tu Tasa Metabólica Basal y optimizá tu nutrición.</p>
+      <p class="text-slate-500 text-lg font-medium">
+        Descubrí tu Tasa Metabólica Basal y optimizá tu nutrición.
+      </p>
     </header>
 
-    <div class="bg-white p-8 rounded-[2.5rem] border border-slate-100 shadow-sm space-y-4 max-w-md mx-auto mb-16">
-      <select id="sexoC" class="w-full p-4 bg-slate-50 rounded-2xl outline-none font-bold border-2 border-transparent focus:border-orange-500 transition-all">
+    <div
+      class="bg-white p-8 rounded-[2.5rem] border border-slate-100 shadow-sm space-y-4 max-w-md mx-auto mb-16"
+    >
+      <select
+        id="sexoC"
+        class="w-full p-4 bg-slate-50 rounded-2xl outline-none font-bold border-2 border-transparent focus:border-orange-500 transition-all"
+      >
         <option value="H">Hombre</option>
         <option value="M">Mujer</option>
       </select>
-      <input type="number" id="pesoC" placeholder="Peso (kg)" class="w-full p-4 bg-slate-50 rounded-2xl outline-none font-bold border-2 border-transparent focus:border-orange-500 transition-all"/>
-      <input type="number" id="alturaC" placeholder="Altura (cm)" class="w-full p-4 bg-slate-50 rounded-2xl outline-none font-bold border-2 border-transparent focus:border-orange-500 transition-all"/>
-      <input type="number" id="edadC" placeholder="Edad" class="w-full p-4 bg-slate-50 rounded-2xl outline-none font-bold border-2 border-transparent focus:border-orange-500 transition-all"/>
-      <button id="btnCal" class="w-full bg-slate-900 text-white p-5 rounded-2xl font-bold hover:bg-black transition-all shadow-lg">Calcular TMB</button>
+      <input
+        type="number"
+        id="pesoC"
+        placeholder="Peso (kg)"
+        class="w-full p-4 bg-slate-50 rounded-2xl outline-none font-bold border-2 border-transparent focus:border-orange-500 transition-all"
+      />
+      <input
+        type="number"
+        id="alturaC"
+        placeholder="Altura (cm)"
+        class="w-full p-4 bg-slate-50 rounded-2xl outline-none font-bold border-2 border-transparent focus:border-orange-500 transition-all"
+      />
+      <input
+        type="number"
+        id="edadC"
+        placeholder="Edad"
+        class="w-full p-4 bg-slate-50 rounded-2xl outline-none font-bold border-2 border-transparent focus:border-orange-500 transition-all"
+      />
+      <button
+        id="btnCal"
+        class="w-full bg-slate-900 text-white p-5 rounded-2xl font-bold hover:bg-black transition-all shadow-lg"
+        >Calcular TMB</button
+      >
 
-      <div id="resCal" class="hidden p-6 bg-orange-50 rounded-3xl text-center border-2 border-orange-100 animate-in fade-in zoom-in">
-        <p class="text-orange-600 text-xs font-bold uppercase tracking-widest mb-1">Tu metabolismo basal es de:</p>
-        <div class="text-4xl font-black text-orange-900"><span id="valCal"></span> kcal</div>
-        <p class="text-orange-400 text-[10px] mt-2 leading-tight uppercase font-bold">Calorías mínimas para funciones vitales</p>
+      <div
+        id="resCal"
+        class="hidden p-6 bg-orange-50 rounded-3xl text-center border-2 border-orange-100 animate-in fade-in zoom-in"
+      >
+        <p
+          class="text-orange-600 text-xs font-bold uppercase tracking-widest mb-1"
+        >
+          Tu metabolismo basal es de:
+        </p>
+        <div class="text-4xl font-black text-orange-900">
+          <span id="valCal"></span> kcal
+        </div>
       </div>
     </div>
 
-    
-
-    <article class="prose prose-slate max-w-none border-t border-slate-200 pt-16 pb-20 text-slate-600">
-      <h2 class="text-3xl font-black text-slate-800 mb-6">¿Qué es la Tasa Metabólica Basal (TMB)?</h2>
+    <article
+      class="prose prose-slate max-w-none border-t border-slate-200 pt-16 pb-20 text-slate-600"
+    >
+      <h2 class="text-3xl font-black text-slate-800 mb-6">
+        ¿Qué es la Tasa Metabólica Basal (TMB)?
+      </h2>
       <p>
-        La <strong>Tasa Metabólica Basal</strong> es la cantidad mínima de energía (calorías) que tu cuerpo necesita para seguir funcionando mientras está en reposo total. Esto incluye procesos vitales como respirar, la circulación sanguínea, la producción de células y la regulación de la temperatura.
-      </p>
-
-      <div class="bg-slate-50 p-8 rounded-[2rem] my-8 border border-slate-100">
-        <h3 class="text-xl font-bold text-slate-800 mb-4 text-center">La Ecuación de Mifflin-St Jeor</h3>
-        <p class="text-sm text-center mb-4 italic">Es la fórmula que utilizamos en esta calculadora por su alta precisión en adultos:</p>
-        <div class="space-y-2 font-mono text-center text-orange-700 font-bold">
-          <p>Hombres: $10 \times \text{peso} + 6.25 \times \text{altura} - 5 \times \text{edad} + 5$</p>
-          <p>Mujeres: $10 \times \text{peso} + 6.25 \times \text{altura} - 5 \times \text{edad} - 161$</p>
-        </div>
-      </div>
-
-      <h3 class="text-2xl font-bold text-slate-800 mb-4">¿Cómo usar este dato para perder o ganar peso?</h3>
-      <p>
-        La TMB no incluye el ejercicio. Para saber cuántas calorías quemás realmente en un día, debés multiplicar tu TMB por un factor de actividad física:
-      </p>
-      <ul class="space-y-3 bg-white p-6 rounded-2xl border border-slate-100 list-none">
-        <li>🏃‍♂️ <strong>Sedentario:</strong> TMB $\times 1.2$</li>
-        <li>🏃‍♂️ <strong>Ejercicio ligero:</strong> TMB $\times 1.375$</li>
-        <li>🏃‍♂️ <strong>Ejercicio moderado:</strong> TMB $\times 1.55$</li>
-        <li>🏃‍♂️ <strong>Deportista:</strong> TMB $\times 1.725$</li>
-      </ul>
-      <p class="mt-4">
-        Si consumís <strong>menos</strong> de ese resultado, bajarás de peso (déficit calórico). Si consumís <strong>más</strong>, subirás (superávit).
+        La Tasa Metabólica Basal es el número de calorías que tu cuerpo quema
+        para realizar las funciones básicas de supervivencia (respirar, bombear
+        sangre, regenerar células) en reposo total.
       </p>
     </article>
   </div>
 
   <script>
-    document.getElementById("btnCal")?.addEventListener("click", () => {
-      const s = (document.getElementById("sexoC") as HTMLSelectElement).value;
-      const p = parseFloat((document.getElementById("pesoC") as HTMLInputElement).value);
-      const a = parseFloat((document.getElementById("alturaC") as HTMLInputElement).value);
-      const e = parseFloat((document.getElementById("edadC") as HTMLInputElement).value);
+    const setupCalorias = () => {
+      const btn = document.getElementById("btnCal");
+      btn?.addEventListener("click", () => {
+        const s = (document.getElementById("sexoC") as HTMLSelectElement).value;
+        const p = parseFloat(
+          (document.getElementById("pesoC") as HTMLInputElement).value,
+        );
+        const a = parseFloat(
+          (document.getElementById("alturaC") as HTMLInputElement).value,
+        );
+        const e = parseFloat(
+          (document.getElementById("edadC") as HTMLInputElement).value,
+        );
 
-      if (p && a && e) {
-        let tmb = 10 * p + 6.25 * a - 5 * e;
-        tmb = s === "H" ? tmb + 5 : tmb - 161;
+        if (p && a && e) {
+          let tmb = 10 * p + 6.25 * a - 5 * e;
+          tmb = s === "H" ? tmb + 5 : tmb - 161;
 
-        const val = document.getElementById("valCal");
-        if
+          const val = document.getElementById("valCal");
+          const res = document.getElementById("resCal");
+          if (val && res) {
+            val.innerText = Math.round(tmb).toLocaleString("es-AR");
+            res.classList.remove("hidden");
+          }
+        }
+      });
+    };
+    setupCalorias();
+  </script>
+</Layout>
