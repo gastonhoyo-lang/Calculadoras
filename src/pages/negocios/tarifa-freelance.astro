@@ -1,0 +1,96 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import InputField from "/src/components/InputField.astro";
+import ResultBox from "../../components/ResultBox.astro";
+---
+
+<Layout
+  title="Calculadora de Tarifa Freelance | ¿Cuánto cobrar?"
+  description="Calculá cuánto deberías cobrar por hora o por proyecto basado en tus gastos y sueldo deseado."
+>
+  <div class="max-w-4xl mx-auto px-4 py-12">
+    <div
+      class="bg-white p-8 md:p-12 rounded-[3rem] border border-slate-100 shadow-sm max-w-2xl mx-auto"
+    >
+      <h1 class="text-3xl font-black mb-8 text-center text-slate-900">
+        Tu Valor <span class="text-indigo-600">Hora</span> 💼
+      </h1>
+
+      <div class="space-y-4">
+        <div>
+          <label class="block text-xs font-bold text-slate-400 uppercase mb-2"
+            >Sueldo neto deseado (Mensual)</label
+          >
+          <input
+            type="number"
+            id="sueldoD"
+            placeholder="Ej: 1500"
+            class="w-full p-4 bg-slate-50 rounded-2xl outline-none font-bold"
+          />
+        </div>
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs font-bold text-slate-400 uppercase mb-2"
+              >Gastos Fijos</label
+            >
+            <input
+              type="number"
+              id="gastosF"
+              placeholder="Luz, internet, etc"
+              class="w-full p-4 bg-slate-50 rounded-2xl outline-none font-bold"
+            />
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-slate-400 uppercase mb-2"
+              >Horas laborables/mes</label
+            >
+            <input
+              type="number"
+              id="horasM"
+              placeholder="Ej: 140"
+              class="w-full p-4 bg-slate-50 rounded-2xl outline-none font-bold"
+            />
+          </div>
+        </div>
+        <button
+          id="btnFreelance"
+          class="w-full bg-indigo-600 text-white p-5 rounded-2xl font-bold hover:bg-indigo-700 transition-all"
+          >Calcular Tarifa</button
+        >
+      </div>
+
+      <div
+        id="resFreelance"
+        class="hidden mt-10 p-8 bg-indigo-900 text-white rounded-[2rem] text-center animate-in zoom-in"
+      >
+        <p class="text-indigo-300 text-xs font-bold uppercase mb-2">
+          Deberías cobrar como mínimo:
+        </p>
+        <div class="text-5xl font-black"><span id="valFreelance"></span></div>
+        <p class="text-indigo-400 text-sm mt-2">por hora de trabajo</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("btnFreelance")?.addEventListener("click", () => {
+      const sueldo = parseFloat(
+        (document.getElementById("sueldoD") as HTMLInputElement).value,
+      );
+      const gastos =
+        parseFloat(
+          (document.getElementById("gastosF") as HTMLInputElement).value,
+        ) || 0;
+      const horas = parseFloat(
+        (document.getElementById("horasM") as HTMLInputElement).value,
+      );
+
+      if (sueldo && horas) {
+        const tarifa = (sueldo + gastos) / horas;
+        document.getElementById("valFreelance")!.innerText =
+          "$" + tarifa.toFixed(2);
+        document.getElementById("resFreelance")?.classList.remove("hidden");
+      }
+    });
+  </script>
+</Layout>

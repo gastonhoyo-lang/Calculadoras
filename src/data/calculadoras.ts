@@ -239,4 +239,11 @@ export const calculadoras = [
     icon: "🏖️",
     color: "emerald"
   },
+  {
+    titulo: "Tarifa Freelance",
+    descripcion: "Calculá cuánto cobrar por tu trabajo según tus gastos y metas.",
+    link: "/negocios/tarifa-freelance",
+    icon: "💼",
+    color: "indigo"
+  },
 ];
