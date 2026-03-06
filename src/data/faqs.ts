@@ -392,7 +392,7 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
   },
   // Copiá y pegá esto dentro del objeto dataFaqs en src/data/faqs.ts
 
-  "calculadora-iva": {
+  "iva": {
     faqs: [
       { 
         q: "¿Qué es el IVA y quiénes deben pagarlo?", 
