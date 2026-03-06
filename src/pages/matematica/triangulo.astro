@@ -1,7 +1,5 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import InputField from "/src/components/InputField.astro";
-import ResultBox from "../../components/ResultBox.astro";
 ---
 
 <Layout
@@ -21,7 +19,7 @@ import ResultBox from "../../components/ResultBox.astro";
     <div class="grid lg:grid-cols-2 gap-8 items-center mb-16">
       <div class="bg-white p-8 rounded-[2.5rem] border border-slate-100 shadow-sm space-y-6">
         <div>
-          <label class="block text-xs font-bold text-slate-400 uppercase tracking-widest mb-3">Base (b)</label>
+          <label for="baseT" class="block text-xs font-bold text-slate-400 uppercase tracking-widest mb-3">Base (b)</label>
           <input
             type="number"
             id="baseT"
@@ -31,7 +29,7 @@ import ResultBox from "../../components/ResultBox.astro";
         </div>
 
         <div>
-          <label class="block text-xs font-bold text-slate-400 uppercase tracking-widest mb-3">Altura (h)</label>
+          <label for="alturaT" class="block text-xs font-bold text-slate-400 uppercase tracking-widest mb-3">Altura (h)</label>
           <input
             type="number"
             id="alturaT"
@@ -51,7 +49,7 @@ import ResultBox from "../../components/ResultBox.astro";
       <div id="resTriContainer" class="hidden animate-in fade-in zoom-in duration-500">
         <div class="bg-slate-900 text-white p-10 rounded-[2.5rem] text-center shadow-xl">
           <p class="text-orange-400 text-sm font-bold uppercase tracking-widest mb-2">El área resultante es</p>
-          <h2 id="areaTVal" class="text-6xl font-black text-white mb-2"></h2>
+          <h2 id="areaTVal" class="text-6xl font-black text-white mb-2">0</h2>
           <p class="text-slate-400 text-sm">unidades cuadradas</p>
         </div>
       </div>
@@ -62,7 +60,7 @@ import ResultBox from "../../components/ResultBox.astro";
     <article class="prose prose-slate max-w-none border-t border-slate-200 pt-16 pb-20 text-slate-600">
       <h2 class="text-3xl font-black text-slate-800 mb-6">¿Cómo se calcula el área de un triángulo?</h2>
       <p>
-        Para hallar la superficie de un triángulo, sin importar si es isósceles, equilátero o escaleno, la fórmula matemática universal es:
+        Para hallar la superficie de un triángulo, la fórmula matemática universal que aplica a todos los tipos (isósceles, equilátero o escaleno) es:
       </p>
 
       <div class="bg-orange-50 p-8 rounded-3xl text-center my-8 border border-orange-100">
@@ -72,15 +70,36 @@ import ResultBox from "../../components/ResultBox.astro";
       </div>
 
       <h3 class="text-2xl font-bold text-slate-800 mb-4">Ejemplo paso a paso:</h3>
-      <p>Si tenés un triángulo con una <strong>base de 10 cm</strong> y una <strong>altura de 15 cm</strong>, el cálculo sería:</p>
+      <p>Si tenemos un triángulo con <strong>base de 10 cm</strong> y <strong>altura de 15 cm</strong>:</p>
       <ul class="space-y-3 bg-slate-50 p-6 rounded-2xl border border-slate-100 list-none">
-        <li>1. Multiplicar base por altura: $10 \times 15 = 150$.</li>
-        <li>2. Dividir por dos: $150 / 2 = 75$.</li>
-        <li><strong>Resultado:</strong> $75 \text{ cm}^2$.</li>
+        <li>1. Multiplicamos la base por la altura: $10 \times 15 = 150$.</li>
+        <li>2. Dividimos el resultado por dos: $150 / 2 = 75$.</li>
+        <li><strong>Resultado final:</strong> El área es de $75 \text{ cm}^2$.</li>
       </ul>
-
-      <h3 class="text-2xl font-bold text-slate-800 mt-10 mb-4">¿Por qué se divide por 2?</h3>
-      <p>
-        Es simple: cualquier triángulo puede verse como la mitad de un paralelogramo (como un rectángulo o un cuadrado) que tenga su misma base y altura. Al calcular $b \times h$ obtenés el área del rectángulo completo, por eso la dividimos para obtener solo la del triángulo.
-      </p>
     </article>
+  </div>
+
+  <script>
+    function setup() {
+      const btn = document.getElementById("btnTriangulo");
+      const baseInput = document.getElementById("baseT") as HTMLInputElement;
+      const alturaInput = document.getElementById("alturaT") as HTMLInputElement;
+      const areaDisplay = document.getElementById("areaTVal");
+      const container = document.getElementById("resTriContainer");
+
+      btn?.addEventListener("click", () => {
+        const b = parseFloat(baseInput.value);
+        const h = parseFloat(alturaInput.value);
+
+        if (b > 0 && h > 0) {
+          const area = (b * h) / 2;
+          if (areaDisplay) areaDisplay.innerText = area.toLocaleString('es-AR', { maximumFractionDigits: 2 });
+          container?.classList.remove("hidden");
+        } else {
+          alert("Ingresá valores válidos mayores a cero.");
+        }
+      });
+    }
+    setup();
+  </script>
+</Layout>
