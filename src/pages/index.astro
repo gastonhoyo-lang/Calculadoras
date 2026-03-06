@@ -6,7 +6,7 @@ import { calculadoras } from "../data/calculadoras";
 
 <Layout
   title="Chieffin | Calculadoras Online Gratuitas y Rápidas"
-  description="Resolvé problemas de matemáticas, finanzas y negocios con nuestras calculadoras inteligentes. Simples, rápidas y precisas."
+  description="Resolvé problemas de matemáticas, finanzas y negocios con nuestras calculadoras inteligentes."
 >
   <main class="max-w-6xl mx-auto px-4">
     <header class="text-center py-16 md:py-24">
@@ -18,8 +18,7 @@ import { calculadoras } from "../data/calculadoras";
       <p
         class="text-slate-500 text-lg md:text-xl max-w-2xl mx-auto font-medium"
       >
-        Herramientas gratuitas para simplificar tus cálculos diarios. Desde
-        regla de tres hasta retorno de inversión.
+        Herramientas gratuitas para simplificar tus cálculos diarios.
       </p>
     </header>
 
@@ -30,10 +29,11 @@ import { calculadoras } from "../data/calculadoras";
       {
         calculadoras.map((calc) => (
           <Card
-            title={calc.titulo}
-            href={calc.link
-            description={calc.descripcion}
+            titulo={calc.title}
+            link={calc.href}
+            descripcion={calc.description}
             icon={calc.icon}
+            color={calc.color}
           />
         ))
       }
