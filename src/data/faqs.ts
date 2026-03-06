@@ -41,15 +41,6 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
       { nombre: "Calculadora de IVA", link: "/finanzas/porcentaje" }
     ]
   },
-  "iva": {
-    faqs: [
-      { q: "¿Cómo calcular el IVA?", a: "Multiplicá el neto por 1.21 para sumarlo, o dividí el total por 1.21 para extraerlo." }
-    ],
-    relacionados: [
-      { nombre: "Asado", link: "/utiles/asado" }
-    ]
-     },
-  // Copiá y pegá esto dentro del objeto dataFaqs en src/data/faqs.ts
 
   "aguinaldo": {
     faqs: [
@@ -485,7 +476,7 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
   },
   // Copiá y pegá esto dentro del objeto dataFaqs en src/data/faqs.ts
 
-  "calculadora-porcentajes": {
+  "porcentaje": {
     faqs: [
       { 
         q: "¿Qué es un porcentaje y qué representa?", 
