@@ -22,7 +22,7 @@ export const calculadoras = [
     color: "indigo"
   },
   // Cuando quieras subir la número 50, solo agregás un bloque acá.
-{
+  {
     titulo: "Pintura",
     descripcion: "¿Cuántos litros necesitás para renovar tus paredes?",
     link: "/hogar/pintura",
@@ -36,14 +36,14 @@ export const calculadoras = [
     icon: "⏳",
     color: "emerald"
   },
-{
+  {
     titulo: "Luz y Consumo",
     descripcion: "Calculá el consumo de tus aparatos y ahorrá en tu factura.",
     link: "/hogar/luz",
     icon: "⚡",
     color: "blue"
   }, 
-{
+  {
     titulo: "Agua Diaria",
     descripcion: "Calculá cuánta agua necesitás según tu peso y actividad.",
     link: "/salud/agua",
@@ -57,14 +57,14 @@ export const calculadoras = [
     icon: "✖️",
     color: "emerald"
   },
-{
+  {
     titulo: "Diferencia de Horas",
     descripcion: "Calculá el tiempo exacto entre dos horas y su valor decimal.",
     link: "/utiles/horas",
     icon: "⏱️",
     color: "blue"
   },
-{
+  {
     titulo: "Círculo",
     descripcion: "Calculá área y perímetro de un círculo fácilmente.",
     link: "/matematica/circulo",
@@ -120,7 +120,7 @@ export const calculadoras = [
     icon: "📉",
     color: "blue"
   },
-{
+  {
     titulo: "Calculadora de Asado",
     descripcion: "¿Cuánta carne comprar? Calculá para tu próxima reunión.",
     link: "/utiles/asado",
@@ -175,5 +175,26 @@ export const calculadoras = [
     link: "/salud/calorias",
     icon: "🔥",
     color: "orange"
+  },
+  {
+    titulo: "Volumen y Definición",
+    descripcion: "Calculá tus macros para ganar músculo o perder grasa.",
+    link: "/salud/volumen-definicion",
+    icon: "🦾",
+    color: "orange"
+  },
+  {
+    titulo: "Edad de Mascotas",
+    descripcion: "Calculá la edad humana de tu perro o gato de forma precisa.",
+    link: "/utiles/edad-mascotas",
+    icon: "🐾",
+    color: "yellow"
+  },
+  {
+    titulo: "Calculadora de Proteína",
+    descripcion: "Descubrí cuánta proteína necesitás según tu entrenamiento.",
+    link: "/salud/proteina",
+    icon: "🥩",
+    color: "blue"
   },
 ];
