@@ -47,6 +47,20 @@ const canonicalURL = new URL(Astro.url.pathname, "https://chieffin.com");
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Chieffin",
+        "url": "https://chieffin.com",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://chieffin.com/?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      }
+    </script>
   </head>
 
   <body class="bg-slate-50 text-slate-900 font-sans antialiased">
@@ -107,14 +121,14 @@ const canonicalURL = new URL(Astro.url.pathname, "https://chieffin.com");
           </div>
 
           <a
-            href="/finanzas/interescompuesto"
+            href="/finanzas/interes-compuesto"
             class="flex items-center hover:text-blue-600 transition py-5"
             >Inversiones</a
           >
           <a
-            href="/finanzas/porcentaje"
+            href="/finanzas/tea-tna"
             class="flex items-center hover:text-blue-600 transition py-5"
-            >Impuestos</a
+            >Tasas</a
           >
         </div>
 
@@ -126,49 +140,48 @@ const canonicalURL = new URL(Astro.url.pathname, "https://chieffin.com");
       </nav>
     </header>
 
-    <main class="max-w-4xl mx-auto px-4 py-12 min-h-[calc(100vh-160px)]">
+    <main class="min-h-[calc(100vh-160px)]">
       <slot />
     </main>
 
-    <footer class="bg-white border-t border-slate-200 py-12">
+    <footer class="bg-white border-t border-slate-200 py-12 mt-20">
       <div
         class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8 text-sm"
       >
         <div>
           <p class="font-bold text-lg mb-4">Chieffin</p>
           <p class="text-slate-500">
-            Herramientas financieras diseñadas para ayudarte a entender mejor tu
-            dinero.
+            Herramientas diseñadas para ayudarte a entender mejor tus números y
+            tomar decisiones informadas.
           </p>
         </div>
         <div>
-          <p class="font-bold mb-4">Categorías</p>
+          <p class="font-bold mb-4">Categorías Populares</p>
           <ul class="space-y-2 text-slate-500">
             <li>
               <a href="/finanzas/prestamo" class="hover:text-blue-600"
-                >Préstamos Personales</a
-              >
+                >Préstamos</a>
             </li>
             <li>
-              <a href="/finanzas/interescompuesto" class="hover:text-blue-600"
-                >Interés Compuesto</a
-              >
+              <a href="/finanzas/interes-compuesto" class="hover:text-blue-600"
+                >Interés Compuesto</a>
             </li>
             <li>
-              <a href="/finanzas/porcentaje" class="hover:text-blue-600"
-                >Calculadora de IVA</a
-              >
+              <a href="/hogar/hormigon" class="hover:text-blue-600"
+                >Construcción</a>
             </li>
           </ul>
         </div>
         <div>
-          <p class="font-bold mb-4">Legal</p>
+          <p class="font-bold mb-4">Legal y Ayuda</p>
           <ul class="space-y-2 text-slate-500">
             <li>
-              <a href="/privacidad" class="hover:text-blue-600">Privacidad</a>
+              <a href="/privacidad" class="hover:text-blue-600"
+                >Política de Privacidad</a>
             </li>
             <li>
-              <a href="/contacto" class="hover:text-blue-600">Contacto</a>
+              <a href="/contacto" class="hover:text-blue-600"
+                >Contacto y Sugerencias</a>
             </li>
           </ul>
         </div>
@@ -176,9 +189,8 @@ const canonicalURL = new URL(Astro.url.pathname, "https://chieffin.com");
       <div
         class="max-w-6xl mx-auto px-4 mt-12 pt-8 border-t border-slate-100 text-center text-slate-400 text-xs"
       >
-        &copy; {new Date().getFullYear()} Chieffin.com - Educación financiera sin
-        complicaciones.
+        &copy; {new Date().getFullYear()} Chieffin.com - Herramientas gratuitas para
+        uso cotidiano.
       </div>
-    </footer>
-  </body>
+    </footer></body>
 </html>
