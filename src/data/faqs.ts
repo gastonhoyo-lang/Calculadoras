@@ -348,7 +348,6 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
       { nombre: "Dólar Tarjeta", link: "/finanzas/dolar-tarjeta" }
     ]
   },
-  // Copiá y pegá esto dentro del objeto dataFaqs en src/data/faqs.ts
 
   "interes-simple": {
     faqs: [
