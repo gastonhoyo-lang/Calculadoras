@@ -1,0 +1,69 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import InputField from "/src/components/InputField.astro";
+import ResultBox from "../../components/ResultBox.astro";
+---
+
+<Layout
+  title="Calculadora FIRE | Retiro Anticipado"
+  description="Calculá cuánto dinero necesitás ahorrar para jubilarte joven basado en la regla del 4%."
+>
+  <div class="max-w-4xl mx-auto px-4 py-12">
+    <header class="text-center mb-10">
+      <h1 class="text-4xl font-black text-slate-900">
+        Libertad <span class="text-emerald-600">Financiera</span> 🏖️
+      </h1>
+      <p class="text-slate-500 font-medium">
+        Calculá tu número FIRE (Financial Independence, Retire Early).
+      </p>
+    </header>
+
+    <div
+      class="bg-white p-8 rounded-[2.5rem] border border-slate-100 shadow-sm max-w-lg mx-auto space-y-6"
+    >
+      <div>
+        <label class="block text-xs font-bold text-slate-400 uppercase mb-2"
+          >Gasto Mensual Deseado ($)</label
+        >
+        <input
+          type="number"
+          id="gastoFire"
+          placeholder="Ej: 2000"
+          class="w-full p-4 bg-slate-50 rounded-2xl outline-none font-bold text-xl"
+        />
+      </div>
+      <button
+        id="btnFire"
+        class="w-full bg-emerald-600 text-white p-5 rounded-2xl font-bold hover:bg-emerald-700 transition-all"
+        >Calcular Mi Número</button
+      >
+
+      <div
+        id="resFire"
+        class="hidden p-8 bg-emerald-50 rounded-3xl text-center border-2 border-emerald-100"
+      >
+        <p class="text-emerald-600 text-xs font-bold uppercase mb-2">
+          Necesitás un patrimonio de:
+        </p>
+        <div id="valFire" class="text-4xl font-black text-emerald-900"></div>
+        <p class="text-[10px] mt-4 text-emerald-700 italic">
+          Esto te permite retirar el 4% anual de por vida ajustado a inflación.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("btnFire")?.addEventListener("click", () => {
+      const gasto = parseFloat(
+        (document.getElementById("gastoFire") as HTMLInputElement).value,
+      );
+      if (gasto > 0) {
+        const numeroFire = gasto * 12 * 25;
+        document.getElementById("valFire")!.innerText =
+          "$" + numeroFire.toLocaleString("es-AR");
+        document.getElementById("resFire")?.classList.remove("hidden");
+      }
+    });
+  </script>
+</Layout>

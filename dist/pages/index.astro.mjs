@@ -252,6 +252,13 @@ const calculadoras = [
     link: "/salud/dejar-de-fumar",
     icon: "🚭",
     color: "emerald"
+  },
+  {
+    titulo: "Retiro FIRE",
+    descripcion: "Calculá cuánto capital necesitás para jubilarte hoy mismo.",
+    link: "/finanzas/retiro-fire",
+    icon: "🏖️",
+    color: "emerald"
   }
 ];
 
