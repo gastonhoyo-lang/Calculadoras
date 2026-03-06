@@ -131,7 +131,7 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
     ]
   },
 
-  "calculadora-cuotas": {
+  "cuotas": {
     faqs: [
       { 
         q: "¿Qué es la TNA y en qué se diferencia de la TEA?", 
@@ -191,7 +191,7 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
     ]
   },
 
-  "impuesto-ganancias": {
+  "ganancias": {
     faqs: [
       { 
         q: "¿Qué es el Mínimo No Imponible?", 
@@ -250,7 +250,7 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
       { nombre: "Interés Compuesto", link: "/finanzas/interes-compuesto" }
     ] 
   },
-  "calculadora-inflacion": {
+  "inflacion": {
     faqs: [
       { 
         q: "¿Cuál es la diferencia entre inflación y costo de vida?", 
@@ -550,7 +550,7 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
     ]
   },
 
-  "calculadora-fire": {
+  "retiro-fire": {
     faqs: [
       { 
         q: "¿Por qué se multiplica el gasto anual por 25?", 
@@ -580,7 +580,7 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
     ]
   },
 
-  "calculadora-vacaciones": {
+  "vacaciones": {
     faqs: [
       { 
         q: "¿A partir de cuándo se cuentan los años de antigüedad?", 
@@ -610,7 +610,7 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
     ]
   },
 
-  "calculadora-frigorias": {
+  "aire-acondicionado": {
     faqs: [
       { 
         q: "¿Qué es una frigoría exactamente?", 
@@ -640,7 +640,7 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
     ]
   },
 
-  "consumo-electrico": {
+  "luz": {
     faqs: [
       { 
         q: "¿Qué es un kWh y cómo lo calculo?", 
@@ -670,7 +670,7 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
     ]
   },
 
-  "calculadora-hormigon": {
+  "hormigon": {
     faqs: [
       { 
         q: "¿Qué significa la dosificación 1:2:3?", 
@@ -790,7 +790,7 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
     ]
   },
 
-  "calculadora-pintura": {
+  "pintura": {
     faqs: [
       { 
         q: "¿Cuánto rinde un litro de pintura?", 
@@ -1180,7 +1180,7 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
     ]
   },
 
-  "agua-diaria": {
+  "agua": {
     faqs: [
       { 
         q: "¿Realmente necesito tomar tanta agua si no tengo sed?", 
@@ -1510,7 +1510,7 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
     ]
   },
 
-  "costo-uso": {
+  "costo-por-uso": {
     faqs: [
       { 
         q: "¿Cuándo es más útil calcular el Costo por Uso?", 
@@ -1570,7 +1570,7 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
     ]
   },
 
-  "propinas": {
+  "propina": {
     faqs: [
       { 
         q: "¿Cuál es el porcentaje de propina estándar en Argentina?", 
@@ -1690,7 +1690,7 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
     ]
   },
 
-  "ecuaciones-lineales": {
+  "ecuaciones": {
     faqs: [
       { 
         q: "¿Qué es una ecuación de primer grado?", 
@@ -1810,7 +1810,7 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
     ]
   },
 
-  "diferencia-horas": {
+  "horas": {
     faqs: [
       { 
         q: "¿Cómo se calcula el tiempo si el turno termina al día siguiente?", 
@@ -1840,7 +1840,7 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
     ]
   },
 
-  "suma-tiempo": {
+  "tiempo": {
     faqs: [
       { 
         q: "¿Para qué sirve sumar horas y minutos?", 
