@@ -257,8 +257,6 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
       { nombre: "Interés Compuesto", link: "/finanzas/interes-compuesto" }
     ]
   },
-  // Copiá y pegá esto dentro del objeto dataFaqs en src/data/faqs.ts
-
   "calculadora-inflacion": {
     faqs: [
       { 
@@ -507,7 +505,7 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
   },
   // Copiá y pegá esto dentro del objeto dataFaqs en src/data/faqs.ts
 
-  "simulador-prestamos": {
+  "prestamo": {
     faqs: [
       { 
         q: "¿Qué es el Sistema de Amortización Francés?", 
