@@ -71,7 +71,7 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
     ]
     },
 
-  "comprar-o-alquilar": {
+  "comprar-vs-alquilar": {
     faqs: [
       { 
         q: "¿Qué es el costo de oportunidad al comprar una casa?", 
