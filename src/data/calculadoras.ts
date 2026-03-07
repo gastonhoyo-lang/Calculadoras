@@ -519,4 +519,12 @@ export const calculadoras = [
     color: "blue",
     keywords: "fiesta, evento, alcohol, asado, compras, boliche, por persona"
   },
+  {
+    titulo: "Interés Compuesto",
+    descripcion: "Calculá el crecimiento de tus ahorros e inversiones a lo largo del tiempo con capitalización mensual o anual.",
+    link: "/finanzas/interes-compuesto",
+    icon: "📈",
+    color: "emerald",
+    keywords: "inversion, ahorro, interes compuesto, capitalizacion, finanzas personales, libertad financiera"
+  },
 ];

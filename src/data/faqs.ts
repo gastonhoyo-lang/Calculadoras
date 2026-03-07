@@ -279,37 +279,6 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
       { nombre: "Dólar Tarjeta", link: "/finanzas/dolar-tarjeta" }
     ]
   },
-
-  "interes-compuesto": {
-    faqs: [
-      { 
-        q: "¿Cuál es la diferencia entre interés simple e interés compuesto?", 
-        a: "En el interés simple, las ganancias se calculan solo sobre el capital inicial. En el interés compuesto, los intereses se reinvierten al final de cada periodo, por lo que en el siguiente mes (o año) generás intereses sobre el capital y también sobre los intereses ganados anteriormente." 
-      },
-      { 
-        q: "¿Cuál es la fórmula del interés compuesto?", 
-        a: "La fórmula matemática es $$A = P(1 + r)^t$$. Donde A es el monto final, P el capital inicial, r la tasa de interés y t el tiempo. Como verás, el tiempo (t) es el exponente, por eso el crecimiento es exponencial y no lineal." 
-      },
-      { 
-        q: "¿Por qué se dice que el tiempo es más importante que el capital?", 
-        a: "Debido al crecimiento exponencial, empezar a invertir temprano con poco dinero suele dar mejores resultados que empezar tarde con mucho dinero. Cuantos más periodos tenga el interés para reinvertirse, más explosivo es el crecimiento final." 
-      },
-      { 
-        q: "¿Qué es la Regla del 72?", 
-        a: "Es una fórmula rápida para saber cuánto tardarás en duplicar tu dinero. Dividí 72 por la tasa de interés anual. Por ejemplo, con un interés del 8% anual, tardarás aproximadamente 9 años en duplicar tu capital (72 / 8 = 9)." 
-      },
-      { 
-        q: "¿Con qué frecuencia deben reinvertirse los intereses?", 
-        a: "Cuanto más frecuente sea la capitalización (mensual en lugar de anual, por ejemplo), más rápido crecerá el dinero. La mayoría de los plazos fijos o inversiones digitales hoy ofrecen capitalización mensual o diaria." 
-      }
-    ],
-    relacionados: [
-      { nombre: "Calculadora de Inflación", link: "/finanzas/inflacion" },
-      { nombre: "Dólar Tarjeta", link: "/finanzas/dolar-tarjeta" },
-      { nombre: "Plazo Fijo", link: "/finanzas/plazo-fijo" }
-    ]
-  },
-
   "interes-mora": {
     faqs: [
       { 
@@ -1925,7 +1894,36 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
     relacionados: [
       { nombre: "Calculadora de Asado", link: "/utiles/asado" },
       { nombre: "Dividir Cuenta", link: "/utiles/dividir-cuenta" },
-      { nombre: "Calculadora de Propinas", link: "/utiles/propinas" }
+      { nombre: "Calculadora de Propinas", link: "/utiles/propina" }
+    ]
+  },
+  "interes-compuesto": {
+    faqs: [
+      { 
+        q: "¿Qué es el interés compuesto y cómo funciona?", 
+        a: "El interés compuesto es aquel que se suma al capital inicial y sobre el cual se vuelven a generar intereses. A diferencia del interés simple, aquí los intereses 'producen más intereses', generando un efecto de bola de nieve que acelera el crecimiento del dinero a largo plazo." 
+      },
+      { 
+        q: "¿Cuál es la diferencia entre interés simple y compuesto?", 
+        a: "En el interés simple, los beneficios se calculan solo sobre el capital original. En el interés compuesto, los beneficios se reinvierten en cada período. La fórmula matemática es $$A = P(1 + r/n)^{nt}$$, donde A es el monto final." 
+      },
+      { 
+        q: "¿Qué significa la frecuencia de capitalización?", 
+        a: "Es la frecuencia con la que los intereses se suman al capital. Puede ser diaria, mensual, trimestral o anual. Cuanto más frecuente sea la capitalización (ej: mensual vs anual), mayor será el crecimiento final de la inversión debido a que el interés trabaja más veces." 
+      },
+      { 
+        q: "¿Por qué es importante empezar a invertir temprano?", 
+        a: "Debido al factor tiempo. El interés compuesto necesita tiempo para mostrar su verdadero poder. Empezar a ahorrar 5 años antes puede significar una diferencia de miles de dólares al final del período debido al crecimiento exponencial." 
+      },
+      { 
+        q: "¿Cómo influye la inflación en el interés compuesto?", 
+        a: "La inflación reduce el poder adquisitivo. Para que tu inversión realmente crezca, la tasa de interés obtenida debe ser mayor a la tasa de inflación. Si ganás un 50% anual pero la inflación es del 60%, en términos reales estás perdiendo dinero." 
+      }
+    ],
+    relacionados: [
+      { nombre: "Plazo Fijo", link: "/finanzas/plazo-fijo" },
+      { nombre: "Interés Simple", link: "/finanzas/interes-simple" },
+      { nombre: "Calculadora de Inflación", link: "/finanzas/inflacion" }
     ]
   },
 };
