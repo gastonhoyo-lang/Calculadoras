@@ -2,6 +2,7 @@
 export const navigation = [
   {
     name: "Finanzas",
+    href: "/finanzas", // <--- AGREGADO
     links: [
       { name: "IVA", href: "/finanzas/iva" },
       { name: "Plazo Fijo", href: "/finanzas/plazo-fijo" },
@@ -13,6 +14,7 @@ export const navigation = [
   },
   {
     name: "Hogar",
+    href: "/hogar", // <--- AGREGADO
     links: [
       { name: "Ladrillos", href: "/hogar/ladrillos" },
       { name: "Pintura", href: "/hogar/pintura" },
@@ -24,6 +26,7 @@ export const navigation = [
   },
   {
     name: "Matemática",
+    href: "/matematica", // <--- AGREGADO
     links: [
       { name: "Regla de Tres", href: "/matematica/regla-de-tres" },
       { name: "Pitágoras", href: "/matematica/pitagoras" },
@@ -34,6 +37,7 @@ export const navigation = [
   },
   {
     name: "Negocios",
+
     links: [
       { name: "Punto de Equilibrio", href: "/negocios/punto-equilibrio" },
       { name: "Margen de Ganancia", href: "/negocios/margen" },
@@ -44,6 +48,7 @@ export const navigation = [
   },
   {
     name: "Salud",
+    href: "/salud", // <--- AGREGADO
     links: [
       { name: "IMC", href: "/salud/imc" },
       { name: "Gasto Calórico", href: "/salud/calorias" },
@@ -55,6 +60,7 @@ export const navigation = [
   },
   {
     name: "Útiles",
+    href: "/utiles", // <--- AGREGADO
     links: [
       { name: "Asado", href: "/utiles/asado" },
       { name: "Dividir Cuenta", href: "/utiles/dividir-cuenta" },
@@ -65,6 +71,7 @@ export const navigation = [
   },
   {
     name: "Varios",
+    href: "/varios", // <--- AGREGADO
     links: [
       { name: "Edad Exacta", href: "/varios/edad" },
       { name: "Tiempo", href: "/utiles/tiempo" },
