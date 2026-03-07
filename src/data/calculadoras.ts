@@ -527,4 +527,12 @@ export const calculadoras = [
     color: "emerald",
     keywords: "inversion, ahorro, interes compuesto, capitalizacion, finanzas personales, libertad financiera"
   },
-];
+  {
+    titulo: "Conversor de Tasas (TNA a TEA)",
+    descripcion: "Convertí tasas nominales a efectivas según la capitalización para conocer el costo o rendimiento real.",
+    link: "/finanzas/tasas-tna-tea",
+    icon: "🔄",
+    color: "blue",
+    keywords: "finanzas, tna, tea, cft, interes, capitalizacion, banco, prestamo, plazo fijo"
+  },]
+;

@@ -1926,4 +1926,33 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
       { nombre: "Calculadora de Inflación", link: "/finanzas/inflacion" }
     ]
   },
+  "tasas-tna-tea": {
+    faqs: [
+      { 
+        q: "¿Qué es la TNA (Tasa Nominal Anual)?", 
+        a: "La TNA es la tasa de referencia que los bancos informan por ley, pero no tiene en cuenta la capitalización. Es una tasa 'teórica' que sirve para calcular el interés simple de un período determinado." 
+      },
+      { 
+        q: "¿Qué es la TEA (Tasa Efectiva Anual)?", 
+        a: "La TEA es la tasa que realmente terminás pagando o cobrando al cabo de un año. Incluye la capitalización de los intereses, es decir, el efecto de reinvertir los intereses ganados en cada período (mes, quincena, etc.)." 
+      },
+      { 
+        q: "¿Cómo se pasa de TNA a TEA?", 
+        a: "Primero se calcula la tasa periódica dividiendo la TNA por la cantidad de períodos en el año (m). Luego se aplica la fórmula: $$TEA = (1 + TNA/m)^m - 1$$. Por ejemplo, para un plazo fijo mensual, m es 12." 
+      },
+      { 
+        q: "¿Por qué la TEA es siempre mayor a la TNA?", 
+        a: "Porque la TEA asume que los intereses generados no se retiran, sino que se suman al capital para generar nuevos intereses el mes siguiente. Es el concepto de interés compuesto aplicado a un año." 
+      },
+      { 
+        q: "¿Qué es el CFT (Costo Financiero Total)?", 
+        a: "En préstamos, el CFT es lo más importante. Es la TEA más todos los gastos adicionales como seguros, comisiones bancarias e impuestos (IVA). Es el número final que indica cuánto te cuesta el crédito." 
+      }
+    ],
+    relacionados: [
+      { nombre: "Interés Compuesto", link: "/finanzas/interes-compuesto" },
+      { nombre: "Plazo Fijo", link: "/finanzas/plazo-fijo" },
+      { nombre: "Calculadora de IVA", link: "/finanzas/iva" }
+    ]
+  },
 };
