@@ -1898,5 +1898,34 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
       { nombre: "Diferencia de Horas", link: "/utiles/horas" },
       { nombre: "Gasto Calórico", link: "/salud/calorias" }
     ]
-  }
+  },
+  "bebidas": {
+    faqs: [
+      { 
+        q: "¿Cómo se calcula la cantidad de bebida por persona?", 
+        a: "Para un evento estándar de 4 horas, se estima un consumo de 1 litro de bebida sin alcohol por persona (gaseosa/agua) y 1 litro de cerveza o una botella de vino cada 3 adultos. Estas cantidades aseguran que nadie se quede con sed sin generar un desperdicio excesivo." 
+      },
+      { 
+        q: "¿Cuánto hielo necesito comprar para mi fiesta?", 
+        a: "La regla general es calcular 1 kg de hielo cada 3 personas si es solo para consumo en vasos. Si además necesitás enfriar botellas en una heladerita o batea, deberás duplicar la cantidad a 1 kg cada 1.5 personas, especialmente en días de calor." 
+      },
+      { 
+        q: "¿Cómo influye la duración del evento en el cálculo?", 
+        a: "El consumo no es lineal; se toma más durante las primeras dos horas. Aplicamos un factor de corrección donde cada hora extra después de las 4 iniciales suma aproximadamente un 15% al total de la compra original." 
+      },
+      { 
+        q: "¿Cuántas copas rinde una botella de vino o champagne?", 
+        a: "Una botella de vino de 750ml rinde entre 5 y 6 copas generosas. En el caso del champagne o espumante, servido en copa flauta, rinde entre 6 y 7 copas por botella. Para el Fernet o bebidas blancas, calculá entre 12 y 15 tragos por litro de alcohol." 
+      },
+      { 
+        q: "¿Cómo calcular bebidas si hay muchos niños?", 
+        a: "Los niños consumen exclusivamente bebidas sin alcohol. Se recomienda calcular 600ml de gaseosa o jugo por niño para un evento de media duración. Es fundamental priorizar el agua mineral si el evento es al aire libre o incluye juegos físicos." 
+      }
+    ],
+    relacionados: [
+      { nombre: "Calculadora de Asado", link: "/utiles/asado" },
+      { nombre: "Dividir Cuenta", link: "/utiles/dividir-cuenta" },
+      { nombre: "Calculadora de Propinas", link: "/utiles/propinas" }
+    ]
+  },
 };

@@ -511,5 +511,12 @@ export const calculadoras = [
     color: "indigo",
     keywords: "matematica, x, algebra, escuela, paso a paso"
   },
-
+  {
+    titulo: "Calculadora de Bebidas",
+    descripcion: "Calculá cuánto comprar de alcohol, gaseosas y hielo para tu fiesta según los invitados.",
+    link: "/utiles/bebidas",
+    icon: "🥤",
+    color: "blue",
+    keywords: "fiesta, evento, alcohol, asado, compras, boliche, por persona"
+  },
 ];
