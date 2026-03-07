@@ -820,7 +820,7 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
     ]
   },
 
-  "calculadora-circulo": {
+  "circulo": {
     faqs: [
       { 
         q: "¿Qué es el radio de un círculo?", 
@@ -845,12 +845,12 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
     ],
     relacionados: [
       { nombre: "Metros Cuadrados", link: "/herramientas/metros-cuadrados" },
-      { nombre: "Calculadora de Pintura", link: "/hogar/calculadora-pintura" },
+      { nombre: "Calculadora de Pintura", link: "/hogar/pintura" },
       { nombre: "Cálculo de Hormigón", link: "/construccion/hormigon" }
     ]
   },
 
-  "calculadora-pitagoras": {
+  "pitagoras": {
     faqs: [
       { 
         q: "¿Qué es un triángulo rectángulo?", 
@@ -906,11 +906,11 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
     relacionados: [
       { nombre: "Calculadora de IVA", link: "/finanzas/iva" },
       { nombre: "Metros Cuadrados", link: "/herramientas/metros-cuadrados" },
-      { nombre: "Conversor de Unidades", link: "/herramientas/conversor" }
+      { nombre: "Calcualdora de ROI", link: "/negocios/roi/" }
     ]
   },
 
-  "area-triangulo": {
+  "triangulo": {
     faqs: [
       { 
         q: "¿Cuál es la base y cuál es la altura?", 
@@ -940,7 +940,7 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
     ]
   },
 
-  "comisiones-venta": {
+  "comisiones": {
     faqs: [
       { 
         q: "¿Qué es el costo fijo por unidad?", 
@@ -970,7 +970,7 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
     ]
   },
 
-  "margen-ganancia": {
+  "margen": {
     faqs: [
       { 
         q: "¿Cuál es la diferencia entre Margen y Markup?", 
@@ -994,13 +994,13 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
       }
     ],
     relacionados: [
-      { nombre: "Comisiones de Venta", link: "/finanzas/comisiones-venta" },
+      { nombre: "Comisiones de Venta", link: "/finanzas/comisiones" },
       { nombre: "Calculadora de IVA", link: "/finanzas/iva" },
       { nombre: "Regla de Tres Simple", link: "/herramientas/regla-de-tres" }
     ]
   },
 
-  "markup-vs-margen": {
+  "markup-margen": {
     faqs: [
       { 
         q: "¿Por qué el Margen nunca puede ser del 100%?", 
@@ -1025,12 +1025,12 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
     ],
     relacionados: [
       { nombre: "Margen de Ganancia", link: "/finanzas/margen-ganancia" },
-      { nombre: "Comisiones de Venta", link: "/finanzas/comisiones-venta" },
+      { nombre: "Comisiones de Venta", link: "/finanzas/comisiones" },
       { nombre: "Calculadora de IVA", link: "/finanzas/iva" }
     ]
   },
 
-  "precio-de-venta": {
+  "precio-venta": {
     faqs: [
       { 
         q: "¿Por qué no debo simplemente multiplicar mi costo por el porcentaje?", 
@@ -1054,13 +1054,13 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
       }
     ],
     relacionados: [
-      { nombre: "Markup vs Margen", link: "/finanzas/markup-vs-margen" },
+      { nombre: "Markup vs Margen", link: "/finanzas/markup-margen" },
       { nombre: "Comisiones de Venta", link: "/finanzas/comisiones-venta" },
       { nombre: "Calculadora de IVA", link: "/finanzas/iva" }
     ]
   },
 
-  "punto-de-equilibrio": {
+  "punto-equilibrio": {
     faqs: [
       { 
         q: "¿Qué sucede si vendo menos de lo que indica el punto de equilibrio?", 
@@ -1084,9 +1084,9 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
       }
     ],
     relacionados: [
-      { nombre: "Margen de Ganancia", link: "/finanzas/margen-ganancia" },
-      { nombre: "Precio de Venta", link: "/finanzas/precio-de-venta" },
-      { nombre: "Markup vs Margen", link: "/finanzas/markup-vs-margen" }
+      { nombre: "Margen de Ganancia", link: "/finanzas/margen" },
+      { nombre: "Precio de Venta", link: "/finanzas/precio-venta" },
+      { nombre: "Markup vs Margen", link: "/finanzas/markup-margen" }
     ]
   },
 
@@ -1115,7 +1115,7 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
     ],
     relacionados: [
       { nombre: "Margen de Ganancia", link: "/finanzas/margen-ganancia" },
-      { nombre: "Punto de Equilibrio", link: "/finanzas/punto-de-equilibrio" },
+      { nombre: "Punto de Equilibrio", link: "/finanzas/punto-equilibrio" },
       { nombre: "Calculadora de IVA", link: "/finanzas/iva" }
     ]
   },
@@ -1144,7 +1144,7 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
       }
     ],
     relacionados: [
-      { nombre: "Punto de Equilibrio", link: "/finanzas/punto-de-equilibrio" },
+      { nombre: "Punto de Equilibrio", link: "/finanzas/punto-equilibrio" },
       { nombre: "Calculadora de ROI", link: "/finanzas/roi" },
       { nombre: "Calculadora de IVA", link: "/finanzas/iva" }
     ]
@@ -1174,9 +1174,9 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
       }
     ],
     relacionados: [
-      { nombre: "Punto de Equilibrio", link: "/finanzas/punto-de-equilibrio" },
+      { nombre: "Punto de Equilibrio", link: "/finanzas/punto-equilibrio" },
       { nombre: "ROI de Proyectos", link: "/finanzas/roi" },
-      { nombre: "Markup vs Margen", link: "/finanzas/markup-vs-margen" }
+      { nombre: "Markup vs Margen", link: "/finanzas/markup-margen" }
     ]
   },
 
@@ -1205,8 +1205,8 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
     ],
     relacionados: [
       { nombre: "Calculadora de IMC", link: "/salud/imc" },
-      { nombre: "Valor de tu Hora", link: "/productividad/valor-hora" },
-      { nombre: "Días Vividos", link: "/curiosidades/días-vividos" }
+      { nombre: "Valor de tu Hora", link: "/negocios/valor-hora" },
+      { nombre: "Días Vividos", link: "/varios/edad" }
     ]
   },
 
@@ -1234,9 +1234,9 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
       }
     ],
     relacionados: [
-      { nombre: "Agua Diaria", link: "/salud/agua-diaria" },
+      { nombre: "Agua Diaria", link: "/salud/agua" },
       { nombre: "Calculadora de IMC", link: "/salud/imc" },
-      { nombre: "Días Vividos", link: "/curiosidades/dias-vividos" }
+      { nombre: "Días Vividos", link: "/varios/edad" }
     ]
   },
 
@@ -1265,8 +1265,8 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
     ],
     relacionados: [
       { nombre: "Calculadora de Calorías", link: "/salud/calorias" },
-      { nombre: "Agua Diaria", link: "/salud/agua-diaria" },
-      { nombre: "Días Vividos", link: "/curiosidades/dias-vividos" }
+      { nombre: "Agua Diaria", link: "/salud/agua" },
+      { nombre: "Días Vividos", link: "/varios/edad" }
     ]
   },
 
@@ -1294,9 +1294,9 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
       }
     ],
     relacionados: [
-      { nombre: "Calculadora de Agua", link: "/salud/agua-diaria" },
+      { nombre: "Calculadora de Agua", link: "/salud/agua" },
       { nombre: "Gasto Calórico", link: "/salud/calorias" },
-      { nombre: "Días Vividos", link: "/curiosidades/dias-vividos" }
+      { nombre: "Días Vividos", link: "/varios/edad" }
     ]
   },
 
@@ -1325,8 +1325,8 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
     ],
     relacionados: [
       { nombre: "Gasto Calórico", link: "/salud/calorias" },
-      { nombre: "Agua Diaria", link: "/salud/agua-diaria" },
-      { nombre: "Valor de tu Hora", link: "/productividad/valor-hora" }
+      { nombre: "Agua Diaria", link: "/salud/agua" },
+      { nombre: "Valor de tu Hora", link: "/negocios/valor-hora" }
     ]
   },
 
@@ -1355,12 +1355,12 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
     ],
     relacionados: [
       { nombre: "Gasto Calórico", link: "/salud/calorias" },
-      { nombre: "Agua Diaria", link: "/salud/agua-diaria" },
+      { nombre: "Agua Diaria", link: "/salud/agua" },
       { nombre: "Frecuencia Cardíaca", link: "/salud/frecuencia-cardiaca" }
     ]
   },
 
-  "dieta-keto": {
+  "keto": {
     faqs: [
       { 
         q: "¿Qué pasa si me paso de los carbohidratos un día?", 
@@ -1386,7 +1386,7 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
     relacionados: [
       { nombre: "Gasto Calórico", link: "/salud/calorias" },
       { nombre: "Calculadora de IMC", link: "/salud/imc" },
-      { nombre: "Agua Diaria", link: "/salud/agua-diaria" }
+      { nombre: "Agua Diaria", link: "/salud/agua" }
     ]
   },
 
@@ -1415,8 +1415,8 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
     ],
     relacionados: [
       { nombre: "Calculadora de Embarazo", link: "/salud/embarazo" },
-      { nombre: "Agua Diaria", link: "/salud/agua-diaria" },
-      { nombre: "Días Vividos", link: "/curiosidades/dias-vividos" }
+      { nombre: "Agua Diaria", link: "/salud/agua" },
+      { nombre: "Días Vividos", link: "/varios/edad" }
     ]
   },
 
@@ -1445,7 +1445,7 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
     ],
     relacionados: [
       { nombre: "Gasto Calórico", link: "/salud/calorias" },
-      { nombre: "Dieta Keto", link: "/salud/dieta-keto" },
+      { nombre: "Dieta Keto", link: "/salud/keto" },
       { nombre: "Frecuencia Cardíaca", link: "/salud/frecuencia-cardiaca" }
     ]
   },
@@ -1506,7 +1506,7 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
     relacionados: [
       { nombre: "Interés Compuesto", link: "/finanzas/interes-compuesto" },
       { nombre: "Calculadora de IMC", link: "/salud/imc" },
-      { nombre: "Días Vividos", link: "/curiosidades/dias-vividos" }
+      { nombre: "Días Vividos", link: "/varios/edad" }
     ]
   },
 
@@ -1534,7 +1534,7 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
       }
     ],
     relacionados: [
-      { nombre: "Consumo de Combustible", link: "/utilidades/combustible" },
+      { nombre: "Consumo de Combustible", link: "/utiles/combustible" },
       { nombre: "Interés Compuesto", link: "/finanzas/interes-compuesto" },
       { nombre: "Regla 50/30/20", link: "/finanzas/regla-50-30-20" }
     ]
@@ -1565,7 +1565,7 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
     ],
     relacionados: [
       { nombre: "Costo por Uso", link: "/finanzas/costo-uso" },
-      { nombre: "Consumo de Combustible", link: "/utilidades/combustible" },
+      { nombre: "Consumo de Combustible", link: "/utiles/combustible" },
       { nombre: "Interés Compuesto", link: "/finanzas/interes-compuesto" }
     ]
   },
@@ -1594,8 +1594,8 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
       }
     ],
     relacionados: [
-      { nombre: "Dividir Cuenta", link: "/utilidades/dividir-cuenta" },
-      { nombre: "Gastos Compartidos", link: "/finanzas/gastos-compartidos" },
+      { nombre: "Dividir Cuenta", link: "/utiles/dividir-cuenta" },
+      { nombre: "Gastos Compartidos", link: "/utiles/gastos-compartidos" },
       { nombre: "Calculadora de IVA", link: "/finanzas/iva" }
     ]
   },
@@ -1624,8 +1624,8 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
       }
     ],
     relacionados: [
-      { nombre: "Días Vividos", link: "/curiosidades/dias-vividos" },
-      { nombre: "Costo por Uso", link: "/finanzas/costo-uso" },
+      { nombre: "Días Vividos", link: "/varios/edad" },
+      { nombre: "Costo por Uso", link: "/utiles/costo-uso" },
       { nombre: "Gasto Calórico", link: "/salud/calorias" }
     ]
   },
@@ -1655,8 +1655,8 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
     ],
     relacionados: [
       { nombre: "Regla 50/30/20", link: "/finanzas/regla-50-30-20" },
-      { nombre: "Costo por Uso", link: "/finanzas/costo-uso" },
-      { nombre: "Días Hábiles", link: "/productividad/dias-habiles" }
+      { nombre: "Costo por Uso", link: "/utiles/costo-uso" },
+      { nombre: "Días Hábiles", link: "/utiles/dias-habiles" }
     ]
   },
 
@@ -1684,9 +1684,9 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
       }
     ],
     relacionados: [
-      { nombre: "Calculadora de Propinas", link: "/utilidades/propinas" },
-      { nombre: "Costo por Uso", link: "/finanzas/costo-uso" },
-      { nombre: "Consumo de Combustible", link: "/utilidades/combustible" }
+      { nombre: "Calculadora de Propinas", link: "/utilidades/propina" },
+      { nombre: "Costo por Uso", link: "/utiles/costo-por-uso" },
+      { nombre: "Consumo de Combustible", link: "/utiles/combustible" }
     ]
   },
 
@@ -1716,7 +1716,7 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
     relacionados: [
       { nombre: "Interés Compuesto", link: "/finanzas/interes-compuesto" },
       { nombre: "Regla de Tres Simple", link: "/matematica/regla-de-tres" },
-      { nombre: "Días Hábiles", link: "/productividad/dias-habiles" }
+      { nombre: "Días Hábiles", link: "/utiles/dias-habiles" }
     ]
   },
 
@@ -1745,8 +1745,8 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
     ],
     relacionados: [
       { nombre: "Gasto Calórico", link: "/salud/calorias" },
-      { nombre: "Días Vividos", link: "/curiosidades/dias-vividos" },
-      { nombre: "Costo por Uso", link: "/finanzas/costo-uso" }
+      { nombre: "Días Vividos", link: "/varios/edad" },
+      { nombre: "Costo por Uso", link: "/utiles/costo-por-uso" }
     ]
   },
 
@@ -1804,7 +1804,7 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
       }
     ],
     relacionados: [
-      { nombre: "Dividir Cuenta y Propina", link: "/utilidades/dividir-cuenta" },
+      { nombre: "Dividir Cuenta y Propina", link: "/utiles/dividir-cuenta" },
       { nombre: "Interés Simple", link: "/finanzas/interes-simple" },
       { nombre: "Regla de Tres Simple", link: "/matematica/regla-de-tres" }
     ]
@@ -1834,9 +1834,9 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
       }
     ],
     relacionados: [
-      { nombre: "Días Hábiles", link: "/productividad/dias-habiles" },
-      { nombre: "Cronómetro Online", link: "/utilidades/cronometro" },
-      { nombre: "Gastos Compartidos", link: "/finanzas/gastos-compartidos" }
+      { nombre: "Días Hábiles", link: "/utiles/dias-habiles" },
+      { nombre: "", link: "" },
+      { nombre: "Gastos Compartidos", link: "/utiles/gastos-compartidos" }
     ]
   },
 
@@ -1864,13 +1864,13 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
       }
     ],
     relacionados: [
-      { nombre: "Diferencia de Horas", link: "/productividad/diferencia-horas" },
-      { nombre: "Días Hábiles", link: "/productividad/dias-habiles" },
-      { nombre: "Cronómetro Online", link: "/utilidades/cronometro" }
+      { nombre: "Diferencia de Horas", link: "/utiles/horas" },
+      { nombre: "Días Hábiles", link: "/utiles/dias-habiles" },
+      { nombre: "", link: "" }
     ]
   },
 
-  "edad-exacta": {
+  "edad": {
     faqs: [
       { 
         q: "¿Qué precisión tiene el cálculo de los años bisiestos?", 
@@ -1894,8 +1894,8 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
       }
     ],
     relacionados: [
-      { nombre: "Edad de Mascotas", link: "/curiosidades/edad-mascotas" },
-      { nombre: "Diferencia de Horas", link: "/productividad/diferencia-horas" },
+      { nombre: "Edad de Mascotas", link: "/utiles/edad-mascotas" },
+      { nombre: "Diferencia de Horas", link: "/utiles/horas" },
       { nombre: "Gasto Calórico", link: "/salud/calorias" }
     ]
   }
