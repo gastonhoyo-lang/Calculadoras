@@ -2042,4 +2042,33 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
     { nombre: "Frigorías de Aire", link: "/hogar/calculadora-frigorias" }
   ]
 },
+"calculadora-de-angulos": {
+  faqs: [
+    { 
+      q: "¿Qué es un ángulo complementario?", 
+      a: "Dos ángulos son complementarios si la suma de sus medidas es exactamente 90°. Por ejemplo, si tenés un ángulo de 35°, su complemento es 55°. Es un concepto clave en el diseño de esquinas y marcos." 
+    },
+    { 
+      q: "¿Qué es un ángulo suplementario?", 
+      a: "Los ángulos suplementarios son aquellos que, al sumarse, dan como resultado 180°. Se utilizan mucho en ingeniería y arquitectura para calcular inclinaciones sobre una línea recta o superficie plana." 
+    },
+    { 
+      q: "¿Cómo convertir grados a radianes?", 
+      a: "La conversión es sencilla: multiplicás los grados por $$\\pi$$ (aprox. 3.14159) y dividís el resultado por 180. Los radianes son la unidad estándar usada en cálculos de física y programación avanzada." 
+    },
+    { 
+      q: "¿Para qué sirve conocer los ángulos en carpintería?", 
+      a: "Es fundamental para realizar cortes a inglete precisos (generalmente a 45° para marcos) y para asegurar que las estructuras como techos o muebles tengan la inclinación y estabilidad correcta." 
+    },
+    { 
+      q: "¿Qué es un ángulo recto y por qué es tan importante?", 
+      a: "Un ángulo recto mide exactamente 90°. Es la base de la construcción moderna (paredes, pisos y techos), ya que garantiza la perpendicularidad y el aprovechamiento del espacio." 
+    }
+  ],
+  relacionados: [
+    { nombre: "Calculadora de Áreas", link: "/matematicas/calculadora-de-areas" },
+    { nombre: "Calculadora de Volúmenes", link: "/matematicas/calculadora-de-volumenes" },
+    { nombre: "Frigorías de Aire", link: "/hogar/calculadora-frigorias" }
+  ]
+},
 };
