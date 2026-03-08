@@ -219,6 +219,26 @@ import ResultBox from "../../components/ResultBox.astro";
             resPan.innerText = `${pan} u.`;
 
             resBox.classList.remove("hidden");
+
+            // Lógica del botón compartir
+            const btnShare = document.getElementById("btnCompartirAsado");
+            if (btnShare) {
+              btnShare.classList.remove("hidden");
+              btnShare.onclick = () => {
+                const mensaje =
+                  `🥩 *¡Hay Asado!* 🇦🇷\n\n` +
+                  `Calculé las cantidades para *${p} personas*:\n` +
+                  `• Carne: ${carne} kg\n` +
+                  `• Achuras: ${achuras} u.\n` +
+                  `• Carbón: ${carbon} kg\n` +
+                  `• Pan: ${pan} u.\n\n` +
+                  `Calculá el tuyo acá: ${window.location.href}`;
+
+                const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(mensaje)}`;
+                window.open(whatsappUrl, "_blank");
+              };
+            }
+
             resBox.scrollIntoView({ behavior: "smooth", block: "center" });
           }
         } else {
