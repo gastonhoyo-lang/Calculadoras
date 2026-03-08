@@ -534,5 +534,29 @@ export const calculadoras = [
     icon: "🔄",
     color: "blue",
     keywords: "finanzas, tna, tea, cft, interes, capitalizacion, banco, prestamo, plazo fijo"
-  },]
-;
+  },
+  {
+  titulo: "Calculadora de Áreas (m²)",
+  descripcion: "Calculá metros cuadrados para construcción, pintura o superficies de forma rápida y precisa.",
+  link: "/matematicas/calculadora-de-areas",
+  icon: "📐",
+  color: "blue",
+  keywords: "calcular metros cuadrados, m2, superficie, area rectangulo, calcular pared, m2 piso, construccion"
+},
+{
+  titulo: "Calculadora de Volúmenes",
+  descripcion: "Calculá metros cúbicos (m³) para piletas, tanques, hormigón o capacidad de carga.",
+  link: "/matematicas/calculadora-de-volumenes",
+  icon: "📦",
+  color: "cyan",
+  keywords: "calcular metros cubicos, m3, volumen, capacidad tanque, litros pileta, calcular hormigon"
+},
+{
+  titulo: "Calculadora de Ángulos",
+  descripcion: "Convertí grados a radianes, calculá ángulos complementarios, suplementarios y funciones trigonométricas.",
+  link: "/matematicas/calculadora-de-angulos",
+  icon: "📐",
+  color: "indigo",
+  keywords: "angulos, grados a radianes, angulo complementario, angulo suplementario, trigonometria, seno coseno"
+},
+];

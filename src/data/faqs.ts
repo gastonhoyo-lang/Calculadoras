@@ -1955,4 +1955,91 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
       { nombre: "Calculadora de IVA", link: "/finanzas/iva" }
     ]
   },
+  "calculadora-de-areas": {
+  faqs: [
+    { 
+      q: "¿Cómo se calculan los metros cuadrados (m²)?", 
+      a: "Para calcular la superficie de un espacio rectangular o cuadrado, se debe multiplicar el largo por el ancho. La fórmula básica es: $$Área = Base \\times Altura$$. El resultado se expresa siempre en unidades al cuadrado." 
+    },
+    { 
+      q: "¿Cómo medir una pared con ventanas o puertas?", 
+      a: "Primero calculá el área total de la pared (largo x alto). Luego, calculá el área de cada ventana o puerta y restáselas al total. De esta forma obtenés la superficie neta que necesitás pintar o revestir." 
+    },
+    { 
+      q: "¿Cuánta pintura necesito por metro cuadrado?", 
+      a: "Como regla general, 1 litro de pintura rinde entre 10 y 12 m² por mano en paredes lisas. Si la pared es rugosa o de ladrillo visto, el rendimiento puede bajar a 6 u 8 m² por litro." 
+    },
+    { 
+      q: "¿Cuál es la diferencia entre metros lineales y metros cuadrados?", 
+      a: "El metro lineal mide una sola dimensión (longitud), como un zócalo o una moldura. El metro cuadrado mide una superficie (dos dimensiones), como un piso o una pared completa." 
+    },
+    { 
+      q: "¿Cómo convertir centímetros a metros para el cálculo?", 
+      a: "Es fundamental que ambas medidas estén en la misma unidad. Si mediste en centímetros, dividí por 100 para pasar a metros. Por ejemplo: 250 cm son 2.5 metros." 
+    }
+  ],
+  relacionados: [
+    { nombre: "Frigorías de Aire", link: "/hogar/aire-acondicionado" },
+    { nombre: "Calculadora de IVA", link: "/finanzas/iva" },
+    { nombre: "Calculadora de Asado", link: "/hogar/asado" }
+  ]
+},
+"calculadora-de-volumenes": {
+  faqs: [
+    { 
+      q: "¿Cómo se calculan los metros cúbicos (m³)?", 
+      a: "Para un espacio rectangular (como una pileta o habitación), la fórmula es: $$Volumen = Largo \\times Ancho \\times Alto$$. El resultado indica el espacio tridimensional en metros cúbicos." 
+    },
+    { 
+      q: "¿Cómo pasar de metros cúbicos a litros?", 
+      a: "Es una conversión directa y muy útil: **1 metro cúbico equivale a 1.000 litros**. Si tu cálculo dio 15 m³, entonces necesitás 15.000 litros para llenarlo." 
+    },
+    { 
+      q: "¿Cómo calcular el volumen de una pileta con profundidad variable?", 
+      a: "Debés calcular la profundidad promedio. Sumá la parte más profunda y la más playa, dividí por 2, y usá ese número como 'alto' en la fórmula principal." 
+    },
+    { 
+      q: "¿Para qué sirve calcular el volumen en construcción?", 
+      a: "Es fundamental para pedir materiales como hormigón elaborado, arena o tierra. Los corralones venden estos materiales por metro cúbico ($m^3$)." 
+    },
+    { 
+      q: "¿Cómo calcular el volumen de un cilindro (tanque circular)?", 
+      a: "La fórmula es: $$Volumen = \\pi \\times radio^2 \\times alto$$. Primero calculás el área del círculo de la base y luego lo multiplicás por la altura del tanque." 
+    }
+  ],
+  relacionados: [
+    { nombre: "Calculadora de Áreas", link: "/matematicas/calculadora-de-areas" },
+    { nombre: "Frigorías de Aire", link: "/hogar/calculadora-frigorias" },
+    { nombre: "Calculadora de IVA", link: "/finanzas/iva" }
+  ]
+},
+"calculadora-de-angulos": {
+  faqs: [
+    { 
+      q: "¿Qué es un ángulo complementario?", 
+      a: "Dos ángulos son complementarios si la suma de sus medidas es exactamente 90°. Por ejemplo, el complemento de un ángulo de 30° es 60°." 
+    },
+    { 
+      q: "¿Qué es un ángulo suplementario?", 
+      a: "Dos ángulos son suplementarios si su suma da como resultado 180°. Son fundamentales en geometría para calcular inclinaciones en líneas rectas." 
+    },
+    { 
+      q: "¿Cómo convertir grados a radianes?", 
+      a: "La fórmula de conversión es: $$Radianes = Grados \\times (\\pi / 180)$$. Un círculo completo tiene 360° o $2\\pi$ radianes." 
+    },
+    { 
+      q: "¿Qué es un ángulo recto, agudo y obtuso?", 
+      a: "Un ángulo **agudo** mide menos de 90°, un ángulo **recto** mide exactamente 90° y un ángulo **obtuso** mide más de 90° pero menos de 180°." 
+    },
+    { 
+      q: "¿Para qué sirve calcular ángulos en la vida real?", 
+      a: "Es esencial en arquitectura para techos y pendientes, en carpintería para cortes a inglete y en navegación para determinar rumbos precisos." 
+    }
+  ],
+  relacionados: [
+    { nombre: "Calculadora de Áreas", link: "/matematicas/calculadora-de-areas" },
+    { nombre: "Teorema de Pitágoras", link: "/matematicas/pitagoras" },
+    { nombre: "Frigorías de Aire", link: "/hogar/calculadora-frigorias" }
+  ]
+},
 };
