@@ -128,7 +128,7 @@ import ResultBox from "../../components/ResultBox.astro";
   </main>
 </Layout>
 
-<!-- Código JS solo para el cliente -->
+<!-- JS solo para el cliente -->
 <script client:load>
   const container = document.getElementById("inputsContainer");
   const addButton = document.getElementById("addInput");
@@ -141,7 +141,7 @@ import ResultBox from "../../components/ResultBox.astro";
     let hasValues = false;
 
     inputs.forEach((input) => {
-      const val = parseFloat((input as HTMLInputElement).value);
+      const val = parseFloat(input.value);
       if (!isNaN(val)) {
         totalMultiplier *= 1 + val / 100;
         hasValues = true;
@@ -169,7 +169,9 @@ import ResultBox from "../../components/ResultBox.astro";
 
     newInput
       .querySelector("input")
-      ?.addEventListener("input", calculateAccumulated);
+      .addEventListener("input", calculateAccumulated);
+
+    calculateAccumulated(); // recalcular al añadir input
   });
 
   document
