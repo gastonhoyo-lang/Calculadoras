@@ -1,0 +1,119 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import InputField from "/src/components/InputField.astro";
+import ResultBox from "../../components/ResultBox.astro";
+---
+
+<Layout
+  title="Calculadora de MCM y MCD | Mínimo Común Múltiplo y Máximo Común Divisor"
+  description="Calculá el MCM y el MCD de dos o más números de forma rápida. Ideal para simplificar fracciones y resolver problemas matemáticos."
+>
+  <main class="max-w-4xl mx-auto px-4 py-12">
+    <div class="text-center mb-10">
+      <h1 class="text-4xl font-black text-slate-900 mb-4">
+        Calculadora de MCM y MCD
+      </h1>
+      <p class="text-slate-600 text-lg">
+        Ingresá los números separados por espacios o comas.
+      </p>
+    </div>
+
+    <div
+      class="bg-white p-8 rounded-[2.5rem] shadow-xl border border-slate-100 mb-12"
+    >
+      <div class="mb-6">
+        <label class="block text-sm font-bold mb-2 text-slate-700"
+          >Tus números:</label
+        >
+        <input
+          type="text"
+          id="numInput"
+          class="w-full p-6 bg-slate-50 rounded-2xl border-2 border-transparent focus:border-indigo-500 outline-none text-xl font-bold transition-all"
+          placeholder="Ej: 12, 18, 24"
+        />
+      </div>
+
+      <button
+        id="btnCalcular"
+        class="w-full py-4 bg-orange-500 text-white font-bold rounded-2xl hover:bg-orange-600 transition-all shadow-lg shadow-orange-200 text-lg"
+      >
+        Calcular MCM y MCD
+      </button>
+
+      <div
+        id="resultado"
+        class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-4 hidden"
+      >
+        <div
+          class="p-6 rounded-2xl bg-indigo-50 border border-indigo-100 text-center"
+        >
+          <span
+            class="block text-indigo-600 font-bold uppercase tracking-wider text-xs mb-1"
+            >Mínimo Común Múltiplo</span
+          >
+          <div id="mcmRes" class="text-3xl font-black text-indigo-900">-</div>
+        </div>
+        <div
+          class="p-6 rounded-2xl bg-emerald-50 border border-emerald-100 text-center"
+        >
+          <span
+            class="block text-emerald-600 font-bold uppercase tracking-wider text-xs mb-1"
+            >Máximo Común Divisor</span
+          >
+          <div id="mcdRes" class="text-3xl font-black text-emerald-900">-</div>
+        </div>
+      </div>
+    </div>
+  </main>
+</Layout>
+
+<script>
+  const btn = document.getElementById("btnCalcular");
+  const resDiv = document.getElementById("resultado");
+  const input = document.getElementById("numInput") as HTMLInputElement;
+
+  // Funciones lógicas
+  const obtenerMCD = (a: number, b: number): number =>
+    b === 0 ? a : obtenerMCD(b, a % b);
+
+  const obtenerMCM = (a: number, b: number): number => {
+    if (a === 0 || b === 0) return 0;
+    return Math.abs(a * b) / obtenerMCD(a, b);
+  };
+
+  btn?.addEventListener("click", () => {
+    const rawValue = input.value;
+    // Limpiamos la entrada para aceptar espacios o comas
+    const numeros = rawValue
+      .split(/[\s,]+/)
+      .map((n) => parseInt(n))
+      .filter((n) => !isNaN(n) && n > 0);
+
+    if (numeros.length < 2) {
+      alert("Por favor, ingresá al menos dos números válidos.");
+      return;
+    }
+
+    // Cálculo MCD
+    let mcd = numeros[0];
+    for (let i = 1; i < numeros.length; i++) {
+      mcd = obtenerMCD(mcd, numeros[i]);
+    }
+
+    // Cálculo MCM
+    let mcm = numeros[0];
+    for (let i = 1; i < numeros.length; i++) {
+      mcm = obtenerMCM(mcm, numeros[i]);
+    }
+
+    // Mostrar resultados
+    const mcmEl = document.getElementById("mcmRes");
+    const mcdEl = document.getElementById("mcdRes");
+
+    if (mcmEl && mcdEl && resDiv) {
+      mcmEl.innerText = mcm.toString();
+      mcdEl.innerText = mcd.toString();
+      resDiv.classList.remove("hidden");
+    }
+  });
+</script>

@@ -1,0 +1,112 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import InputField from "/src/components/InputField.astro";
+import ResultBox from "../../components/ResultBox.astro";
+---
+
+<Layout
+  title="Calculadora de Ecuaciones de Segundo Grado | Paso a Paso"
+  description="Resolvé ecuaciones cuadráticas usando la fórmula general. Obtené las raíces x1 y x2 de forma instantánea."
+>
+  <main class="max-w-4xl mx-auto px-4 py-12">
+    <div class="text-center mb-10">
+      <h1 class="text-4xl font-black text-slate-900 mb-4">
+        Calculadora de Ecuaciones de Segundo Grado
+      </h1>
+      <p class="text-slate-600">
+        Introducí los valores de <strong>a</strong>, <strong>b</strong> y <strong
+          >c</strong
+        > para la forma: $ax^2 + bx + c = 0$
+      </p>
+    </div>
+
+    <div
+      class="bg-white p-8 rounded-[2.5rem] shadow-xl border border-slate-100 mb-12"
+    >
+      <div class="grid grid-cols-3 gap-4 mb-8">
+        <div>
+          <label class="block text-sm font-bold mb-2">Valor a</label>
+          <input
+            type="number"
+            id="valA"
+            class="w-full p-4 bg-slate-50 rounded-2xl border-none focus:ring-2 focus:ring-indigo-500"
+            placeholder="Ej: 1"
+          />
+        </div>
+        <div>
+          <label class="block text-sm font-bold mb-2">Valor b</label>
+          <input
+            type="number"
+            id="valB"
+            class="w-full p-4 bg-slate-50 rounded-2xl border-none focus:ring-2 focus:ring-indigo-500"
+            placeholder="Ej: -3"
+          />
+        </div>
+        <div>
+          <label class="block text-sm font-bold mb-2">Valor c</label>
+          <input
+            type="number"
+            id="valC"
+            class="w-full p-4 bg-slate-50 rounded-2xl border-none focus:ring-2 focus:ring-indigo-500"
+            placeholder="Ej: 2"
+          />
+        </div>
+      </div>
+
+      <button
+        id="btnCalcular"
+        class="w-full py-4 bg-indigo-600 text-white font-bold rounded-2xl hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-200"
+      >
+        Resolver Ecuación
+      </button>
+
+      <div id="resultado" class="mt-8 p-6 rounded-2xl hidden"></div>
+    </div>
+  </main>
+</Layout>
+
+<script>
+  const btn = document.getElementById("btnCalcular");
+  const resDiv = document.getElementById("resultado");
+
+  btn?.addEventListener("click", () => {
+    const a = parseFloat(
+      (document.getElementById("valA") as HTMLInputElement).value,
+    );
+    const b = parseFloat(
+      (document.getElementById("valB") as HTMLInputElement).value,
+    );
+    const c = parseFloat(
+      (document.getElementById("valC") as HTMLInputElement).value,
+    );
+
+    if (isNaN(a) || isNaN(b) || isNaN(c)) return;
+    if (a === 0) {
+      resDiv!.innerHTML =
+        "El valor de 'a' no puede ser 0 en una ecuación de segundo grado.";
+      resDiv!.className =
+        "mt-8 p-6 rounded-2xl bg-red-50 text-red-700 font-bold hidden";
+      resDiv!.classList.remove("hidden");
+      return;
+    }
+
+    const discriminante = b * b - 4 * a * c;
+    resDiv!.classList.remove("hidden");
+    resDiv!.className = "mt-8 p-6 rounded-2xl bg-indigo-50 text-indigo-900";
+
+    if (discriminante > 0) {
+      const x1 = (-b + Math.sqrt(discriminante)) / (2 * a);
+      const x2 = (-b - Math.sqrt(discriminante)) / (2 * a);
+      resDiv!.innerHTML = `
+        <p class="font-bold text-lg mb-2">Dos soluciones reales:</p>
+        <p>x₁ = <strong>${x1.toFixed(2)}</strong></p>
+        <p>x₂ = <strong>${x2.toFixed(2)}</strong></p>
+      `;
+    } else if (discriminante === 0) {
+      const x = -b / (2 * a);
+      resDiv!.innerHTML = `<p class="font-bold text-lg">Una única solución real: x = <strong>${x.toFixed(2)}</strong></p>`;
+    } else {
+      resDiv!.innerHTML = `<p class="font-bold text-lg text-amber-700">La ecuación no tiene soluciones reales (soluciones complejas).</p>`;
+    }
+  });
+</script>

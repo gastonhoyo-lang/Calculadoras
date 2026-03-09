@@ -2041,5 +2041,43 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
     { nombre: "Calculadora de Volúmenes", link: "/matematica/calculadora-de-volumenes" },
     { nombre: "Frigorías de Aire", link: "/hogar/aire-acondicionado" }
   ]
-},
+  },
+  "ecuaciones-segundo-grado": {
+  faqs: [
+    { 
+      q: "¿Qué es la fórmula general o de Bhaskara?", 
+      a: "Es la fórmula $$x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}$$ que permite hallar las raíces de cualquier ecuación cuadrática." 
+    },
+    { 
+      q: "¿Qué pasa si el discriminante es negativo?", 
+      a: "Si el valor dentro de la raíz ($$b^2 - 4ac$$) es menor a cero, la ecuación no tiene solución en el conjunto de los números reales, solo en el campo de los números complejos." 
+    }
+  ],
+  relacionados: [
+    { nombre: "Calculadora de Ecuaciones Simples", link: "/utiles/ecuaciones" },
+    { nombre: "Regla de Tres Simple", link: "/matematica/regla-de-tres" },
+    { nombre: "Teorema de Pitágoras", link: "/matematica/pitagoras" }
+  ]
+  },
+  "mcm-mcd": {
+    faqs: [
+      {
+        q: "¿Qué es el Mínimo Común Múltiplo (MCM)?",
+        a: "El MCM es el número positivo más pequeño que es múltiplo de dos o más números. Se utiliza frecuentemente para sumar o restar fracciones con distinto denominador."
+      },
+      {
+        q: "¿Qué es el Máximo Común Divisor (MCD)?",
+        a: "El MCD es el mayor número entero que divide a dos o más números sin dejar residuo. Es fundamental para simplificar fracciones y resolver problemas de repartos equitativos."
+      },
+      {
+        q: "¿Cómo se calculan el MCM y el MCD?",
+        a: "El método más común es la descomposición en factores primos. Para el MCD se multiplican los factores comunes con su menor exponente. Para el MCM se multiplican los factores comunes y no comunes con su mayor exponente."
+      }
+    ],
+    relacionados: [
+      { nombre: "Calculadora de Fracciones", link: "/utiles/fracciones" },
+      { nombre: "Ecuaciones de Segundo Grado", link: "/matematica/ecuaciones-segundo-grado" },
+      { nombre: "Regla de Tres", link: "/matematica/regla-de-tres" }
+    ]
+    },
 };

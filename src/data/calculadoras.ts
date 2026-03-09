@@ -562,5 +562,22 @@ export const calculadoras = [
   color: "indigo",
   keywords: "angulos, grados a radianes, angulo complementario, angulo suplementario, trigonometria, geometria"
   },
-
+  {
+  titulo: "Ecuaciones 2do Grado",
+  descripcion: "Resolvé ecuaciones cuadráticas paso a paso con la fórmula de Bhaskara.",
+  link: "/matematica/ecuaciones-segundo-grado",
+  categoria: "matematica",
+  icon: "🧬",
+  color: "orange",
+  keywords: "cuadratica, bhaskara, bascara, raices x1 x2, algebra, secundaria"
+},
+{
+    titulo: "MCM y MCD",
+    descripcion: "Calculá el Mínimo Común Múltiplo y Máximo Común Divisor al instante.",
+    link: "/matematica/mcm-mcd",
+    categoria: "matematica",
+    icon: "🔢",
+    color: "orange",
+    keywords: "mcm, mcd, divisores, multiplos, matematica, escuela, factorizar"
+  },
 ];
