@@ -108,7 +108,7 @@ import ResultBox from "../../components/ResultBox.astro";
         class="bg-slate-900 p-8 rounded-3xl text-center my-8 shadow-2xl overflow-x-auto"
       >
         <span class="text-teal-400 font-mono text-xl">
-          $$VP = \frac{VF}{(1 + r) ^ n}$$
+          {`$$VP = \\frac{FV}{(1 + r)^n}$$`}
         </span>
       </div>
 
@@ -137,10 +137,10 @@ import ResultBox from "../../components/ResultBox.astro";
   </main>
 </Layout>
 
-<script>
-  const fvIn = document.getElementById("fvInput") as HTMLInputElement;
-  const rateIn = document.getElementById("rateInput") as HTMLInputElement;
-  const yearsIn = document.getElementById("yearsInput") as HTMLInputElement;
+<script client:load>
+  const fvIn = document.getElementById("fvInput");
+  const rateIn = document.getElementById("rateInput");
+  const yearsIn = document.getElementById("yearsInput");
   const pvOut = document.getElementById("pvOutput");
   const discOut = document.getElementById("discountLabel");
 
@@ -151,7 +151,6 @@ import ResultBox from "../../components/ResultBox.astro";
 
     if (FV === 0 || years < 0) return;
 
-    // Fórmula: VP = VF / (1 + r)^n
     const pv = FV / Math.pow(1 + rate, years);
     const discount = FV - pv;
 

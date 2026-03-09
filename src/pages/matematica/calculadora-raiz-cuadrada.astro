@@ -112,8 +112,8 @@ import ResultBox from "../../components/ResultBox.astro";
   </main>
 </Layout>
 
-<script>
-  const input = document.getElementById("numberInput") as HTMLInputElement;
+<script client:load>
+  const input = document.getElementById("numberInput");
   const output = document.getElementById("resultOutput");
   const step = document.getElementById("calcStep");
 
@@ -121,23 +121,26 @@ import ResultBox from "../../components/ResultBox.astro";
     const val = parseFloat(input.value);
 
     if (isNaN(val)) {
-      output!.innerText = "0";
-      step!.innerText = "Introduce un valor";
+      output.innerText = "0";
+      step.innerText = "Introduce un valor";
+      step.classList.remove("text-rose-500");
+      step.classList.add("text-emerald-500");
       return;
     }
 
     if (val < 0) {
-      output!.innerText = "Error";
-      step!.innerText = "No existen raíces reales negativas";
-      step!.classList.replace("text-emerald-500", "text-rose-500");
+      output.innerText = "Error";
+      step.innerText = "No existen raíces reales negativas";
+      step.classList.remove("text-emerald-500");
+      step.classList.add("text-rose-500");
     } else {
       const root = Math.sqrt(val);
-      // Mostramos hasta 6 decimales si es irracional
-      output!.innerText = Number.isInteger(root)
+      output.innerText = Number.isInteger(root)
         ? root.toString()
         : root.toFixed(4);
-      step!.innerText = `${output!.innerText}² = ${val}`;
-      step!.classList.replace("text-rose-500", "text-emerald-500");
+      step.innerText = `${output.innerText}² = ${val}`;
+      step.classList.remove("text-rose-500");
+      step.classList.add("text-emerald-500");
     }
   });
 </script>

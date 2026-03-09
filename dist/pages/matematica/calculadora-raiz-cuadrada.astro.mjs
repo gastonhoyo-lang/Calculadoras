@@ -1,11 +1,15 @@
 /* empty css                                          */
-import { a as createComponent, r as renderComponent, d as renderScript, b as renderTemplate, m as maybeRenderHead } from '../../chunks/astro/server_Do9XiQ7L.mjs';
+import { a as createComponent, b as renderTemplate, r as renderComponent, m as maybeRenderHead } from '../../chunks/astro/server_Do9XiQ7L.mjs';
 import 'piccolore';
 import { $ as $$Layout } from '../../chunks/Layout_DvQkidL1.mjs';
 export { renderers } from '../../renderers.mjs';
 
+var __freeze = Object.freeze;
+var __defProp = Object.defineProperty;
+var __template = (cooked, raw) => __freeze(__defProp(cooked, "raw", { value: __freeze(raw || cooked.slice()) }));
+var _a;
 const $$CalculadoraRaizCuadrada = createComponent(($$result, $$props, $$slots) => {
-  return renderTemplate`${renderComponent($$result, "Layout", $$Layout, { "title": "Calculadora de Ra\xEDz Cuadrada Online | Resultados Precisos", "description": "Calcul\xE1 la ra\xEDz cuadrada de cualquier n\xFAmero de forma instant\xE1nea. Herramienta matem\xE1tica gratuita con explicaci\xF3n paso a paso." }, { "default": ($$result2) => renderTemplate` ${maybeRenderHead()}<main class="max-w-4xl mx-auto px-4 py-12"> <div class="text-center mb-10"> <h1 class="text-4xl font-black text-slate-900 mb-4 tracking-tight">
+  return renderTemplate(_a || (_a = __template(["", ' <script client:load>\n  const input = document.getElementById("numberInput");\n  const output = document.getElementById("resultOutput");\n  const step = document.getElementById("calcStep");\n\n  input?.addEventListener("input", () => {\n    const val = parseFloat(input.value);\n\n    if (isNaN(val)) {\n      output.innerText = "0";\n      step.innerText = "Introduce un valor";\n      step.classList.remove("text-rose-500");\n      step.classList.add("text-emerald-500");\n      return;\n    }\n\n    if (val < 0) {\n      output.innerText = "Error";\n      step.innerText = "No existen ra\xEDces reales negativas";\n      step.classList.remove("text-emerald-500");\n      step.classList.add("text-rose-500");\n    } else {\n      const root = Math.sqrt(val);\n      output.innerText = Number.isInteger(root)\n        ? root.toString()\n        : root.toFixed(4);\n      step.innerText = `${output.innerText}\xB2 = ${val}`;\n      step.classList.remove("text-rose-500");\n      step.classList.add("text-emerald-500");\n    }\n  });\n<\/script>'], ["", ' <script client:load>\n  const input = document.getElementById("numberInput");\n  const output = document.getElementById("resultOutput");\n  const step = document.getElementById("calcStep");\n\n  input?.addEventListener("input", () => {\n    const val = parseFloat(input.value);\n\n    if (isNaN(val)) {\n      output.innerText = "0";\n      step.innerText = "Introduce un valor";\n      step.classList.remove("text-rose-500");\n      step.classList.add("text-emerald-500");\n      return;\n    }\n\n    if (val < 0) {\n      output.innerText = "Error";\n      step.innerText = "No existen ra\xEDces reales negativas";\n      step.classList.remove("text-emerald-500");\n      step.classList.add("text-rose-500");\n    } else {\n      const root = Math.sqrt(val);\n      output.innerText = Number.isInteger(root)\n        ? root.toString()\n        : root.toFixed(4);\n      step.innerText = \\`\\${output.innerText}\xB2 = \\${val}\\`;\n      step.classList.remove("text-rose-500");\n      step.classList.add("text-emerald-500");\n    }\n  });\n<\/script>'])), renderComponent($$result, "Layout", $$Layout, { "title": "Calculadora de Ra\xEDz Cuadrada Online | Resultados Precisos", "description": "Calcul\xE1 la ra\xEDz cuadrada de cualquier n\xFAmero de forma instant\xE1nea. Herramienta matem\xE1tica gratuita con explicaci\xF3n paso a paso." }, { "default": ($$result2) => renderTemplate` ${maybeRenderHead()}<main class="max-w-4xl mx-auto px-4 py-12"> <div class="text-center mb-10"> <h1 class="text-4xl font-black text-slate-900 mb-4 tracking-tight">
 Calculadora de Raíz Cuadrada
 </h1> <p class="text-slate-600 max-w-2xl mx-auto italic">
 "La operación inversa de elevar al cuadrado."
@@ -27,7 +31,7 @@ Son números cuyo resultado es un entero. Por ejemplo, $\\sqrt${16} = 4$.
 Aunque parece puramente matemático, fórmulas como la de **Desviación
             Estándar** (que usa raíces) son vitales para entender la volatilidad
             de las keywords en los rankings.
-</p> </div> </div> </section> </main> ` })} ${renderScript($$result, "C:/proyectos/seo-tools/src/pages/matematica/calculadora-raiz-cuadrada.astro?astro&type=script&index=0&lang.ts")}`;
+</p> </div> </div> </section> </main> ` }));
 }, "C:/proyectos/seo-tools/src/pages/matematica/calculadora-raiz-cuadrada.astro", void 0);
 
 const $$file = "C:/proyectos/seo-tools/src/pages/matematica/calculadora-raiz-cuadrada.astro";

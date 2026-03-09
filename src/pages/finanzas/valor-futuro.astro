@@ -126,7 +126,9 @@ import ResultBox from "../../components/ResultBox.astro";
         class="bg-slate-900 p-8 rounded-3xl text-center my-8 shadow-2xl overflow-x-auto"
       >
         <span class="text-lime-400 font-mono text-xl">
-          $$VF = VP \cdot (1 + r)^n + PMT \cdot \frac{(1 + r) ^ (n - 1)}{r}$$
+          {
+            `$$VF = VP \\cdot (1 + r)^n + PMT \\cdot \\frac{(1 + r)^{n} - 1}{r}$$`
+          }
         </span>
       </div>
 
@@ -156,45 +158,42 @@ import ResultBox from "../../components/ResultBox.astro";
   </main>
 </Layout>
 
-<!-- Código JS solo para el cliente -->
 <script client:load>
-  window.addEventListener("load", () => {
-    const pvIn = document.getElementById("pvInput");
-    const rateIn = document.getElementById("rateInput");
-    const yearsIn = document.getElementById("yearsInput");
-    const pmtIn = document.getElementById("pmtInput");
-    const fvOut = document.getElementById("fvOutput");
-    const intOut = document.getElementById("interestEarned");
+  const pvIn = document.getElementById("pvInput");
+  const rateIn = document.getElementById("rateInput");
+  const yearsIn = document.getElementById("yearsInput");
+  const pmtIn = document.getElementById("pmtInput");
+  const fvOut = document.getElementById("fvOutput");
+  const intOut = document.getElementById("interestEarned");
 
-    const calculateFV = () => {
-      const PV = parseFloat(pvIn.value) || 0;
-      const annualRate = (parseFloat(rateIn.value) || 0) / 100;
-      const years = parseFloat(yearsIn.value) || 0;
-      const PMT = parseFloat(pmtIn.value) || 0;
+  const calculateFV = () => {
+    const PV = parseFloat(pvIn.value) || 0;
+    const annualRate = (parseFloat(rateIn.value) || 0) / 100;
+    const years = parseFloat(yearsIn.value) || 0;
+    const PMT = parseFloat(pmtIn.value) || 0;
 
-      if (years === 0 && PV === 0) return;
+    if (years === 0 && PV === 0) return;
 
-      const r = annualRate / 12;
-      const n = years * 12;
+    const r = annualRate / 12;
+    const n = years * 12;
 
-      let fv = PV * Math.pow(1 + annualRate, years);
+    let fv = PV * Math.pow(1 + annualRate, years);
 
-      if (r > 0) {
-        fv += PMT * ((Math.pow(1 + r, n) - 1) / r);
-      } else {
-        fv += PMT * n;
-      }
+    if (r > 0) {
+      fv += PMT * ((Math.pow(1 + r, n) - 1) / r);
+    } else {
+      fv += PMT * n;
+    }
 
-      const totalInvested = PV + PMT * n;
-      const profit = fv - totalInvested;
+    const totalInvested = PV + PMT * n;
+    const profit = fv - totalInvested;
 
-      if (fvOut) fvOut.innerText = "$" + Math.round(fv).toLocaleString();
-      if (intOut)
-        intOut.innerText = `Ganancia por intereses: $${Math.round(profit).toLocaleString()}`;
-    };
+    if (fvOut) fvOut.innerText = "$" + Math.round(fv).toLocaleString();
+    if (intOut)
+      intOut.innerText = `Ganancia por intereses: $${Math.round(profit).toLocaleString()}`;
+  };
 
-    [pvIn, rateIn, yearsIn, pmtIn].forEach((el) =>
-      el?.addEventListener("input", calculateFV),
-    );
-  });
+  [pvIn, rateIn, yearsIn, pmtIn].forEach((el) =>
+    el?.addEventListener("input", calculateFV),
+  );
 </script>
