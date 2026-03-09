@@ -26,8 +26,9 @@ import ResultBox from "../../components/ResultBox.astro";
           <div>
             <label
               class="block text-[10px] font-bold uppercase text-slate-400 mb-2 ml-1 tracking-widest"
-              >Número (Radicando)</label
             >
+              Número (Radicando)
+            </label>
             <div class="relative group">
               <span
                 class="absolute left-4 top-1/2 -translate-y-1/2 text-3xl text-slate-300 font-light group-focus-within:text-cyan-500 transition-colors"
@@ -50,8 +51,9 @@ import ResultBox from "../../components/ResultBox.astro";
           <div class="relative z-10">
             <span
               class="block text-[10px] font-bold uppercase text-cyan-600 mb-2 tracking-widest"
-              >Resultado (Raíz)</span
             >
+              Resultado (Raíz)
+            </span>
             <div
               id="resultOutput"
               class="text-6xl font-black text-cyan-700 leading-none"
@@ -80,25 +82,26 @@ import ResultBox from "../../components/ResultBox.astro";
         ¿Qué es la Raíz Cúbica?
       </h2>
       <p>
-        La raíz cúbica de un número $x$ es aquel número $y$ que, al ser elevado
-        a la potencia de 3 ($y^3$), resulta en $x$. A diferencia de la raíz
-        cuadrada, la raíz cúbica está definida para todos los números reales,
-        incluyendo los negativos.
+        La raíz cúbica de un número <strong>x</strong> es aquel número <strong
+          >y</strong
+        > que, al ser elevado a la potencia de 3 (<strong>y³</strong>), resulta
+        en <strong>x</strong>. A diferencia de la raíz cuadrada, la raíz cúbica
+        está definida para todos los números reales, incluyendo los negativos.
       </p>
 
       <div class="bg-slate-900 p-8 rounded-3xl text-center my-8 shadow-2xl">
-        <span class="text-cyan-400 font-mono text-3xl"
-          >$$\sqrt[3]{x} = y \iff y^3 = x$$</span
-        >
+        <!-- LaTeX como string para evitar error SSR -->
+        <span class="text-cyan-400 font-mono text-3xl">
+          {"$$\\sqrt[3]{x} = y \\iff y^3 = x$$"}
+        </span>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
         <div class="p-6 bg-slate-50 rounded-2xl border border-slate-200">
           <h4 class="font-bold text-slate-900 mb-2">Cálculo con Negativos</h4>
           <p class="text-xs leading-relaxed">
-            Si calculas $\sqrt[3]{-8}$, el resultado es $-2$, porque $(-2)
-            \times (-2) \times (-2) = -8$. Esto es posible porque el exponente
-            es impar.
+            Si calculas √[3]{-8}, el resultado es -2, porque (-2) × (-2) × (-2)
+            = -8. Esto es posible porque el exponente es impar.
           </p>
         </div>
         <div class="p-6 bg-slate-50 rounded-2xl border border-slate-200">
@@ -114,8 +117,8 @@ import ResultBox from "../../components/ResultBox.astro";
   </main>
 </Layout>
 
-<script>
-  const input = document.getElementById("numberInput") as HTMLInputElement;
+<script client:load>
+  const input = document.getElementById("numberInput");
   const output = document.getElementById("resultOutput");
   const step = document.getElementById("calcStep");
 
@@ -123,18 +126,17 @@ import ResultBox from "../../components/ResultBox.astro";
     const val = parseFloat(input.value);
 
     if (isNaN(val)) {
-      output!.innerText = "0";
-      step!.innerText = "Introduce un valor";
+      output.innerText = "0";
+      step.innerText = "Introduce un valor";
       return;
     }
 
-    // Math.cbrt maneja correctamente los números negativos
+    // Math.cbrt maneja correctamente números negativos
     const root = Math.cbrt(val);
 
-    // Formateo del resultado
-    output!.innerText = Number.isInteger(root)
+    output.innerText = Number.isInteger(root)
       ? root.toString()
       : root.toFixed(4);
-    step!.innerText = `${output!.innerText}³ ≈ ${val}`;
+    step.innerText = `${output.innerText}³ ≈ ${val}`;
   });
 </script>

@@ -91,58 +91,16 @@ import ResultBox from "../../components/ResultBox.astro";
         </div>
       </div>
     </div>
-
-    <section
-      class="prose prose-slate max-w-none border-t border-slate-100 pt-12 text-slate-700"
-    >
-      <h2 class="text-3xl font-black text-slate-900 mb-6">
-        ¿Cómo convertir millas a kilómetros?
-      </h2>
-      <p>
-        Para convertir millas a kilómetros, se utiliza el factor de conversión
-        internacional. Una milla terrestre equivale exactamente a <strong
-          >1,609344 kilómetros</strong
-        >.
-      </p>
-
-      <div class="bg-slate-900 p-8 rounded-3xl text-center my-8 shadow-2xl">
-        <span class="text-blue-400 font-mono text-xl">
-          $$Distancia_{km} = Distancia_{mi} \times 1,609344$$
-        </span>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
-        <div class="p-6 bg-slate-50 rounded-2xl border border-slate-200">
-          <h4 class="font-bold text-slate-900 mb-2 italic text-sm">
-            Uso Internacional
-          </h4>
-          <p class="text-xs leading-relaxed">
-            Aunque la mayoría del mundo utiliza el sistema métrico (km), países
-            como Estados Unidos y el Reino Unido siguen usando millas para medir
-            distancias por carretera.
-          </p>
-        </div>
-        <div class="p-6 bg-slate-50 rounded-2xl border border-slate-200">
-          <h4 class="font-bold text-slate-900 mb-2 italic text-sm">
-            Millas Náuticas
-          </h4>
-          <p class="text-xs leading-relaxed">
-            Es importante no confundirlas: una milla náutica equivale a 1,852 km
-            y se utiliza exclusivamente en navegación marítima y aérea.
-          </p>
-        </div>
-      </div>
-    </section>
   </main>
 </Layout>
 
-<script>
-  const milesInput = document.getElementById("milesInput") as HTMLInputElement;
-  const kmInput = document.getElementById("kmInput") as HTMLInputElement;
+<script client:load>
+  const milesInput = document.getElementById("milesInput");
+  const kmInput = document.getElementById("kmInput");
   const resultDisplay = document.getElementById("resultDisplay");
   const FACTOR = 1.609344;
 
-  const updateDisplay = (val: number) => {
+  const updateDisplay = (val) => {
     if (resultDisplay) {
       resultDisplay.innerHTML = `${val.toLocaleString(undefined, { maximumFractionDigits: 3 })} <small class="text-2xl opacity-60">km</small>`;
     }
@@ -152,7 +110,7 @@ import ResultBox from "../../components/ResultBox.astro";
     const miles = parseFloat(milesInput.value);
     if (!isNaN(miles)) {
       const km = miles * FACTOR;
-      kmInput.value = km.toFixed(4);
+      kmInput.value = Number.isInteger(km) ? km.toString() : km.toFixed(4);
       updateDisplay(km);
     } else {
       kmInput.value = "";
@@ -164,7 +122,9 @@ import ResultBox from "../../components/ResultBox.astro";
     const km = parseFloat(kmInput.value);
     if (!isNaN(km)) {
       const miles = km / FACTOR;
-      milesInput.value = miles.toFixed(4);
+      milesInput.value = Number.isInteger(miles)
+        ? miles.toString()
+        : miles.toFixed(4);
       updateDisplay(km);
     } else {
       milesInput.value = "";

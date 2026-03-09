@@ -26,13 +26,15 @@ import ResultBox from "../../components/ResultBox.astro";
           <div>
             <label
               class="block text-[10px] font-bold uppercase text-slate-400 mb-2 ml-1 tracking-widest"
-              >Número (Radicando)</label
             >
+              Número (Radicando)
+            </label>
             <div class="relative group">
               <span
                 class="absolute left-5 top-1/2 -translate-y-1/2 text-3xl text-slate-300 font-light group-focus-within:text-emerald-500 transition-colors"
-                >√</span
               >
+                √
+              </span>
               <input
                 type="number"
                 id="numberInput"
@@ -49,8 +51,9 @@ import ResultBox from "../../components/ResultBox.astro";
           <div class="relative z-10">
             <span
               class="block text-[10px] font-bold uppercase text-emerald-600 mb-2 tracking-widest"
-              >Resultado (Raíz)</span
             >
+              Resultado (Raíz)
+            </span>
             <div
               id="resultOutput"
               class="text-6xl font-black text-emerald-700 leading-none"
@@ -79,32 +82,35 @@ import ResultBox from "../../components/ResultBox.astro";
         ¿Qué es la Raíz Cuadrada?
       </h2>
       <p>
-        La raíz cuadrada de un número $x$ es aquel número $y$ que, al ser
-        multiplicado por sí mismo (elevado al cuadrado), da como resultado el
-        número original. Se representa con el símbolo radical.
+        La raíz cuadrada de un número <strong>x</strong> es aquel número <strong
+          >y</strong
+        > que, al ser multiplicado por sí mismo (elevado al cuadrado), da como resultado
+        el número original. Se representa con el símbolo radical.
       </p>
 
       <div class="bg-slate-900 p-8 rounded-3xl text-center my-8 shadow-2xl">
-        <span class="text-emerald-400 font-mono text-3xl"
-          >$$\sqrt{x} = y \iff y^2 = x$$</span
-        >
+        <!-- LaTeX como string para que Astro no lo interprete -->
+        <span class="text-emerald-400 font-mono text-3xl">
+          {"$$\\sqrt{x} = y \\iff y^2 = x$$"}
+        </span>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
         <div class="p-6 bg-slate-50 rounded-2xl border border-slate-200">
           <h4 class="font-bold text-slate-900 mb-2">Raíces Exactas</h4>
           <p class="text-xs leading-relaxed">
-            Son números cuyo resultado es un entero. Por ejemplo, $\sqrt{16} = 4$.
-            Conocer estos "cuadrados perfectos" ayuda a agilizar cálculos mentales
-            en ingeniería y diseño.
+            Son números cuyo resultado es un entero. Por ejemplo, √16 = 4.
+            Conocer estos "cuadrados perfectos" ayuda a agilizar cálculos
+            mentales en ingeniería y diseño.
           </p>
         </div>
         <div class="p-6 bg-slate-50 rounded-2xl border border-slate-200">
           <h4 class="font-bold text-slate-900 mb-2">Aplicación en SEO</h4>
           <p class="text-xs leading-relaxed">
-            Aunque parece puramente matemático, fórmulas como la de **Desviación
-            Estándar** (que usa raíces) son vitales para entender la volatilidad
-            de las keywords en los rankings.
+            Aunque parece puramente matemático, fórmulas como la de <strong
+              >Desviación Estándar</strong
+            > (que usa raíces) son vitales para entender la volatilidad de las keywords
+            en los rankings.
           </p>
         </div>
       </div>
@@ -123,24 +129,21 @@ import ResultBox from "../../components/ResultBox.astro";
     if (isNaN(val)) {
       output.innerText = "0";
       step.innerText = "Introduce un valor";
-      step.classList.remove("text-rose-500");
-      step.classList.add("text-emerald-500");
+      step.classList.replace("text-rose-500", "text-emerald-500");
       return;
     }
 
     if (val < 0) {
       output.innerText = "Error";
       step.innerText = "No existen raíces reales negativas";
-      step.classList.remove("text-emerald-500");
-      step.classList.add("text-rose-500");
+      step.classList.replace("text-emerald-500", "text-rose-500");
     } else {
       const root = Math.sqrt(val);
       output.innerText = Number.isInteger(root)
         ? root.toString()
         : root.toFixed(4);
       step.innerText = `${output.innerText}² = ${val}`;
-      step.classList.remove("text-rose-500");
-      step.classList.add("text-emerald-500");
+      step.classList.replace("text-rose-500", "text-emerald-500");
     }
   });
 </script>

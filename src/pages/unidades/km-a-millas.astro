@@ -28,8 +28,9 @@ import ResultBox from "../../components/ResultBox.astro";
         <div class="space-y-2">
           <label
             class="block text-[10px] font-bold uppercase text-slate-400 ml-1 tracking-widest text-center"
-            >Kilómetros (km)</label
           >
+            Kilómetros (km)
+          </label>
           <input
             type="number"
             id="kmInput"
@@ -50,8 +51,9 @@ import ResultBox from "../../components/ResultBox.astro";
         <div class="space-y-2">
           <label
             class="block text-[10px] font-bold uppercase text-slate-400 ml-1 tracking-widest text-center"
-            >Millas (mi)</label
           >
+            Millas (mi)
+          </label>
           <input
             type="number"
             id="mileInput"
@@ -70,85 +72,21 @@ import ResultBox from "../../components/ResultBox.astro";
         </p>
       </div>
     </div>
-
-    <section
-      class="prose prose-slate max-w-none border-t border-slate-100 pt-12 text-slate-700"
-    >
-      <h2 class="text-3xl font-black text-slate-900 mb-6">
-        ¿Cómo calcular la conversión?
-      </h2>
-      <p>
-        Para pasar de kilómetros a millas terrestres, dividimos la cantidad de
-        kilómetros por <strong>1.60934</strong>. Si lo que buscas es una
-        estimación rápida para conducir, podés usar 1.6 como referencia.
-      </p>
-
-      <div class="bg-slate-900 p-8 rounded-3xl text-center my-8 shadow-2xl">
-        <span class="text-amber-400 font-mono text-xl">
-          $$millas = \frac{km}{1.60934}$$
-        </span>
-      </div>
-
-      <h3 class="text-2xl font-bold text-slate-900 mb-4">
-        Equivalencias en Carretera
-      </h3>
-      <div class="overflow-x-auto">
-        <table class="w-full text-sm text-left">
-          <thead class="bg-slate-50 border-b border-slate-200">
-            <tr>
-              <th
-                class="p-4 font-bold uppercase tracking-wider text-slate-400 text-[10px]"
-                >Kilómetros</th
-              >
-              <th
-                class="p-4 font-bold uppercase tracking-wider text-slate-400 text-[10px]"
-                >Millas (aprox.)</th
-              >
-              <th
-                class="p-4 font-bold uppercase tracking-wider text-slate-400 text-[10px]"
-                >Referencia</th
-              >
-            </tr>
-          </thead>
-          <tbody class="divide-y divide-slate-100 font-mono">
-            <tr
-              ><td class="p-4 font-bold">5 km</td><td class="p-4">3.1 mi</td><td
-                class="p-4 text-slate-500 font-sans">Carrera recreativa</td
-              ></tr
-            >
-            <tr
-              ><td class="p-4 font-bold">42.2 km</td><td class="p-4">26.2 mi</td
-              ><td class="p-4 text-slate-500 font-sans">Maratón</td></tr
-            >
-            <tr
-              ><td class="p-4 font-bold">100 km</td><td class="p-4">62.1 mi</td
-              ><td class="p-4 text-slate-500 font-sans"
-                >Velocidad en autopista</td
-              ></tr
-            >
-            <tr
-              ><td class="p-4 font-bold">160.9 km</td><td class="p-4">100 mi</td
-              ><td class="p-4 text-slate-500 font-sans"
-                >Hito de las 100 millas</td
-              ></tr
-            >
-          </tbody>
-        </table>
-      </div>
-    </section>
   </main>
 </Layout>
 
-<script>
-  const kmIn = document.getElementById("kmInput") as HTMLInputElement;
-  const mileIn = document.getElementById("mileInput") as HTMLInputElement;
+<script client:load>
+  const kmIn = document.getElementById("kmInput");
+  const mileIn = document.getElementById("mileInput");
   const info = document.getElementById("infoText");
 
   const updateKm = () => {
     const km = parseFloat(kmIn.value);
     if (!isNaN(km)) {
       const miles = km / 1.609344;
-      mileIn.value = miles.toFixed(2).replace(/\.00$/, "");
+      mileIn.value = Number.isInteger(miles)
+        ? miles.toString()
+        : miles.toFixed(2);
       if (info)
         info.innerText = `${km} kilómetros son aproximadamente ${mileIn.value} millas`;
     } else {
@@ -160,7 +98,7 @@ import ResultBox from "../../components/ResultBox.astro";
     const miles = parseFloat(mileIn.value);
     if (!isNaN(miles)) {
       const km = miles * 1.609344;
-      kmIn.value = km.toFixed(2).replace(/\.00$/, "");
+      kmIn.value = Number.isInteger(km) ? km.toString() : km.toFixed(2);
       if (info)
         info.innerText = `${miles} millas equivalen a ${kmIn.value} kilómetros`;
     } else {
