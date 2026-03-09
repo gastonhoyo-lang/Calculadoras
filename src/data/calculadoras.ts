@@ -610,10 +610,46 @@ export const calculadoras = [
   {
   titulo: "Probabilidad Binomial",
   descripcion: "Calculá la probabilidad de obtener un número exacto de éxitos en una serie de experimentos.",
-  link: "/matematica/probabilidad-binomial",
+  link: "/matematica/calculadora-binomial",
   categoria: "matematica",
   icon: "🎲",
   color: "blue",
   keywords: "probabilidad, binomial, estadistica, exito, fracaso, ncr"
+},
+{
+    titulo: "Combinaciones y Permutaciones",
+    descripcion: "Calculá nCr y nPr para conjuntos de elementos. Aprendé la diferencia cuando el orden importa.",
+    link: "/matematica/combinaciones-permutaciones",
+    categoria: "matematica",
+    icon: "🔢",
+    color: "orange",
+    keywords: "combinatoria, ncr, npr, factorial, combinaciones, permutaciones, probabilidad"
+  },
+{
+  titulo: "Calculadora de Matrices",
+  descripcion: "Realizá operaciones de suma y resta de matrices de forma sencilla con explicaciones paso a paso.",
+  link: "/matematica/calculadora-matrices",
+  categoria: "matematica",
+  icon: "🧱",
+  color: "purple",
+  keywords: "matrices, algebra, suma de matrices, resta de matrices, matematicas"
+},
+  {
+  titulo: "Conversor de Bases",
+  descripcion: "Convertí números entre sistemas decimal, binario, hexadecimal y octal de forma instantánea.",
+  link: "/matematica/conversor-bases",
+  categoria: "matematica",
+  icon: "💾",
+  color: "emerald",
+  keywords: "binario, hexadecimal, conversor, bases numericas, decimal a binario, octal"
+},
+{
+  titulo: "Notación Científica",
+  descripcion: "Convertí números decimales a notación científica y viceversa de forma instantánea.",
+  link: "/matematica/notacion-cientifica",
+  categoria: "matematica",
+  icon: "🚀",
+  color: "indigo",
+  keywords: "notacion cientifica, potencias de 10, fisica, quimica, convertir numeros"
 },
 ];

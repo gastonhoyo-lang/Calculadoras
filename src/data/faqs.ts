@@ -2143,7 +2143,7 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
       { nombre: "MCM y MCD", link: "/matematica/mcm-mcd" }
     ]
   },
-  "probabilidad-binomial": {
+  "calculadora-binomial": {
     faqs: [
       {
         q: "¿Qué es la distribución binomial?",
@@ -2158,5 +2158,73 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
       { nombre: "Varianza y Desviación", link: "/matematica/varianza-desviacion-estandar" },
       { nombre: "Promedio, Mediana y Moda", link: "/matematica/promedio-mediana-moda" }
     ]
-  }
+  },
+  "combinaciones-permutaciones": {
+    faqs: [
+      {
+        q: "¿Cuál es la diferencia entre combinación y permutación?",
+        a: "En las permutaciones el orden importa (ej. un código de seguridad), mientras que en las combinaciones el orden no afecta el resultado (ej. elegir jugadores para un equipo)."
+      },
+      {
+        q: "¿Cómo se relaciona con la probabilidad?",
+        a: "La combinatoria (nCr) es la base para calcular los coeficientes en la [Probabilidad Binomial](/matematica/calculadora-binomial), permitiendo saber de cuántas formas pueden ocurrir los éxitos."
+      },
+      {
+        q: "¿Qué es el factorial (n!)?",
+        a: "Es el producto de todos los números enteros positivos desde 1 hasta n. Es la operación fundamental que realiza nuestra [calculadora de nCr y nPr](/matematica/combinaciones-permutaciones)."
+      }
+    ],
+    relacionados: [
+      { nombre: "Probabilidad Binomial", link: "/matematica/calculadora-binomial" },
+      { nombre: "Calculadora de Factorial", link: "/matematica/factorial" }
+    ]  
+  },
+"conversor-bases": {
+  faqs: [
+    {
+      q: "¿Cómo convertir de decimal a binario?",
+      a: "Se divide el número decimal por 2 sucesivamente y se anotan los restos en orden inverso. Nuestra [calculadora de bases](/matematica/conversor-bases) lo hace automáticamente por vos."
+    },
+    {
+      q: "¿Por qué se usa el sistema hexadecimal en programación?",
+      a: "Porque permite representar grandes valores binarios de forma corta y legible. Un byte (8 bits) se representa con solo dos caracteres hexadecimales."
+    }
+  ],
+  relacionados: [
+    { nombre: "Calculadora de Matrices", link: "/matematica/calculadora-matrices" },
+    { nombre: "Combinaciones y Permutaciones", link: "/matematica/combinaciones-permutaciones" }
+  ]
+},
+"notacion-cientifica": {
+  faqs: [
+    {
+      q: "¿Qué es la notación científica?",
+      a: "Es una forma de escribir números muy grandes o muy pequeños de manera abreviada, multiplicando un número entre 1 y 10 por una potencia de 10."
+    },
+    {
+      q: "¿Cuándo el exponente es negativo?",
+      a: "El exponente es negativo cuando el número original es menor a 1 (un decimal pequeño). Esto indica cuántos lugares se movió la coma hacia la derecha."
+    }
+  ],
+  relacionados: [
+    { nombre: "Conversor de Bases", link: "/matematica/conversor-bases" },
+    { nombre: "Calculadora de Matrices", link: "/matematica/calculadora-matrices" }
+  ]
+  },
+"calculadora-matrices": {
+  faqs: [
+    {
+      q: "¿Cómo se suman dos matrices?",
+      a: "Para sumar dos matrices, simplemente sumás los elementos que ocupan la misma posición en cada una. Ambas matrices deben tener la misma cantidad de filas y columnas."
+    },
+    {
+      q: "¿Qué es una matriz de 2x2?",
+      a: "Es una matriz que tiene 2 filas y 2 columnas, sumando un total de 4 elementos. Es la forma más común para aprender álgebra lineal."
+    }
+  ],
+  relacionados: [
+    { nombre: "Combinaciones y Permutaciones", link: "/matematica/combinaciones-permutaciones" },
+    { nombre: "Probabilidad Binomial", link: "/matematica/calculadora-binomial" }
+  ]  
+}
 };
