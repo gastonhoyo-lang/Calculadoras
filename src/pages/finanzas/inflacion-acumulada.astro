@@ -128,21 +128,20 @@ import ResultBox from "../../components/ResultBox.astro";
   </main>
 </Layout>
 
-<script>
+<!-- Código JS solo para el cliente -->
+<script client:load>
   const container = document.getElementById("inputsContainer");
   const addButton = document.getElementById("addInput");
   const output = document.getElementById("resultOutput");
   const step = document.getElementById("calcStep");
 
   const calculateAccumulated = () => {
-    const inputs = document.querySelectorAll(
-      ".inflation-input",
-    ) as NodeListOf<HTMLInputElement>;
+    const inputs = document.querySelectorAll(".inflation-input");
     let totalMultiplier = 1;
     let hasValues = false;
 
     inputs.forEach((input) => {
-      const val = parseFloat(input.value);
+      const val = parseFloat((input as HTMLInputElement).value);
       if (!isNaN(val)) {
         totalMultiplier *= 1 + val / 100;
         hasValues = true;
@@ -168,13 +167,11 @@ import ResultBox from "../../components/ResultBox.astro";
     newInput.innerHTML = `<input type="number" step="any" class="inflation-input w-full p-4 bg-slate-50 rounded-2xl border-2 border-transparent focus:border-red-500 outline-none transition-all font-mono" placeholder="Nuevo %" />`;
     container?.appendChild(newInput);
 
-    // Re-vincular eventos
     newInput
       .querySelector("input")
       ?.addEventListener("input", calculateAccumulated);
   });
 
-  // Evento inicial para los inputs existentes
   document
     .querySelectorAll(".inflation-input")
     .forEach((el) => el.addEventListener("input", calculateAccumulated));
