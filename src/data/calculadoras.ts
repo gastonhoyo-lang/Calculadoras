@@ -538,7 +538,7 @@ export const calculadoras = [
   {
   titulo: "Calculadora de Áreas (m²)",
   descripcion: "Calculá metros cuadrados para construcción, pintura o superficies de forma rápida y precisa.",
-  link: "/matematica/calculadora-de-areas",
+  link: "/matematica/areas",
   categoria: "matematica",
   icon: "📐",
   color: "blue",
