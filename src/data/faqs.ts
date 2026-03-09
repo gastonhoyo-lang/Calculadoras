@@ -2226,5 +2226,34 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
     { nombre: "Combinaciones y Permutaciones", link: "/matematica/combinaciones-permutaciones" },
     { nombre: "Probabilidad Binomial", link: "/matematica/calculadora-binomial" }
   ]  
+},
+"factorial": {
+  faqs: [
+    {
+      q: "¿Qué es un número factorial?",
+      a: "Es el resultado de multiplicar un número entero positivo por todos los números enteros menores que él hasta el 1. Se representa con el símbolo 'n!'."
+    },
+    {
+      q: "¿Por qué el factorial de 0 es 1?",
+      a: "Se define como 1 por convención matemática para que las fórmulas de [Combinaciones y Permutaciones](/matematica/combinaciones-permutaciones) funcionen correctamente sin dar errores de división por cero."
+    },
+    {
+      q: "¿Hasta qué número se puede calcular un factorial?",
+      a: "Los factoriales crecen de forma explosiva. Por ejemplo, 170! es el número más grande que la mayoría de las calculadoras pueden procesar antes de mostrar 'Infinito'. Para manejar estos números gigantes, solemos usar la [Calculadora de Notación Científica](/matematica/notacion-cientifica)."
+    },
+    {
+      q: "¿Para qué sirve el factorial en la vida real?",
+      a: "Se usa principalmente en estadística y probabilidad para calcular cuántas formas diferentes hay de organizar objetos o eventos (permutaciones)."
+    },
+    {
+      q: "¿Cómo se calcula el factorial de números grandes?",
+      a: "Para números que superan la capacidad estándar, se utilizan aproximaciones como la Fórmula de Stirling o se expresan directamente en [potencias de 10](/matematica/notacion-cientifica) para facilitar su lectura."
+    }
+  ],
+  relacionados: [
+    { nombre: "Combinaciones y Permutaciones", link: "/matematica/combinaciones-permutaciones" },
+    { nombre: "Notación Científica", link: "/matematica/notacion-cientifica" },
+    { nombre: "Probabilidad Binomial", link: "/matematica/calculadora-binomial" }
+  ]
 }
 };

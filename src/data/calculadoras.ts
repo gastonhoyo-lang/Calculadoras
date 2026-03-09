@@ -652,4 +652,13 @@ export const calculadoras = [
   color: "indigo",
   keywords: "notacion cientifica, potencias de 10, fisica, quimica, convertir numeros"
 },
+{
+  titulo: "Calculadora de Factorial",
+  descripcion: "Calculá el factorial (n!) de cualquier número y observá el procedimiento paso a paso.",
+  link: "/matematica/factorial",
+  categoria: "matematica",
+  icon: "❗",
+  color: "rose",
+  keywords: "factorial, matematicas, n!, probabilidad, combinatoria, formula factorial"
+},
 ];
