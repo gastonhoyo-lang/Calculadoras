@@ -5,16 +5,17 @@ import ResultBox from "../../components/ResultBox.astro";
 ---
 
 <Layout
-  title="Conversor de Millas a Kilómetros | Convertir mi a km"
-  description="Calculadora online para convertir millas a kilómetros de forma exacta. Utiliza la tasa oficial de 1.60934 km por milla."
+  title="Conversor de Millas a Kilómetros | Precisión en Distancias"
+  description="Calculadora online para convertir millas a kilómetros de forma exacta. Utiliza la tasa oficial de 1.60934 km por milla para tus viajes y proyectos."
 >
   <main class="max-w-4xl mx-auto px-4 py-12">
     <div class="text-center mb-10">
       <h1 class="text-4xl font-black text-slate-900 mb-4 tracking-tight">
-        Conversor de Millas a Kilómetros
+        Millas a Kilómetros
       </h1>
       <p class="text-slate-600 max-w-2xl mx-auto">
-        Convertí unidades del sistema imperial al métrico con precisión decimal.
+        Convertí unidades del sistema imperial al métrico con precisión decimal
+        para navegación, deportes o viajes.
       </p>
     </div>
 
@@ -69,7 +70,7 @@ import ResultBox from "../../components/ResultBox.astro";
           <div class="relative z-10 text-white">
             <span
               class="block text-[10px] font-bold uppercase opacity-80 mb-2 tracking-widest"
-              >Resultado Exacto</span
+              >Resultado Visual</span
             >
             <div
               id="resultDisplay"
@@ -91,22 +92,131 @@ import ResultBox from "../../components/ResultBox.astro";
         </div>
       </div>
     </div>
+
+    <section
+      class="prose prose-slate max-w-none border-t border-slate-100 pt-12 text-slate-700"
+    >
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
+        <div>
+          <h2 class="text-3xl font-black text-slate-900 mb-6 tracking-tight">
+            ¿Por qué la milla es diferente?
+          </h2>
+          <p>
+            La <strong>milla internacional</strong> es una unidad de longitud que
+            se utiliza principalmente en los Estados Unidos y el Reino Unido. Aunque
+            el mundo se mueve mayoritariamente en kilómetros, la milla persiste en
+            la señalización de carreteras y en la industria aeronáutica.
+          </p>
+          <p>
+            Históricamente, la milla romana equivalía a mil pasos (<em
+              >mille passus</em
+            >), pero hoy está estandarizada bajo el acuerdo de 1959.
+          </p>
+        </div>
+
+        <div
+          class="bg-slate-900 p-8 rounded-[2rem] border border-slate-800 text-center flex flex-col justify-center shadow-2xl"
+        >
+          <h4
+            class="text-blue-400 font-bold mb-4 uppercase tracking-widest text-xs"
+          >
+            Conversión Rápida
+          </h4>
+          <div class="space-y-4 font-mono">
+            <p class="text-white">
+              5 mi ≈ <span class="text-blue-400">8.05 km</span>
+            </p>
+            <p class="text-white">
+              10 mi ≈ <span class="text-blue-400">16.09 km</span>
+            </p>
+            <p class="text-white">
+              26.2 mi (Maratón) ≈ <span class="text-blue-400">42.19 km</span>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="text-2xl font-bold text-slate-900 mt-12 mb-8 text-center">
+        Ejemplos de distancias comunes
+      </h3>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+        <div class="p-6 bg-slate-50 rounded-3xl border border-slate-200">
+          <div class="text-3xl mb-4 text-center">🏁</div>
+          <h4
+            class="font-bold text-slate-900 mb-2 text-center text-sm uppercase italic"
+          >
+            Carreras
+          </h4>
+          <p class="text-xs leading-relaxed text-slate-600 text-center">
+            Una carrera de <strong>5 millas</strong> equivale a <strong
+              >8.04 kilómetros</strong
+            >.
+          </p>
+        </div>
+
+        <div class="p-6 bg-slate-50 rounded-3xl border border-slate-200">
+          <div class="text-3xl mb-4 text-center">✈️</div>
+          <h4
+            class="font-bold text-slate-900 mb-2 text-center text-sm uppercase italic"
+          >
+            Viajes
+          </h4>
+          <p class="text-xs leading-relaxed text-slate-600 text-center">
+            La distancia entre Londres y Brighton es de unas <strong
+              >50 millas</strong
+            > (aprox. 80 km).
+          </p>
+        </div>
+
+        <div class="p-6 bg-slate-50 rounded-3xl border border-slate-200">
+          <div class="text-3xl mb-4 text-center">🛰️</div>
+          <h4
+            class="font-bold text-slate-900 mb-2 text-center text-sm uppercase italic"
+          >
+            Espacio
+          </h4>
+          <p class="text-xs leading-relaxed text-slate-600 text-center">
+            La línea de Kármán (el inicio del espacio) está a unas <strong
+              >62 millas</strong
+            > o 100 km.
+          </p>
+        </div>
+      </div>
+
+      <div
+        class="p-8 bg-blue-50 rounded-[2rem] border border-blue-100 flex items-start gap-5 shadow-sm"
+      >
+        <div class="text-3xl bg-white p-3 rounded-2xl shadow-sm">📐</div>
+        <div>
+          <h4 class="text-blue-900 font-bold mb-1">Dato Matemático</h4>
+          <p class="text-sm text-blue-800 leading-relaxed">
+            ¿Sabías que la relación entre millas y kilómetros es muy cercana a
+            la <strong>Sucesión de Fibonacci</strong>? 3 mi son casi 5 km, 5 mi
+            son 8 km, y 8 mi son casi 13 km. ¡Es un truco mental excelente!
+          </p>
+        </div>
+      </div>
+    </section>
   </main>
 </Layout>
 
-<script client:load>
-  const milesInput = document.getElementById("milesInput");
-  const kmInput = document.getElementById("kmInput");
+<script>
+  const milesInput = document.getElementById(
+    "milesInput",
+  ) as HTMLInputElement | null;
+  const kmInput = document.getElementById("kmInput") as HTMLInputElement | null;
   const resultDisplay = document.getElementById("resultDisplay");
   const FACTOR = 1.609344;
 
-  const updateDisplay = (val) => {
+  const updateDisplay = (val: number) => {
     if (resultDisplay) {
       resultDisplay.innerHTML = `${val.toLocaleString(undefined, { maximumFractionDigits: 3 })} <small class="text-2xl opacity-60">km</small>`;
     }
   };
 
   milesInput?.addEventListener("input", () => {
+    if (!kmInput) return;
     const miles = parseFloat(milesInput.value);
     if (!isNaN(miles)) {
       const km = miles * FACTOR;
@@ -119,6 +229,7 @@ import ResultBox from "../../components/ResultBox.astro";
   });
 
   kmInput?.addEventListener("input", () => {
+    if (!milesInput) return;
     const km = parseFloat(kmInput.value);
     if (!isNaN(km)) {
       const miles = km / FACTOR;
