@@ -27,8 +27,9 @@ import ResultBox from "../../components/ResultBox.astro";
           <div>
             <label
               class="block text-[10px] font-bold uppercase text-slate-400 mb-2 ml-1 tracking-widest"
-              >Monto Futuro a Recibir ($)</label
             >
+              Monto Futuro a Recibir ($)
+            </label>
             <input
               type="number"
               id="fvInput"
@@ -41,8 +42,9 @@ import ResultBox from "../../components/ResultBox.astro";
             <div>
               <label
                 class="block text-[10px] font-bold uppercase text-slate-400 mb-2 ml-1 tracking-widest"
-                >Tasa de Descuento (%)</label
               >
+                Tasa de Descuento (%)
+              </label>
               <input
                 type="number"
                 id="rateInput"
@@ -53,8 +55,9 @@ import ResultBox from "../../components/ResultBox.astro";
             <div>
               <label
                 class="block text-[10px] font-bold uppercase text-slate-400 mb-2 ml-1 tracking-widest"
-                >Años</label
               >
+                Años
+              </label>
               <input
                 type="number"
                 id="yearsInput"
@@ -66,21 +69,23 @@ import ResultBox from "../../components/ResultBox.astro";
         </div>
 
         <div
-          class="text-center p-10 bg-teal-600 rounded-[2.5rem] shadow-lg shadow-teal-200 relative overflow-hidden h-full flex flex-col justify-center"
+          id="pvCard"
+          class="text-center p-10 bg-teal-600 rounded-[2.5rem] shadow-lg shadow-teal-200 relative overflow-hidden h-full flex flex-col justify-center min-h-[300px]"
         >
           <div class="relative z-10 text-white">
             <span
               class="block text-[10px] font-bold uppercase opacity-80 mb-2 tracking-widest"
-              >Valor Presente Actual</span
             >
+              Valor Presente Actual
+            </span>
             <div id="pvOutput" class="text-6xl font-black leading-none">$0</div>
 
             <div
-              class="mt-8 p-4 bg-white/20 rounded-2xl backdrop-blur-sm inline-block"
+              class="mt-8 p-4 bg-white/20 rounded-2xl backdrop-blur-sm inline-block border border-white/20"
             >
-              <span id="discountLabel" class="text-sm font-bold"
-                >Descuento aplicado: $0</span
-              >
+              <span id="discountLabel" class="text-sm font-bold">
+                Descuento aplicado: $0
+              </span>
             </div>
           </div>
           <span
@@ -94,42 +99,98 @@ import ResultBox from "../../components/ResultBox.astro";
     <section
       class="prose prose-slate max-w-none border-t border-slate-100 pt-12 text-slate-700"
     >
-      <h2 class="text-3xl font-black text-slate-900 mb-6">
-        El Valor del Tiempo
-      </h2>
-      <p>
-        El Valor Presente es el valor actual de una suma de dinero que se
-        recibirá en el futuro. Se basa en el principio de que <strong
-          >un dólar hoy vale más que un dólar mañana</strong
-        >, porque el dinero de hoy puede invertirse para generar intereses.
-      </p>
-
-      <div
-        class="bg-slate-900 p-8 rounded-3xl text-center my-8 shadow-2xl overflow-x-auto"
-      >
-        <span class="text-teal-400 font-mono text-xl">
-          {`$$VP = \\frac{FV}{(1 + r)^n}$$`}
-        </span>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
-        <div class="p-6 bg-slate-50 rounded-2xl border border-slate-200">
-          <h4 class="font-bold text-slate-900 mb-2 italic">
-            Tasa de Descuento
-          </h4>
-          <p class="text-xs leading-relaxed">
-            Representa el costo de oportunidad o la tasa de retorno que podrías
-            obtener en una inversión alternativa de riesgo similar.
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
+        <div>
+          <h2 class="text-3xl font-black text-slate-900 mb-6 tracking-tight">
+            El Valor del Dinero en el Tiempo
+          </h2>
+          <p>
+            El <strong>Valor Presente (VP)</strong> permite determinar el valor actual
+            de una suma de dinero que se recibirá en el futuro. Es una herramienta
+            vital para inversores, ya que ayuda a decidir si una inversión vale la
+            pena hoy.
+          </p>
+          <p>
+            Se basa en la premisa de que <strong
+              >un dólar hoy vale más que un dólar mañana</strong
+            >, debido a su capacidad de generar rendimientos (intereses) si se
+            invierte de inmediato.
           </p>
         </div>
-        <div class="p-6 bg-slate-50 rounded-2xl border border-slate-200">
-          <h4 class="font-bold text-slate-900 mb-2 italic text-sm">
-            Uso en Negocios
+
+        <div
+          class="bg-slate-900 p-8 rounded-[2rem] shadow-2xl flex flex-col justify-center border border-slate-800 text-center"
+        >
+          <span
+            class="text-teal-400 font-mono text-xs mb-4 block uppercase tracking-widest font-bold"
+            >Fórmula de Descuento</span
+          >
+          <div class="text-white font-mono text-lg text-center leading-relaxed">
+            VP = FV / (1 + r)^n
+            <span class="block mt-2 text-[10px] text-slate-500 italic"
+              >Donde FV es el Monto Futuro, r la tasa y n el tiempo</span
+            >
+          </div>
+        </div>
+      </div>
+
+      <h3 class="text-2xl font-bold text-slate-900 mt-16 mb-8 text-center">
+        Ejemplos de Aplicación Real
+      </h3>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+        <div class="p-6 bg-slate-50 rounded-3xl border border-slate-200">
+          <div class="text-3xl mb-4 text-center">🎁</div>
+          <h4
+            class="font-bold text-slate-900 mb-2 text-sm uppercase italic text-center"
+          >
+            Promesa de Pago
           </h4>
-          <p class="text-xs leading-relaxed">
-            Se usa para calcular el VAN (Valor Actual Neto) de un proyecto. Si
-            el VP de lo que vas a ganar es mayor que lo que tenés que invertir
-            hoy, el negocio es rentable.
+          <p class="text-xs leading-relaxed text-slate-600 text-center">
+            Si alguien te promete <strong>$10.000</strong> en 5 años, con una tasa
+            del 10%, hoy ese dinero vale solo <strong>$6.209</strong>.
+          </p>
+        </div>
+
+        <div class="p-6 bg-slate-50 rounded-3xl border border-slate-200">
+          <div class="text-3xl mb-4 text-center">📈</div>
+          <h4
+            class="font-bold text-slate-900 mb-2 text-sm uppercase italic text-center"
+          >
+            Costo de Oportunidad
+          </h4>
+          <p class="text-xs leading-relaxed text-slate-600 text-center">
+            Ayuda a comparar si es mejor recibir dinero hoy o esperar a una suma
+            mayor en el futuro.
+          </p>
+        </div>
+
+        <div class="p-6 bg-slate-50 rounded-3xl border border-slate-200">
+          <div class="text-3xl mb-4 text-center">🏢</div>
+          <h4
+            class="font-bold text-slate-900 mb-2 text-sm uppercase italic text-center"
+          >
+            Valuación de Activos
+          </h4>
+          <p class="text-xs leading-relaxed text-slate-600 text-center">
+            Es el pilar para valuar bonos o acciones basándose en los dividendos
+            futuros "traídos" a valor de hoy.
+          </p>
+        </div>
+      </div>
+
+      <div
+        class="p-8 bg-teal-50 rounded-[2rem] border border-teal-100 flex items-start gap-5 shadow-sm"
+      >
+        <div class="text-3xl bg-white p-3 rounded-2xl shadow-sm">💡</div>
+        <div>
+          <h4 class="text-teal-900 font-bold mb-1">
+            ¿Qué es la Tasa de Descuento?
+          </h4>
+          <p class="text-sm text-teal-800 leading-relaxed">
+            Es la tasa de interés que utilizas para "descontar" el flujo futuro.
+            Generalmente refleja la inflación esperada o el retorno que
+            obtendrías en una inversión segura (como un bono del tesoro).
           </p>
         </div>
       </div>
@@ -137,26 +198,36 @@ import ResultBox from "../../components/ResultBox.astro";
   </main>
 </Layout>
 
-<script client:load>
-  const fvIn = document.getElementById("fvInput");
-  const rateIn = document.getElementById("rateInput");
-  const yearsIn = document.getElementById("yearsInput");
+<script>
+  const fvIn = document.getElementById("fvInput") as HTMLInputElement | null;
+  const rateIn = document.getElementById(
+    "rateInput",
+  ) as HTMLInputElement | null;
+  const yearsIn = document.getElementById(
+    "yearsInput",
+  ) as HTMLInputElement | null;
   const pvOut = document.getElementById("pvOutput");
   const discOut = document.getElementById("discountLabel");
 
   const calculatePV = () => {
+    if (!fvIn || !rateIn || !yearsIn || !pvOut || !discOut) return;
+
     const FV = parseFloat(fvIn.value) || 0;
     const rate = (parseFloat(rateIn.value) || 0) / 100;
     const years = parseFloat(yearsIn.value) || 0;
 
-    if (FV === 0 || years < 0) return;
+    if (FV === 0 || years < 0) {
+      pvOut.innerText = "$0";
+      discOut.innerText = "Descuento aplicado: $0";
+      return;
+    }
 
+    // Fórmula: VP = FV / (1 + r)^n
     const pv = FV / Math.pow(1 + rate, years);
     const discount = FV - pv;
 
-    if (pvOut) pvOut.innerText = "$" + Math.round(pv).toLocaleString();
-    if (discOut)
-      discOut.innerText = `Descuento aplicado: $${Math.round(discount).toLocaleString()}`;
+    pvOut.innerText = "$" + Math.round(pv).toLocaleString();
+    discOut.innerText = `Descuento aplicado: $${Math.round(discount).toLocaleString()}`;
   };
 
   [fvIn, rateIn, yearsIn].forEach((el) =>
