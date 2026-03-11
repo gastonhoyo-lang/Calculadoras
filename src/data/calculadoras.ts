@@ -1263,4 +1263,13 @@ keywords: "interes simple, calculadora de intereses, formula interes simple, cal
   color: "indigo",
   keywords: "galones a litros, convertir galones, gal a l, calculadora de galones, volumen estadounidense"
 },
+{
+  titulo: "Conversor de Metros a Pies",
+  descripcion: "Transformá metros a pies con precisión decimal instantánea para arquitectura, aviación o uso cotidiano.",
+  link: "/unidades/metros-a-pies",
+  categoria: "unidades",
+  icon: "📏",
+  color: "blue-500",
+  keywords: "metros a pies, m a ft, convertir metros, calculadora de longitud, sistema imperial, pies a metros"
+}
 ];

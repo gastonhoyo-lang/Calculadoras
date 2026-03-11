@@ -4120,5 +4120,34 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
     { "nombre": "Onzas Líquidas a Mililitros", "link": "/unidades/oz-to-ml" },
     { "nombre": "Consumo de Combustible", "link": "/utilidades/combustible" }
   ]
-}
+},
+  "metros-a-pies": {
+    "faqs": [
+      {
+        "q": "¿Cuántos pies tiene exactamente un metro?",
+        "a": "Un metro tiene exactamente 3.280839895 pies. Para cálculos rápidos y cotidianos, se suele utilizar el valor aproximado de 3.28."
+      },
+      {
+        "q": "¿Cómo se escribe la abreviatura de pies?",
+        "a": "La abreviatura estándar es 'ft' (de feet). También es común ver el símbolo de prima (') para indicar pies, como en 5' para 5 pies."
+      },
+      {
+        "q": "¿Es lo mismo un pie que 12 pulgadas?",
+        "a": "Sí, un pie se divide exactamente en 12 pulgadas. Si conviertes metros a pies y obtienes decimales, puedes multiplicar esos decimales por 12 para obtener las pulgadas restantes."
+      },
+      {
+        "q": "¿Por qué los países usan sistemas de medida diferentes?",
+        "a": "La mayoría usa el sistema métrico por su simplicidad decimal. EE.UU. mantiene el sistema imperial por tradición histórica y el alto costo de cambiar toda su infraestructura industrial."
+      },
+      {
+        "q": "¿Qué es más grande, un metro o un pie?",
+        "a": "Un metro es significativamente más grande que un pie. Específicamente, un metro es más de tres veces la longitud de un pie."
+      }
+    ],
+    "relacionados": [
+      { "nombre": "Pies a Metros", "link": "/unidades/pies-to-metros" },
+      { "nombre": "Millas a Kilómetros", "link": "/unidades/miles-to-km" },
+      { "nombre": "Pulgadas a Centímetros", "link": "/unidades/pulgadas-to-cm" }
+    ]
+  }
 };
