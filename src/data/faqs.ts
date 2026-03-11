@@ -4006,4 +4006,33 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
     { "nombre": "Calculadora de Consumo", "link": "/utiles/combustible" }
   ]
 },
+"kg-a-lb": {
+  "faqs": [
+    {
+      "q": "¿Cuántas libras tiene exactamente un kilogramo?",
+      "a": "Un kilogramo equivale exactamente a 2,20462262 libras. Para la mayoría de los usos cotidianos, se simplifica el cálculo multiplicando los kilos por 2,2."
+    },
+    {
+      "q": "¿Cómo convertir kg a libras mentalmente?",
+      "a": "Un truco rápido es multiplicar el peso por 2 y luego sumarle un 10% del resultado. Por ejemplo, para 10kg: 10x2=20; el 10% de 20 es 2; 20+2 = 22 lbs."
+    },
+    {
+      "q": "¿Por qué el límite de equipaje en aviones suele ser de 23 kg o 50 lb?",
+      "a": "Es una estandarización internacional. 23 kg equivalen a 50,7 lbs. Las aerolíneas redondean a 50 libras en países con sistema imperial para facilitar el pesaje."
+    },
+    {
+      "q": "¿Cuál es la diferencia entre masa y peso al convertir estas unidades?",
+      "a": "Técnicamente, el kilogramo es una unidad de masa y la libra puede referirse a fuerza o masa. Sin embargo, en el uso comercial y diario, ambos se tratan como unidades de peso equivalentes."
+    },
+    {
+      "q": "¿Cuánto es una libra en gramos para recetas de cocina?",
+      "a": "Una libra equivale aproximadamente a 453,59 gramos. En cocina, muchos chefs redondean a 450 gramos para simplificar las mediciones de ingredientes secos."
+    }
+  ],
+  "relacionados": [
+    { "nombre": "Libras a Kilogramos", "link": "/unidades/lb-to-kg" },
+    { "nombre": "Pulgadas a Centímetros", "link": "/unidades/pulgadas-a-cm" },
+    { "nombre": "Calculadora de IMC", "link": "/salud/calculadora-imc" }
+  ]
+}
 };

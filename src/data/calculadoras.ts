@@ -1228,4 +1228,13 @@ export const calculadoras = [
   color: "blue",
   keywords: "millas a km, convertir millas, distancia en km, calculadora de distancia, mi a kilometros"
 },
+{
+  titulo: "Kilogramos a Libras",
+  descripcion: "Convertí kilogramos a libras (kg a lb) de forma exacta. Útil para pesaje corporal, pesas de gimnasio y recetas internacionales.",
+  link: "/unidades/kg-to-lb",
+  categoria: "unidades",
+  icon: "⚖️",
+  color: "emerald",
+  keywords: "kg a lb, convertir kilos a libras, peso en libras, kilogramos a libras calculadora, masa imperial"
+},
 ];
