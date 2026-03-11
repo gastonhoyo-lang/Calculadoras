@@ -1308,4 +1308,13 @@ keywords: "interes simple, calculadora de intereses, formula interes simple, cal
   color: "blue-600",
   keywords: "bytes a mb, convertir bytes a megabytes, almacenamiento digital, calculadora informática, miB a bytes"
 },
+{
+  titulo: "Conversor de MB a GB",
+  descripcion: "Calculadora de alta precisión para convertir Megabytes a Gigabytes. Soporta estándares decimales y binarios para profesionales de IT.",
+  link: "/unidades/mb-a-gb",
+  categoria: "unidades",
+  icon: "⚡",
+  color: "indigo-600",
+  keywords: "mb a gb, convertir megabytes a gigabytes, almacenamiento digital, calculadora informática, 1024 mb a gb"
+},
 ];

@@ -4209,4 +4209,91 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
       { "nombre": "Conversor de Hectáreas a Acres", "link": "/unidades/hectareas-a-acres" }
     ]
 },
+  "pies-cuadrados-a-metros-cuadrados": {
+    "faqs": [
+      {
+        "q": "¿Cómo convertir pies cuadrados a metros cuadrados?",
+        "a": "Para convertir pies cuadrados a metros cuadrados de forma manual, debes multiplicar la cantidad de pies cuadrados por 0.092903. También puedes dividir la cantidad de pies cuadrados por 10.764 para obtener el mismo resultado."
+      },
+      {
+        "q": "¿Cuántos metros cuadrados tiene un pie cuadrado?",
+        "a": "Un pie cuadrado equivale exactamente a 0.09290304 metros cuadrados. Es una unidad mucho menor que el metro cuadrado, representando aproximadamente el 9% de este."
+      },
+      {
+        "q": "¿Por qué se usa el pie cuadrado en construcción?",
+        "a": "El pie cuadrado es la unidad de medida estándar en Estados Unidos y otros países con influencia anglosajona. Se utiliza para medir el área habitable de viviendas, locales comerciales y la cobertura de materiales como pisos y pintura."
+      },
+      {
+        "q": "¿Cuál es la fórmula para pasar de ft2 a m2?",
+        "a": "La fórmula matemática es: Área en m2 = Área en ft2 × 0.092903. Esta constante proviene del cálculo de (0.3048 metros)^2, que es la longitud de un pie convertida al sistema métrico."
+      },
+      {
+        "q": "¿Qué es más grande, un metro cuadrado o un pie cuadrado?",
+        "a": "Un metro cuadrado es considerablemente más grande que un pie cuadrado. De hecho, 1 metro cuadrado es igual a aproximadamente 10.76 pies cuadrados."
+      }
+    ],
+    "relacionados": [
+      { "nombre": "Metros Cuadrados a Pies Cuadrados", "link": "/unidades/m2-a-ft2" },
+      { "nombre": "Calculadora de Hectáreas a Metros", "link": "/unidades/hectareas-a-m2" },
+      { "nombre": "Conversor de Acres a Hectáreas", "link": "/unidades/acres-a-hectareas" }
+    ]
+  },
+  "bytes-a-mb": {
+    "faqs": [
+      {
+        "q": "¿Cuántos bytes tiene un MB exactamente?",
+        "a": "Depende del sistema. En el sistema decimal (SI), un Megabyte tiene exactamente 1,000,000 de bytes. En el sistema binario (JEDEC), un Megabyte (o Mebibyte) tiene 1,048,576 bytes."
+      },
+      {
+        "q": "¿Cómo convertir bytes a MB en Excel?",
+        "a": "Para convertir bytes a MB en decimal, divide la celda por 1,000,000. Para convertir a MB binario (MiB), utiliza la fórmula: =A1/(1024^2)."
+      },
+      {
+        "q": "¿Por qué mi disco duro muestra menos espacio en Windows?",
+        "a": "Windows utiliza el sistema binario (1024) para calcular el espacio, mientras que los fabricantes de discos duros utilizan el sistema decimal (1000). Esto crea una diferencia de aproximadamente un 7% en la lectura."
+      },
+      {
+        "q": "¿Cuál es la diferencia entre MB y MiB?",
+        "a": "MB (Megabyte) se refiere oficialmente a 10^6 bytes (decimal), mientras que MiB (Mebibyte) se refiere a 2^20 bytes (binario). Sin embargo, en muchos contextos informáticos se usan indistintamente."
+      },
+      {
+        "q": "¿Qué es más grande, un Megabyte o un Gigabyte?",
+        "a": "Un Gigabyte (GB) es más grande. Un GB contiene 1,000 Megabytes en el sistema decimal."
+      }
+    ],
+    "relacionados": [
+      { "nombre": "Calculadora de Bits a Bytes", "link": "/unidades/bits-a-bytes" },
+      { "nombre": "Conversor de MB a GB", "link": "/unidades/mb-a-gb" },
+      { "nombre": "Calculadora de Velocidad de Descarga", "link": "/tecnologia/velocidad-descarga" }
+    ]
+  },
+  "mb-a-gb": {
+    "faqs": [
+      {
+        "q": "¿Cuántos MB tiene un GB exactamente?",
+        "a": "Depende del estándar utilizado. En el sistema decimal (usado por fabricantes), 1 GB tiene 1,000 MB. En el sistema binario (usado por Windows), 1 GB tiene 1,024 MB."
+      },
+      {
+        "q": "¿Cómo convertir Megabytes a Gigabytes manualmente?",
+        "a": "Para una conversión rápida, divide la cantidad de MB entre 1,000. Para una conversión técnica precisa para software, divide la cantidad entre 1,024."
+      },
+      {
+        "q": "¿Por qué mi computadora muestra menos espacio del que compré?",
+        "a": "Esto ocurre porque los fabricantes de discos venden Gigabytes decimales (base 1,000), pero los sistemas operativos calculan en Gigabytes binarios (base 1,024). Esa diferencia del 7% hace que 500 GB parezcan 465 GB."
+      },
+      {
+        "q": "¿Qué es más grande, 5000 MB o 4 GB?",
+        "a": "5000 MB es más grande. 5000 MB equivalen a 5 GB (decimal) o 4.88 GB (binario), por lo que supera en ambos casos a los 4 GB."
+      },
+      {
+        "q": "¿Cuántos MB son 100 GB?",
+        "a": "En el sistema comercial, 100 GB son 100,000 MB. En el sistema informático binario, 100 GB equivalen a 102,400 MB."
+      }
+    ],
+    "relacionados": [
+      { "nombre": "Conversor de Bytes a MB", "link": "/unidades/bytes-a-mb" },
+      { "nombre": "Calculadora de GB a TB", "link": "/unidades/gb-a-tb" },
+      { "nombre": "Conversor de Bits a Bytes", "link": "/unidades/bits-a-bytes" }
+    ]
+  },
 };
