@@ -1271,5 +1271,14 @@ keywords: "interes simple, calculadora de intereses, formula interes simple, cal
   icon: "📏",
   color: "blue-500",
   keywords: "metros a pies, m a ft, convertir metros, calculadora de longitud, sistema imperial, pies a metros"
-}
+},
+{
+  titulo: "Conversor de Pies a Metros",
+  descripcion: "Transformá pies a metros al instante con nuestra calculadora de alta precisión. Ideal para ingeniería, aviación y arquitectura.",
+  link: "/unidades/pies-a-metros",
+  categoria: "unidades",
+  icon: "📏",
+  color: "blue-500",
+  keywords: "pies a metros, ft a m, convertir pies, calculadora de longitud, sistema imperial, metros a pies"
+},
 ];

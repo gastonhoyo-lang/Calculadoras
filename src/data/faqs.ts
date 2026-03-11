@@ -4149,5 +4149,34 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
       { "nombre": "Millas a Kilómetros", "link": "/unidades/miles-to-km" },
       { "nombre": "Pulgadas a Centímetros", "link": "/unidades/pulgadas-to-cm" }
     ]
+  },
+  "pies-a-metros": {
+    "faqs": [
+      {
+        "q": "¿Cuántos metros tiene un pie exactamente?",
+        "a": "Un pie tiene exactamente 0.3048 metros. Esta es una medida estandarizada internacionalmente desde 1959."
+      },
+      {
+        "q": "¿Cómo convertir pies a metros de forma rápida?",
+        "a": "Para una conversión rápida, multiplica el valor en pies por 0.3. Si necesitas precisión exacta, usa el factor 0.3048."
+      },
+      {
+        "q": "¿Qué es más grande, un metro o un pie?",
+        "a": "El metro es más grande. Un metro equivale a aproximadamente 3.28 pies."
+      },
+      {
+        "q": "¿Por qué se usa el pie en aviación?",
+        "a": "Es una convención histórica liderada por los países anglosajones que se ha mantenido para estandarizar la comunicación entre pilotos y controladores en todo el mundo."
+      },
+      {
+        "q": "¿Cuántos pies hay en un metro cuadrado?",
+        "a": "Un metro cuadrado equivale a aproximadamente 10.764 pies cuadrados, ya que la conversión se realiza al cuadrado (3.2808 x 3.2808)."
+      }
+    ],
+    "relacionados": [
+      { "nombre": "Metros a Pies", "link": "/unidades/metros-a-pies" },
+      { "nombre": "Millas a Kilómetros", "link": "/unidades/millas-a-kilometros" },
+      { "nombre": "Pulgadas a Centímetros", "link": "/unidades/pulgadas-a-centimetros" }
+    ]
   }
 };
