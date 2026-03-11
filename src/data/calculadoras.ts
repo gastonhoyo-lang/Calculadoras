@@ -1370,5 +1370,14 @@ keywords: "interes simple, calculadora de intereses, formula interes simple, cal
   icon: "🔐",
   color: "blue-600",
   keywords: "generador de contraseñas, crear clave segura, password generator, seguridad digital, entropía de claves"
-}
+},
+{
+  titulo: "Contador de Letras y Palabras",
+  descripcion: "Herramienta avanzada para contar caracteres, palabras y párrafos. Incluye estimación de tiempo de lectura y análisis SEO.",
+  link: "/utiles/contador-de-letras",
+  categoria: "utiles",
+  icon: "✍️",
+  color: "indigo-600",
+  keywords: "contador de letras, contador de palabras, contar caracteres, herramienta redaccion, seo copy, tiempo de lectura"
+},
 ];

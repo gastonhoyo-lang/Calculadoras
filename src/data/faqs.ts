@@ -4469,6 +4469,34 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
       { "nombre": "Calculadora de Regla de Tres", "link": "/matematicas/regla-de-tres" },
       { "nombre": "Conversor de Unidades", "link": "/unidades/conversor-velocidad" }
     ]
+  },
+  "contador-de-letras": {
+    "faqs": [
+      {
+        "q": "¿Cuenta los espacios el contador de caracteres?",
+        "a": "Sí, nuestra herramienta ofrece dos métricas: el total de caracteres incluyendo espacios y el recuento de caracteres netos sin espacios para mayor precisión técnica."
+      },
+      {
+        "q": "¿Cuántas palabras debe tener un artículo SEO?",
+        "a": "Para contenido informativo, lo ideal es superar las 700 a 1000 palabras. Sin embargo, lo más importante es responder a la intención de búsqueda del usuario de forma completa."
+      },
+      {
+        "q": "¿Cuál es el límite de caracteres para Twitter (X)?",
+        "a": "El límite estándar es de 280 caracteres, aunque para suscriptores premium este límite es significativamente mayor."
+      },
+      {
+        "q": "¿Cómo se calcula el tiempo de lectura de un texto?",
+        "a": "Se estima basándose en la velocidad promedio de lectura de un adulto, que es de aproximadamente 200 a 250 palabras por minuto."
+      },
+      {
+        "q": "¿El contador detecta saltos de línea como párrafos?",
+        "a": "Sí, el algoritmo identifica los bloques de texto separados por saltos de línea y los contabiliza como párrafos independientes siempre que contengan caracteres."
+      }
+    ],
+    "relacionados": [
+      { "nombre": "Conversor de Velocidad", "link": "/unidades/conversor-velocidad" },
+      { "nombre": "Calculadora de Regla de Tres", "link": "/matematicas/regla-de-tres" },
+      { "nombre": "Generador de Contraseñas", "link": "/utiles/generador-contrasenas" }
+    ]
   }
-
 };
