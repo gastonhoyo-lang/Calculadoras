@@ -4064,7 +4064,7 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
     { "nombre": "Calculadora de Calorías", "link": "/salud/calorias" }
   ]
 },
-"litro-to-gal": {
+"litros-a-galones": {
   "faqs": [
     {
       "q": "¿Cuántos litros hay en un galón estadounidense?",
@@ -4119,7 +4119,7 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
   "relacionados": [
     { "nombre": "Litros a Galones", "link": "/unidades/litros-to-galones" },
     { "nombre": "Onzas Líquidas a Mililitros", "link": "/unidades/oz-to-ml" },
-    { "nombre": "Consumo de Combustible", "link": "/transporte/consumo" }
+    { "nombre": "Consumo de Combustible", "link": "/utilidades/combustible" }
   ]
 }
 };
