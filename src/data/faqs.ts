@@ -4296,4 +4296,63 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
       { "nombre": "Conversor de Bits a Bytes", "link": "/unidades/bits-a-bytes" }
     ]
   },
+  "segundos-a-horas": {
+    "faqs": [
+      {
+        "q": "¿Cómo pasar de segundos a horas?",
+        "a": "Para convertir segundos a horas, debes dividir la cantidad total de segundos por 3,600. Por ejemplo, 7,200 segundos divididos por 3,600 equivalen a 2 horas."
+      },
+      {
+        "q": "¿Cuántos segundos tiene una hora exactamente?",
+        "a": "Una hora tiene exactamente 3,600 segundos. Esto se calcula multiplicando 60 minutos por los 60 segundos que tiene cada minuto."
+      },
+      {
+        "q": "¿Cuál es la fórmula para convertir segundos a horas?",
+        "a": "La fórmula es: Horas = Segundos / 3,600. Es una operación directa basada en el sistema sexagesimal de medición del tiempo."
+      },
+      {
+        "q": "¿Qué significa 0.5 horas en segundos?",
+        "a": "0.5 horas representa media hora. Para convertirlo a segundos, multiplicas 0.5 por 3,600, lo que resulta en 1,800 segundos (o 30 minutos)."
+      },
+      {
+        "q": "¿Cómo convertir segundos a horas, minutos y segundos?",
+        "a": "Primero divides los segundos por 3,600 para obtener las horas. El resto se divide por 60 para obtener los minutos, y el residuo final son los segundos restantes."
+      }
+    ],
+    "relacionados": [
+      { "nombre": "Conversor de Minutos a Horas", "link": "/unidades/minutos-a-horas" },
+      { "nombre": "Calculadora de Horas a Segundos", "link": "/unidades/horas-a-segundos" },
+      { "nombre": "Calculadora de Ritmo de Carrera", "link": "/deporte/ritmo-carrera" }
+    ]
+  },
+  "horas-a-dias": {
+    "faqs": [
+      {
+        "q": "¿Cómo convertir horas a días rápidamente?",
+        "a": "Para convertir horas a días, simplemente divide el número de horas entre 24. Por ejemplo, 48 horas divididas por 24 resultan en exactamente 2 días."
+      },
+      {
+        "q": "¿Cuántos días son 72 horas?",
+        "a": "72 horas equivalen a exactamente 3 días completos (72 / 24 = 3)."
+      },
+      {
+        "q": "¿Qué parte de un día son 12 horas?",
+        "a": "12 horas representan exactamente 0.5 días, es decir, la mitad de un día solar de 24 horas."
+      },
+      {
+        "q": "¿Cómo calcular cuántos días hay en 100 horas?",
+        "a": "Divide 100 entre 24. El resultado es 4.166 días, lo que equivale a 4 días y 4 horas aproximadamente."
+      },
+      {
+        "q": "¿Por qué un día tiene 24 horas?",
+        "a": "Es una convención histórica basada en el sistema sexagesimal de los egipcios y babilonios que dividieron el día y la noche en periodos de 12 horas cada uno."
+      }
+    ],
+    "relacionados": [
+      { "nombre": "Conversor de Minutos a Horas", "link": "/unidades/minutos-a-horas" },
+      { "nombre": "Calculadora de Días a Semanas", "link": "/unidades/dias-a-semanas" },
+      { "nombre": "Conversor de Segundos a Horas", "link": "/unidades/segundos-a-horas" }
+    ]
+  }
+
 };

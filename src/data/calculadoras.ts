@@ -1317,4 +1317,22 @@ keywords: "interes simple, calculadora de intereses, formula interes simple, cal
   color: "indigo-600",
   keywords: "mb a gb, convertir megabytes a gigabytes, almacenamiento digital, calculadora informática, 1024 mb a gb"
 },
+{
+  titulo: "Conversor de Segundos a Horas",
+  descripcion: "Calculadora de alta precisión para convertir segundos a horas. Útil para física, ingeniería y análisis de productividad temporal.",
+  link: "/unidades/segundos-a-horas",
+  categoria: "unidades",
+  icon: "⏱️",
+  color: "orange-600",
+  keywords: "segundos a horas, convertir segundos a h, calculadora de tiempo, pasar s a h, formula tiempo"
+},
+{
+  titulo: "Conversor de Horas a Días",
+  descripcion: "Calculadora técnica para transformar horas en días con precisión decimal. Ideal para logística, uptime de servidores y gestión de proyectos.",
+  link: "/unidades/horas-a-dias",
+  categoria: "unidades",
+  icon: "📅",
+  color: "blue-600",
+  keywords: "horas a dias, convertir h a d, calculadora de tiempo, cuantas horas tiene un dia, pasar horas a dias decimal"
+},
 ];
