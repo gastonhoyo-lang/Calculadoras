@@ -1362,4 +1362,13 @@ keywords: "interes simple, calculadora de intereses, formula interes simple, cal
   color: "emerald-600",
   keywords: "conversor velocidad, kmh a ms, mph a kmh, nudos a kmh, calculadora de rapidez, unidades de velocidad"
 },
+{
+  titulo: "Generador de Contraseñas Seguras",
+  descripcion: "Crea claves robustas y personalizadas con alta entropía para proteger todas tus cuentas online.",
+  link: "/utiles/generador-contrasenas",
+  categoria: "utiles",
+  icon: "🔐",
+  color: "blue-600",
+  keywords: "generador de contraseñas, crear clave segura, password generator, seguridad digital, entropía de claves"
+}
 ];

@@ -4441,4 +4441,34 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
       { "nombre": "Calculadora de Regla de Tres", "link": "/matematicas/regla-de-tres" }
     ]
   },
+  "generador-contrasenas": {
+    "faqs": [
+      {
+        "q": "¿Qué longitud debe tener una contraseña segura?",
+        "a": "Se recomienda una longitud mínima de 12 a 16 caracteres para garantizar una resistencia óptima contra ataques de fuerza bruta modernos."
+      },
+      {
+        "q": "¿Es seguro usar un generador de contraseñas online?",
+        "a": "Sí, siempre que el generador funcione localmente en tu navegador mediante JavaScript y no envíe la contraseña a un servidor externo, como nuestra herramienta."
+      },
+      {
+        "q": "¿Qué caracteres hacen que una contraseña sea más fuerte?",
+        "a": "La combinación de letras mayúsculas, minúsculas, números y símbolos aumenta la entropía, haciendo que el espacio de combinaciones sea exponencialmente más grande."
+      },
+      {
+        "q": "¿Cada cuánto debo cambiar mis contraseñas?",
+        "a": "Si usas contraseñas robustas y únicas para cada servicio, solo es necesario cambiarlas si sospechas que ha habido una brecha de seguridad en la plataforma."
+      },
+      {
+        "q": "¿Por qué no debo usar palabras del diccionario en mis claves?",
+        "a": "Los atacantes usan ataques de diccionario que prueban millones de palabras y variaciones comunes en segundos. La aleatoriedad total es la única defensa real."
+      }
+    ],
+    "relacionados": [
+      { "nombre": "Calculadora de Interés Compuesto", "link": "/finanzas/interes-compuesto" },
+      { "nombre": "Calculadora de Regla de Tres", "link": "/matematicas/regla-de-tres" },
+      { "nombre": "Conversor de Unidades", "link": "/unidades/conversor-velocidad" }
+    ]
+  }
+
 };
