@@ -1246,4 +1246,13 @@ export const calculadoras = [
   color: "emerald",
   keywords: "libras a kg, convertir lb a kilos, peso en kg, libras a kilogramos calculadora, masa sistema métrico"
 },
+{
+  titulo: "Litros a Galones",
+  descripcion: "Convertí litros a galones (l a gal) fácilmente. Ideal para calcular combustible, capacidad de acuarios y volúmenes de pintura.",
+  link: "/unidades/l-to-gal",
+  categoria: "unidades",
+  icon: "🛢️",
+  color: "indigo",
+  keywords: "litros a galones, l a gal, convertir litros, galones estadounidenses a litros, calculadora de volumen"
+},
 ];

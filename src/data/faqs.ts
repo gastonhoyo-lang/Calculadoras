@@ -4063,5 +4063,34 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
     { "nombre": "Gramos a Onzas", "link": "/unidades/gramos-a-onzas" },
     { "nombre": "Calculadora de Calorías", "link": "/salud/calorias" }
   ]
+},
+"l-to-gal": {
+  "faqs": [
+    {
+      "q": "¿Cuántos litros hay en un galón estadounidense?",
+      "a": "Un galón estadounidense (US gal) contiene exactamente 3,78541178 litros. Es el estándar utilizado en EE.UU. y gran parte de América."
+    },
+    {
+      "q": "¿Cuál es la diferencia entre el galón de EE.UU. y el galón imperial?",
+      "a": "El galón estadounidense es más pequeño (3,785 l), mientras que el galón imperial del Reino Unido es más grande, con 4,546 litros."
+    },
+    {
+      "q": "¿Cómo convertir litros a galones mentalmente?",
+      "a": "Para una estimación rápida, podés dividir los litros por 4. Si tenés 20 litros, serán un poco más de 5 galones (aprox 5.28 gal)."
+    },
+    {
+      "q": "¿A qué se refiere 'gal' en las etiquetas de productos?",
+      "a": "Generalmente, en productos importados de América, 'gal' se refiere al galón líquido de EE.UU., equivalente a unos 3.78 litros."
+    },
+    {
+      "q": "¿Cuántos litros tiene un cuarto de galón?",
+      "a": "Un cuarto de galón (quart) equivale a aproximadamente 0,946 litros, lo que es casi un litro completo."
+    }
+  ],
+  "relacionados": [
+    { "nombre": "Galones a Litros", "link": "/unidades/galones-to-litros" },
+    { "nombre": "Mililitros a Onzas Líquidas", "link": "/unidades/ml-to-oz" },
+    { "nombre": "Consumo de Combustible", "link": "/transporte/consumo" }
+  ]
 }
 };
