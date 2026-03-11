@@ -1237,4 +1237,13 @@ export const calculadoras = [
   color: "emerald",
   keywords: "kg a lb, convertir kilos a libras, peso en libras, kilogramos a libras calculadora, masa imperial"
 },
+{
+  titulo: "Libras a Kilogramos",
+  descripcion: "Convertí libras a kilogramos (lb a kg) de forma fácil. Perfecto para etiquetas de alimentos, pesas de gimnasio y comercio.",
+  link: "/unidades/lb-to-kg",
+  categoria: "unidades",
+  icon: "📦",
+  color: "emerald",
+  keywords: "libras a kg, convertir lb a kilos, peso en kg, libras a kilogramos calculadora, masa sistema métrico"
+},
 ];

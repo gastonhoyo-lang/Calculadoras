@@ -4006,7 +4006,7 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
     { "nombre": "Calculadora de Consumo", "link": "/utiles/combustible" }
   ]
 },
-"kg-a-lb": {
+"kg-to-lb": {
   "faqs": [
     {
       "q": "¿Cuántas libras tiene exactamente un kilogramo?",
@@ -4033,6 +4033,35 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
     { "nombre": "Libras a Kilogramos", "link": "/unidades/lb-to-kg" },
     { "nombre": "Pulgadas a Centímetros", "link": "/unidades/pulgadas-a-cm" },
     { "nombre": "Calculadora de IMC", "link": "/salud/calculadora-imc" }
+  ]
+},
+"lb-to-kg": {
+  "faqs": [
+    {
+      "q": "¿Cómo convertir libras a kilogramos rápidamente?",
+      "a": "Para un cálculo mental rápido, dividí el valor por 2 y restale un 10% del resultado. Ejemplo: 100 lb / 2 = 50; 50 - 5 = 45 kg (aprox)."
+    },
+    {
+      "q": "¿Cuántos kg tiene una libra exactamente?",
+      "a": "Una libra equivale exactamente a 0,45359237 kilogramos según el estándar internacional de 1959."
+    },
+    {
+      "q": "¿Qué significa la abreviatura 'lb'?",
+      "a": "La abreviatura proviene de la frase latina 'libra pondo', que significa 'peso en libras'. El término 'libra' ya se usaba en el Imperio Romano."
+    },
+    {
+      "q": "¿A cuántos kg equivalen 100 libras?",
+      "a": "100 libras equivalen a 45,36 kilogramos. Es una medida común para ciertos bultos de carga o peso corporal medio."
+    },
+    {
+      "q": "¿Es lo mismo una libra que una pinta?",
+      "a": "No, la libra mide masa/peso, mientras que la pinta es una unidad de volumen para líquidos. Existe un dicho que dice 'a pint's a pound the world around', pero solo es una aproximación para el agua."
+    }
+  ],
+  "relacionados": [
+    { "nombre": "Kilogramos a Libras", "link": "/unidades/kg-to-lb" },
+    { "nombre": "Gramos a Onzas", "link": "/unidades/gramos-a-onzas" },
+    { "nombre": "Calculadora de Calorías", "link": "/salud/calorias" }
   ]
 }
 };
