@@ -1389,4 +1389,40 @@ keywords: "interes simple, calculadora de intereses, formula interes simple, cal
   color: "emerald-600",
   keywords: "palabras únicas, diversidad léxica, TTR, riqueza de vocabulario, contador de palabras, análisis de texto"
 },
+{
+  titulo: "Calculadora de Fecha Futura",
+  descripcion: "Suma días, semanas, meses y años a cualquier fecha inicial de forma precisa y automática.",
+  link: "/utiles/calculadora-fecha-futura",
+  categoria: "utilidades",
+  icon: "📅",
+  color: "rose-600",
+  keywords: "calculadora de fecha, sumar dias a fecha, calcular fecha destino, fecha futura, dias calendario"
+},
+{
+  titulo: "Calculadora de Fecha Pasada",
+  descripcion: "Resta días, semanas, meses y años a cualquier fecha para descubrir qué día fue en el pasado.",
+  link: "/utiles/calculadora-fecha-pasada",
+  categoria: "utilidades",
+  icon: "⏪",
+  color: "cyan-600",
+  keywords: "calculadora de fecha pasada, restar dias a fecha, que dia fue hace meses, calcular fecha anterior, fecha retroactiva"
+},
+{
+  titulo: "Contador de Días para Navidad",
+  descripcion: "Cuenta regresiva precisa en días, horas, minutos y segundos para la llegada del 25 de diciembre.",
+  link: "/utiles/contador-dias-navidad",
+  categoria: "utilidades",
+  icon: "🎄",
+  color: "red-600",
+  keywords: "dias para navidad, cuanto falta para navidad, cuenta regresiva navidad, contador navideño, cuenta atras 25 diciembre"
+},
+{
+  titulo: "Contador de Días para Cumpleaños",
+  descripcion: "Calcula exactamente cuántos días faltan para tu cumpleaños y qué edad cumplirás.",
+  link: "/utiles/contador-dias-cumpleanos",
+  categoria: "utilidades",
+  icon: "🎂",
+  color: "purple-600",
+  keywords: "dias para mi cumple, cuanto falta para mi cumpleaños, contador de cumpleaños, cuenta regresiva cumpleaños, proxima edad"
+},
 ];

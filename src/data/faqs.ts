@@ -4528,5 +4528,149 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
       { "nombre": "Conversor de Velocidad", "link": "/unidades/conversor-velocidad" }
     ]
   },
-
+  "contador-de-palabras-unicas": {
+    "faqs": [
+      {
+        "q": "¿Qué se considera una palabra única?",
+        "a": "Es un término que aparece en el texto por primera vez. Si la palabra se repite, el contador total aumenta, pero el de palabras únicas se mantiene igual."
+      },
+      {
+        "q": "¿Qué es el Type-Token Ratio (TTR)?",
+        "a": "Es una medida de diversidad léxica que se calcula dividiendo el número de palabras únicas entre el total de palabras de un texto."
+      },
+      {
+        "q": "¿Por qué baja la riqueza léxica en textos largos?",
+        "a": "Porque en el lenguaje natural solemos reutilizar artículos, preposiciones y conectores constantemente, lo que diluye la proporción de términos nuevos."
+      },
+      {
+        "q": "¿Este contador ignora mayúsculas y signos de puntuación?",
+        "a": "Sí, nuestra herramienta normaliza el texto convirtiéndolo a minúsculas y eliminando la puntuación para asegurar que 'Gato' y 'gato' se cuenten como la misma palabra."
+      },
+      {
+        "q": "¿Cuál es un buen porcentaje de riqueza léxica?",
+        "a": "Para un artículo de 1000 palabras, un TTR de entre el 40% y 60% es excelente, indicando un vocabulario variado y profesional."
+      }
+    ],
+    "relacionados": [
+      { "nombre": "Contador de Letras", "link": "/utiles/contador-de-letras" },
+      { "nombre": "Contador de Vocales", "link": "/utiles/contador-de-vocales" },
+      { "nombre": "Generador de Contraseñas", "link": "/utiles/generador-contrasenas" }
+    ]
+  },
+  "calculadora-fecha-futura": {
+    "faqs": [
+      {
+        "q": "¿Cómo calcula los meses la herramienta?",
+        "a": "Nuestra calculadora suma meses calendario exactos. Si sumas un mes al 31 de marzo, el sistema ajustará automáticamente al último día de abril para evitar errores de desbordamiento."
+      },
+      {
+        "q": "¿Tiene en cuenta los años bisiestos?",
+        "a": "Sí, el algoritmo utiliza el motor de fechas nativo de JavaScript que respeta perfectamente los años bisiestos (29 de febrero) y todas las irregularidades del calendario gregoriano."
+      },
+      {
+        "q": "¿Puedo sumar semanas y días al mismo tiempo?",
+        "a": "Totalmente. Puedes combinar cualquier cantidad de días, semanas, meses y años en un solo cálculo para obtener la fecha final acumulada."
+      },
+      {
+        "q": "¿Qué pasa si la fecha final cae en fin de semana?",
+        "a": "La herramienta te mostrará explícitamente el día de la semana resultante (ej: 'sábado') para que puedas decidir si ese día es apto para tus propósitos."
+      },
+      {
+        "q": "¿Sirve para calcular fechas en el pasado?",
+        "a": "Aunque está diseñada para el futuro, puedes introducir valores negativos en los campos para restar tiempo a una fecha inicial."
+      }
+    ],
+    "relacionados": [
+      { "nombre": "Semanas a Meses", "link": "/unidades/semanas-a-meses" },
+      { "nombre": "Horas a Días", "link": "/unidades/horas-a-dias" },
+      { "nombre": "Contador de Días", "link": "/utiles/contador-dias" }
+    ]
+  },
+  "calculadora-fecha-pasada": {
+    "faqs": [
+      {
+        "q": "¿Cómo funciona la resta de meses si el mes destino es más corto?",
+        "a": "El sistema ajusta automáticamente. Si restas un mes al 31 de marzo, el resultado será el 28 o 29 de febrero, dependiendo de si el año es bisiesto, evitando errores de lógica."
+      },
+      {
+        "q": "¿Puedo restar cientos de años con esta herramienta?",
+        "a": "Sí, la calculadora soporta fechas históricas basándose en el estándar ISO y el calendario gregoriano, permitiendo retroceder décadas o siglos con precisión."
+      },
+      {
+        "q": "¿La herramienta incluye el día de la semana resultante?",
+        "a": "Correcto. Además de la fecha numérica, te indicará si ese día fue lunes, martes o cualquier otro día de la semana."
+      },
+      {
+        "q": "¿Es útil para calcular periodos de prescripción legal?",
+        "a": "Es ideal para eso. Permite restar años y meses exactos para verificar si un hecho ocurrió dentro del marco temporal permitido por la ley."
+      },
+      {
+        "q": "¿Puedo sumar tiempo en lugar de restar?",
+        "a": "Aunque está optimizada para restar, si introduces números negativos en los campos de entrada, la calculadora funcionará sumando tiempo hacia el futuro."
+      }
+    ],
+    "relacionados": [
+      { "nombre": "Calculadora de Fecha Futura", "link": "/utiles/calculadora-fecha-futura" },
+      { "nombre": "Contador de Días", "link": "/utiles/contador-dias" },
+      { "nombre": "Horas a Minutos", "link": "/unidades/horas-a-minutos" }
+    ]
+  },
+  "contador-dias-navidad": {
+    "faqs": [
+      {
+        "q": "¿Cuántos días faltan exactamente para Navidad?",
+        "a": "El número de días depende de la fecha actual. Nuestra calculadora realiza el cálculo en tiempo real restando el momento presente de las 00:00 del 25 de diciembre."
+      },
+      {
+        "q": "¿A qué hora empieza la cuenta atrás navideña?",
+        "a": "Técnicamente, la cuenta atrás para la siguiente Navidad comienza inmediatamente después de la medianoche del 25 de diciembre del año anterior."
+      },
+      {
+        "q": "¿La calculadora tiene en cuenta los años bisiestos?",
+        "a": "Sí, al utilizar objetos de fecha nativos del sistema, la calculadora detecta automáticamente si el año actual tiene 366 días, ajustando la cuenta de forma precisa."
+      },
+      {
+        "q": "¿Por qué es útil tener un contador de Navidad?",
+        "a": "Es una herramienta excelente para la planificación financiera (ahorro para regalos), logística (envíos postales) y organización de eventos familiares o laborales."
+      },
+      {
+        "q": "¿Falta lo mismo para Navidad en todo el mundo?",
+        "a": "No exactamente. Debido a los husos horarios, los países en el este (como Australia) llegan a la Navidad varias horas antes que los países en el oeste (como México o Argentina)."
+      }
+    ],
+    "relacionados": [
+      { "nombre": "Calculadora de Fecha Futura", "link": "/utiles/calculadora-fecha-futura" },
+      { "nombre": "Contador de Días Pasados", "link": "/utiles/calculadora-fecha-pasada" },
+      { "nombre": "Calculadora de Interés Compuesto", "link": "/finanzas/interes-compuesto" }
+    ]
+  },
+  "contador-dias-cumpleanos": {
+    "faqs": [
+      {
+        "q": "¿Cómo calcula la herramienta si mi cumpleaños ya pasó este año?",
+        "a": "El algoritmo detecta automáticamente si la fecha actual es posterior a tu cumpleaños del año en curso. De ser así, establece el objetivo para el próximo año calendario."
+      },
+      {
+        "q": "¿Tiene en cuenta los años bisiestos?",
+        "a": "Sí, el sistema utiliza el calendario estándar de JavaScript que considera automáticamente los años bisiestos para darte un recuento exacto de días."
+      },
+      {
+        "q": "¿Para qué sirve saber el día de la semana de mi cumpleaños?",
+        "a": "Es fundamental para la planificación de fiestas. Saber si cae en fin de semana te permite decidir si celebras el mismo día o si debes adelantar el festejo al viernes anterior."
+      },
+      {
+        "q": "¿Puedo usarlo para saber cuánto falta para el cumple de otra persona?",
+        "a": "Por supuesto. Solo debes introducir la fecha de nacimiento de esa persona y la calculadora te dirá cuántos días faltan para su próximo aniversario."
+      },
+      {
+        "q": "¿Qué pasa si nací un 29 de febrero?",
+        "a": "Nuestra herramienta asume la convención legal de celebrar el 28 de febrero en años no bisiestos, asegurando que siempre tengas una fecha de referencia."
+      }
+    ],
+    "relacionados": [
+      { "nombre": "Calculadora de Fecha Futura", "link": "/utiles/calculadora-fecha-futura" },
+      { "nombre": "Contador de Días para Navidad", "link": "/utiles/contador-dias-navidad" },
+      { "nombre": "Calculadora de Edad Exacta", "link": "/utiles/calculadora-edad-exacta" }
+    ]
+  }
 };
