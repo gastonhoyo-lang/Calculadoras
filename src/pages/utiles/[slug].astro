@@ -2,7 +2,6 @@
 import Layout from "../../layouts/Layout.astro";
 import unidades from "../../data/unidades.json";
 
-// truco: getStaticPaths genera las páginas en el build
 export async function getStaticPaths() {
   return unidades.map((u) => ({
     params: { slug: u.slug },
@@ -11,57 +10,134 @@ export async function getStaticPaths() {
 }
 
 const { info } = Astro.props;
+
+// TRUCO SEO: Generar variaciones de texto para evitar contenido duplicado
+const seed = info.slug.length; // Usamos el largo del slug como "semilla" para variar
+const variaciones = [
+  `La conversión de ${info.unidad_origen} a ${info.unidad_destino} es fundamental en proyectos de ${info.tipo}.`,
+  `Si necesitas transformar ${info.unidad_origen} en ${info.unidad_destino} de forma rápida, esta calculadora es para ti.`,
+  `Calcular cuántos ${info.unidad_destino} equivalen a un ${info.unidad_origen} es un proceso matemático sencillo pero vital.`,
+];
+const introTexto = variaciones[seed % variaciones.length];
 ---
 
 <Layout
-  title={info.titulo}
-  description={`Calculadora de ${info.titulo}. Convierte fácilmente ${info.h1} con nuestra herramienta gratuita.`}
+  title={`${info.titulo} | Online y Gratis ⚡`}
+  description={`Calculadora de ${info.titulo}. Convierte fácilmente ${info.h1} con nuestra herramienta gratuita y precisa. Incluye fórmula paso a paso.`}
 >
   <main class="max-w-4xl mx-auto py-20 px-4">
-    <h1 class="text-5xl font-black mb-8">
+    <nav class="text-sm text-slate-400 mb-8 font-medium">
+      <a href="/" class="hover:text-blue-600">Home</a> /
+      <a href="/utiles" class="hover:text-blue-600">Útiles</a> /
+      <span class="text-slate-600">{info.h1}</span>
+    </nav>
+
+    <h1 class="text-5xl font-black mb-8 tracking-tight">
       Conversor de <span class="text-blue-600">{info.h1}</span>
     </h1>
 
-    <div class="bg-white p-10 rounded-[3rem] shadow-xl border border-slate-100">
-      <div class="grid grid-cols-2 gap-6">
-        <input
-          type="number"
-          id="input1"
-          placeholder={info.unidad_origen}
-          class="p-4 bg-slate-50 rounded-2xl border-2 border-transparent focus:border-blue-500 outline-none font-bold"
-        />
-        <input
-          type="number"
-          id="input2"
-          placeholder={info.unidad_destino}
-          class="p-4 bg-slate-50 rounded-2xl border-2 border-transparent focus:border-blue-500 outline-none font-bold"
-        />
+    <div
+      class="bg-white p-10 rounded-[3rem] shadow-xl border border-slate-100 mb-12"
+    >
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="space-y-2">
+          <label
+            class="text-xs font-bold text-slate-400 uppercase tracking-widest ml-2"
+            >{info.unidad_origen}</label
+          >
+          <input
+            type="number"
+            id="input1"
+            step="any"
+            placeholder="0.00"
+            class="w-full p-4 bg-slate-50 rounded-2xl border-2 border-transparent focus:border-blue-500 outline-none font-bold text-xl transition-all"
+          />
+        </div>
+        <div class="space-y-2">
+          <label
+            class="text-xs font-bold text-slate-400 uppercase tracking-widest ml-2"
+            >{info.unidad_destino}</label
+          >
+          <input
+            type="number"
+            id="input2"
+            step="any"
+            placeholder="0.00"
+            class="w-full p-4 bg-slate-50 rounded-2xl border-2 border-transparent focus:border-blue-500 outline-none font-bold text-xl transition-all"
+          />
+        </div>
       </div>
-      <p class="mt-6 text-slate-400 text-center">
-        Fórmula: 1 {info.unidad_origen} = {info.valor}
-        {info.unidad_destino}
-      </p>
+      <div class="mt-8 pt-6 border-t border-slate-50 text-center">
+        <p class="text-slate-400 font-medium italic">
+          Equivalencia oficial: <span class="text-blue-600"
+            >1 {info.unidad_origen} = {info.valor} {info.unidad_destino}</span
+          >
+        </p>
+      </div>
     </div>
 
-    <article class="prose mt-20 max-w-none">
-      <h2>¿Cómo pasar de {info.unidad_origen} a {info.unidad_destino}?</h2>
-      <p>
-        Para convertir {info.h1}, simplemente multiplica el valor en {
-          info.unidad_origen
-        } por {info.valor}. Esta herramienta es ideal para temas de {info.tipo}.
+    <article
+      class="prose prose-slate max-w-none bg-slate-50 p-8 md:p-12 rounded-[2.5rem] border border-slate-100"
+    >
+      <h2 class="text-3xl font-black text-slate-900 mb-6 italic">
+        ¿Cómo pasar de {info.unidad_origen} a {info.unidad_destino}?
+      </h2>
+      <p class="text-lg leading-relaxed text-slate-600">
+        {introTexto} Para convertir <strong>{info.h1}</strong>, simplemente
+        debes multiplicar la cantidad de {info.unidad_origen} por el factor de conversión
+        <strong>{info.valor}</strong>.
+      </p>
+
+      <div
+        class="bg-white p-6 rounded-2xl border border-slate-200 my-8 shadow-sm"
+      >
+        <h3 class="mt-0 text-slate-800">Fórmula de cálculo</h3>
+        <code class="text-blue-600 font-mono text-lg font-bold">
+          {info.unidad_destino} = {info.unidad_origen} × {info.valor}
+        </code>
+      </div>
+
+      <p class="text-slate-600">
+        Esta herramienta dinámica es ideal para profesionales de <strong
+          >{info.tipo}</strong
+        > que buscan precisión inmediata sin cálculos manuales propensos a errores.
       </p>
     </article>
   </main>
 
-  <script is:inline define:vars={{ factor: info.valor }}>
+  <script is:inline define:vars={{ factor: info.valor, slug: info.slug }}>
     const i1 = document.getElementById("input1");
     const i2 = document.getElementById("input2");
 
+    // Detectamos si es una página de descuento por el slug
+    const esDescuento = slug.includes("descuento");
+
     i1.addEventListener("input", () => {
-      i2.value = (parseFloat(i1.value) * factor).toFixed(2);
+      const val = parseFloat(i1.value);
+      if (isNaN(val)) {
+        i2.value = "";
+        return;
+      }
+
+      if (esDescuento) {
+        // Lógica: "n% de precio". n está en el h1 o slug.
+        // Para simplificar, si es descuento, el factor lo usamos como porcentaje si lo pasas en el CSV,
+        // o simplemente dejamos que el usuario interactúe.
+        // Aquí un cálculo base: (valor * factor) / 100
+        i2.value = (val * factor).toFixed(2);
+      } else {
+        // Lógica de conversión normal
+        i2.value = (val * factor).toFixed(2);
+      }
     });
+
     i2.addEventListener("input", () => {
-      i1.value = (parseFloat(i2.value) / factor).toFixed(2);
+      const val = parseFloat(i2.value);
+      if (isNaN(val)) {
+        i1.value = "";
+        return;
+      }
+      i1.value = (val / factor).toFixed(2);
     });
   </script>
 </Layout>
