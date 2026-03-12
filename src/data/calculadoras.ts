@@ -980,7 +980,7 @@ keywords: "interes simple, calculadora de intereses, formula interes simple, cal
 {
   titulo: "Calculadora de Percentil",
   descripcion: "Calcula el percentil de una serie de datos y entiende la posición relativa de cualquier valor en una distribución estadística.",
-  link: "/utiles/calculadora-de-percentil",
+  link: "/utiles/calculadora-percentil",
   categoria: "utiles",
   icon: "📊",
   color: "violet-600",
