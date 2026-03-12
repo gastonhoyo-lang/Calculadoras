@@ -1462,4 +1462,31 @@ keywords: "interes simple, calculadora de intereses, formula interes simple, cal
   color: "blue-600",
   keywords: "flujo de caja, cash flow, calculadora financiera, liquidez negocio, ingresos y egresos, finanzas pymes"
 },
+{
+  titulo: "Calculadora de Rentabilidad de Negocio",
+  descripcion: "Mide la eficacia de tu inversión y calcula el ROI y margen de utilidad de tus proyectos o empresa.",
+  link: "/utiles/calculadora-rentabilidad-negocio",
+  categoria: "utiles",
+  icon: "📈",
+  color: "emerald-600",
+  keywords: "rentabilidad negocio, calculadora ROI, retorno de inversion, margen de utilidad, finanzas emprendedores, calcular beneficios"
+},
+{
+  titulo: "Calculadora de Inversión con Aportes Periódicos",
+  descripcion: "Proyecta el crecimiento de tus ahorros sumando un capital inicial y contribuciones mensuales bajo el poder del interés compuesto.",
+  link: "/utiles/calculadora-inversion-aportes-periodicos",
+  categoria: "utiles",
+  icon: "📈",
+  color: "indigo-600",
+  keywords: "inversion periodica, interes compuesto, ahorro mensual, plan de retiro, libertad financiera, calcular inversion futuro"
+},
+{
+  titulo: "Calculadora de Markup",
+  descripcion: "Determina el precio de venta ideal de tus productos aplicando un porcentaje de beneficio sobre el costo.",
+  link: "/utiles/calculadora-de-markup",
+  categoria: "utiles",
+  icon: "🏷️",
+  color: "orange-600",
+  keywords: "markup, calculadora de precios, rentabilidad, retail, costo de producto, margen de ganancia, fijacion de precios"
+},
 ];

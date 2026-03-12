@@ -4801,4 +4801,120 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
       { "nombre": "Regla de Tres Simple", "link": "/matematica/regla-de-tres" }
     ]
   },
+  "calculadora-flujo-de-caja": {
+    "faqs": [
+      {
+        "q": "¿Qué es el flujo de caja positivo?",
+        "a": "Es cuando los ingresos de efectivo de una empresa superan a sus egresos en un periodo dado. Indica que el negocio tiene capacidad de ahorro y reinversión."
+      },
+      {
+        "q": "¿Cuál es la diferencia entre flujo de caja y utilidad?",
+        "a": "La utilidad es un cálculo contable (ingresos menos costos), mientras que el flujo de caja es el movimiento real de dinero físico o bancario."
+      },
+      {
+        "q": "¿Por qué mi empresa tiene ganancias pero no tiene dinero?",
+        "a": "Esto suele ocurrir por tener muchas ventas a crédito no cobradas o por haber realizado grandes inversiones en activos fijos que consumieron el efectivo."
+      },
+      {
+        "q": "¿Cómo se calcula el flujo de caja operativo?",
+        "a": "Se calcula sumando a la utilidad neta los gastos que no implican salida de dinero (como la depreciación) y ajustando por los cambios en el capital de trabajo."
+      },
+      {
+        "q": "¿Qué indica un flujo de caja negativo constante?",
+        "a": "Es una señal de alerta grave que indica que el negocio no es autosuficiente y requiere financiación externa constante para sobrevivir."
+      }
+    ],
+    "relacionados": [
+      { "nombre": "Calculadora de Margen de Ganancia", "link": "/negocios/margen" },
+      { "nombre": "Punto de Equilibrio", "link": "/negocios/punto-equilibrio" },
+      { "nombre": "Retorno de Inversión (ROI)", "link": "/finanzas/rendimiento-inversion" }
+    ]
+  },
+  "calculadora-rentabilidad-negocio": {
+    "faqs": [
+      {
+        "q": "¿Qué es un buen porcentaje de rentabilidad para un negocio?",
+        "a": "Depende del sector. En servicios o productos digitales, un 20-30% es excelente. En retail o alimentación, márgenes del 5-10% son comunes debido a los altos costos operativos."
+      },
+      {
+        "q": "¿Cómo puedo aumentar la rentabilidad sin subir precios?",
+        "a": "La clave está en la eficiencia operativa: reducir desperdicios, negociar mejores precios con proveedores o automatizar tareas para bajar el costo de mano de obra."
+      },
+      {
+        "q": "¿Qué diferencia hay entre rentabilidad bruta y neta?",
+        "a": "La bruta solo considera el costo de producción. La neta resta todos los gastos adicionales como impuestos, intereses, alquileres y marketing."
+      },
+      {
+        "q": "¿Qué significa un ROI negativo?",
+        "a": "Significa que has perdido dinero. Tus ingresos totales no llegaron a cubrir la inversión inicial, resultando en una pérdida neta de capital."
+      },
+      {
+        "q": "¿Por qué es importante calcular la rentabilidad mensualmente?",
+        "a": "Porque permite detectar fugas de dinero a tiempo y ajustar la estrategia antes de que una baja rentabilidad comprometa la liquidez del negocio."
+      }
+    ],
+    "relacionados": [
+      { "nombre": "Calculadora de Margen de Ganancia", "link": "/negocios/margen" },
+      { "nombre": "Calculadora de Punto de Equilibrio", "link": "/negocios/punto-equilibrio" },
+      { "nombre": "Calculadora de Interés Compuesto", "link": "/finanzas/interes-compuesto" }
+    ]
+  },
+  "calculadora-inversion-aportes-periodicos": {
+    "faqs": [
+      {
+        "q": "¿Qué es mejor, invertir mucho de golpe o poco cada mes?",
+        "a": "Lo ideal es invertir lo más pronto posible. Sin embargo, los aportes periódicos ayudan a reducir el riesgo de mercado y generan disciplina de ahorro a largo plazo."
+      },
+      {
+        "q": "¿Cómo afecta la inflación a mi inversión periódica?",
+        "a": "La inflación reduce el poder de compra futuro. Por eso, es recomendable que tus aportes mensuales crezcan anualmente al menos al mismo ritmo que la inflación."
+      },
+      {
+        "q": "¿Cuál es una tasa de interés realista para mis cálculos?",
+        "a": "Históricamente, el mercado de acciones (como el S&P 500) ha rendido cerca de un 7% a 10% anual promedio, pero esto varía según el riesgo y el tipo de activo."
+      },
+      {
+        "q": "¿Puedo retirar mi dinero en cualquier momento?",
+        "a": "Depende del vehículo de inversión que elijas. Los fondos mutuos o acciones son líquidos, pero otros productos como plazos fijos o planes de pensiones pueden tener penalizaciones."
+      },
+      {
+        "q": "¿Qué pasa si dejo de aportar un mes?",
+        "a": "Tu capital acumulado seguirá generando intereses, pero el valor final será menor al proyectado. Lo importante es retomar la constancia lo antes posible."
+      }
+    ],
+    "relacionados": [
+      { "nombre": "Calculadora de Interés Compuesto", "link": "/finanzas/interes-compuesto" },
+      { "nombre": "Calculadora de Inflación", "link": "/finanzas/inflacion" },
+      { "nombre": "Calculadora de Retorno de Inversión (ROI)", "link": "/seo/roi-marketing" }
+    ]
+  },
+  "calculadora-de-markup": {
+    "faqs": [
+      {
+        "q": "¿Qué es un markup saludable para un negocio?",
+        "a": "Depende de la industria. En ropa suele ser del 100% al 150%, en comida (restaurantes) del 300%, y en electrónicos suele ser más bajo, entre un 20% y 50%."
+      },
+      {
+        "q": "¿Es lo mismo markup que margen de beneficio?",
+        "a": "No. El markup se aplica sobre el costo, mientras que el margen es el porcentaje del precio final que queda como ganancia."
+      },
+      {
+        "q": "¿Cómo calcular el precio de venta si tengo el markup?",
+        "a": "Multiplica el costo por (1 + el porcentaje de markup dividido por 100). Por ejemplo, para un 50% de markup, multiplica el costo por 1.5."
+      },
+      {
+        "q": "¿Por qué los restaurantes usan un markup tan alto?",
+        "a": "Porque deben cubrir costos fijos muy elevados, como personal de servicio, desperdicio de comida (merma), alquiler de local comercial y servicios."
+      },
+      {
+        "q": "¿Puedo tener un markup negativo?",
+        "a": "Técnicamente sí, si vendes por debajo de tu costo (estrategia de líder en pérdida), pero esto resultará en una pérdida financiera inmediata por cada venta."
+      }
+    ],
+    "relacionados": [
+      { "nombre": "Calculadora de Margen de Ganancia", "link": "/negocios/margen" },
+      { "nombre": "Calculadora de Punto de Equilibrio", "link": "/negocios/punto-equilibrio" },
+      { "nombre": "Calculadora de IVA", "link": "/finanzas/iva" }
+    ]
+  },
 };
