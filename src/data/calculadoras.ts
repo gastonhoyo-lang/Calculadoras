@@ -1426,5 +1426,14 @@ keywords: "interes simple, calculadora de intereses, formula interes simple, cal
   icon: "⏱️",
   color: "emerald-600",
   keywords: "tiempo de lectura, estimated reading time, calcular lectura blog, velocidad de lectura, optimizacion seo, redaccion de contenidos"
-}
+},
+{
+  titulo: "Calculadora de Diferencia entre Fechas",
+  descripcion: "Calcula con precisión el tiempo transcurrido entre dos fechas en años, meses y días totales.",
+  link: "/utiles/diferencia-entre-fechas",
+  categoria: "utiles",
+  icon: "📅",
+  color: "blue-600",
+  keywords: "diferencia entre fechas, contar dias entre fechas, tiempo transcurrido, calculadora de tiempo, años meses y dias, antiguedad laboral"
+},
 ];

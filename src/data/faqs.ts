@@ -4731,4 +4731,33 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
       { "nombre": "Densidad de Keywords", "link": "/seo/densidad-keywords" }
     ]
   },
+  "diferencia-entre-fechas": {
+    "faqs": [
+      {
+        "q": "¿Cómo se calcula el tiempo transcurrido entre dos fechas?",
+        "a": "Se obtiene restando el valor numérico (timestamp) de la fecha inicial a la fecha final y convirtiendo el resultado de milisegundos a días, meses y años."
+      },
+      {
+        "q": "¿La calculadora tiene en cuenta los años bisiestos?",
+        "a": "Sí, nuestra herramienta utiliza el estándar ISO de fechas que contempla automáticamente los años bisiestos y la duración variable de los meses."
+      },
+      {
+        "q": "¿Cuántos días hay en un año promedio?",
+        "a": "Un año civil tiene 365 días, mientras que un año bisiesto tiene 366. Para cálculos de larga duración, se suele usar la media de 365.25 días."
+      },
+      {
+        "q": "¿Qué es la diferencia de días naturales?",
+        "a": "Es el conteo total de días en el calendario, incluyendo fines de semana y días festivos, sin ningún tipo de exclusión."
+      },
+      {
+        "q": "¿Cómo calcular la antigüedad laboral con fechas?",
+        "a": "Debes restar la fecha de ingreso de la fecha actual o de cese. El resultado te dará los años, meses y días de servicio exactos."
+      }
+    ],
+    "relacionados": [
+      { "nombre": "Calculadora de Edad", "link": "/utiles/calculadora-de-edad" },
+      { "nombre": "Contador de Días", "link": "/utiles/contador-de-dias" },
+      { "nombre": "Calculadora de Aguinaldo", "link": "/finanzas/aguinaldo" }
+    ]
+  }
 };
