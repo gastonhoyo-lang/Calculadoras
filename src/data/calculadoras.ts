@@ -681,15 +681,6 @@ keywords: "interes simple, calculadora de intereses, formula interes simple, cal
   keywords: "contador de caracteres sin espacios, caracteres netos, recuento de letras, contar letras online"
 },
 {
-  titulo: "Densidad de Keywords",
-  descripcion: "Analizá la frecuencia de palabras de tus textos para evitar penalizaciones y mejorar la relevancia semántica.",
-  link: "/seo/densidad-keywords",
-  categoria: "seo",
-  icon: "📊",
-  color: "amber",
-  keywords: "densidad de palabras clave, keyword density, analizador de texto, seo copy, frecuencia de palabras"
-},
-{
   titulo: "Tiempo de Lectura",
   descripcion: "Calculá cuánto tiempo le tomará a tus usuarios leer tu contenido para mejorar la experiencia de usuario.",
   link: "/seo/tiempo-lectura",

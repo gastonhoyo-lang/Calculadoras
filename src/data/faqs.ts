@@ -2193,22 +2193,35 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
     { nombre: "Calculadora de Matrices", link: "/matematica/calculadora-matrices" },
     { nombre: "Combinaciones y Permutaciones", link: "/matematica/combinaciones-permutaciones" }
   ]
-},
-"notacion-cientifica": {
-  faqs: [
-    {
-      q: "¿Qué es la notación científica?",
-      a: "Es una forma de escribir números muy grandes o muy pequeños de manera abreviada, multiplicando un número entre 1 y 10 por una potencia de 10."
-    },
-    {
-      q: "¿Cuándo el exponente es negativo?",
-      a: "El exponente es negativo cuando el número original es menor a 1 (un decimal pequeño). Esto indica cuántos lugares se movió la coma hacia la derecha."
-    }
-  ],
-  relacionados: [
-    { nombre: "Conversor de Bases", link: "/matematica/conversor-bases" },
-    { nombre: "Calculadora de Matrices", link: "/matematica/calculadora-matrices" }
-  ]
+   },
+  "calculadora-notacion-cientifica": {
+    "faqs": [
+      {
+        "q": "¿Qué es un número en notación científica?",
+        "a": "Es una forma de escribir números muy grandes o pequeños multiplicando un número entre 1 y 10 por una potencia de base 10."
+      },
+      {
+        "q": "¿Para qué sirve la notación científica?",
+        "a": "Sirve para simplificar la escritura, lectura y cálculo de cifras con muchos ceros, evitando errores humanos y facilitando la computación."
+      },
+      {
+        "q": "¿Cuándo el exponente es negativo en la notación científica?",
+        "a": "El exponente es negativo cuando el número decimal original es menor a 1 (por ejemplo, 0,005), indicando que la coma se movió a la derecha."
+      },
+      {
+        "q": "¿Cómo convertir de notación científica a decimal?",
+        "a": "Si el exponente es positivo, mueve la coma a la derecha tantos lugares como indique el número. Si es negativo, muévela a la izquierda."
+      },
+      {
+        "q": "¿Qué es la mantisa?",
+        "a": "La mantisa es la parte numérica de la notación científica que debe ser mayor o igual a 1 y menor a 10 para cumplir con el formato estándar."
+      }
+    ],
+    "relacionados": [
+      { "nombre": "Calculadora de Regla de Tres", "link": "/utiles/regla-de-tres" },
+      { "nombre": " Calculadora de Ecuaciones", "link": "/matematica/ecuaciones-" },
+      { "nombre": "Calculadora de Porcentajes", "link": "/finanzas/porcentaje" }
+    ]
   },
 "calculadora-matrices": {
   faqs: [
