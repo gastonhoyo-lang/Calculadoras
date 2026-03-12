@@ -3258,7 +3258,7 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
     ],
     "relacionados": [
       { "nombre": "Calculadora de IMC", "link": "/salud/imc" },
-      { "nombre": "Desviación Estándar", "link": "/utiles/desviacion-estandar" },
+      { "nombre": "Desviación Estándar", "link": "/utiles/calculadora-desviacion-estandar" },
       { "nombre": "Calculadora de Mediana", "link": "/matematica/promedio-mediana-moda" }
     ]
 },

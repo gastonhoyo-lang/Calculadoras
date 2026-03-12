@@ -1436,4 +1436,13 @@ keywords: "interes simple, calculadora de intereses, formula interes simple, cal
   color: "indigo-600",
   keywords: "desviacion estandar, calcular varianza, dispersion estadistica, desviacion muestral, desviacion poblacional, estadistica descriptiva"
 },
+{
+  titulo: "Calculadora de Proporciones",
+  descripcion: "Resuelve igualdades matemáticas y halla el valor faltante en cualquier relación de proporcionalidad de forma sencilla.",
+  link: "/utiles/calculadora-de-proporciones",
+  categoria: "utiles",
+  icon: "⚖️",
+  color: "cyan-600",
+  keywords: "proporciones, calcular proporcion, igualdad de razones, regla de tres, matematicas, hallar x, escala"
+},
 ];
