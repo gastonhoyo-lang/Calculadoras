@@ -2194,7 +2194,7 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
     { nombre: "Combinaciones y Permutaciones", link: "/matematica/combinaciones-permutaciones" }
   ]
    },
-  "calculadora-notacion-cientifica": {
+  "notacion-cientifica": {
     "faqs": [
       {
         "q": "¿Qué es un número en notación científica?",
