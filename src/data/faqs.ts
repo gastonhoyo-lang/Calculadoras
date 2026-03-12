@@ -2299,7 +2299,7 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
     { nombre: "Calculadora de Matrices", link: "/matematica/calculadora-matrices" }
   ]
 },
-"generador-slugs": {
+"generador-slug": {
   faqs: [
     {
       q: "¿Por qué no deben usarse tildes en las URLs?",
@@ -2354,36 +2354,7 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
   relacionados: [
     { nombre: "Contador de Caracteres SEO", link: "/seo/contador-caracteres" },
     { nombre: "Contador de Palabras SEO", link: "/seo/contador-palabras" },
-    { nombre: "Generador de Slugs", link: "/seo/generador-slugs" }
-  ]
-},
-"densidad-keywords": {
-  faqs: [
-    {
-      q: "¿Cuál es la densidad de palabras clave ideal?",
-      a: "No existe una cifra mágica, pero la mayoría de los expertos recomiendan entre un 0.5% y un 2%. Lo más importante es que el texto fluya de forma natural."
-    },
-    {
-      q: "¿Qué es el Keyword Stuffing?",
-      a: "Es la práctica de repetir excesivamente una palabra clave con la intención de manipular los rankings. Google penaliza esta técnica por considerar que ofrece una mala experiencia al usuario."
-    },
-    {
-      q: "¿Cómo puedo reducir la densidad sin perder relevancia?",
-      a: "Usá sinónimos y palabras relacionadas semánticamente (LSI). Esto ayuda a Google a entender el contexto sin necesidad de repetir la misma keyword exacta."
-    },
-    {
-      q: "¿Esta herramienta analiza frases o solo palabras sueltas?",
-      a: "Nuestra herramienta analiza palabras individuales filtrando las 'stop words' para que te enfoques en los términos con mayor carga semántica."
-    },
-    {
-      q: "¿La densidad de keywords afecta al SEO en 2026?",
-      a: "Sí, pero no como antes. Hoy Google prioriza la intención de búsqueda. Usá nuestro [Generador de Slugs](/seo/generador-slugs) para complementar la optimización de tu página."
-    }
-  ],
-  relacionados: [
-    { nombre: "Contador de Palabras SEO", link: "/seo/contador-palabras" },
-    { nombre: "Generador de Slugs SEO", link: "/seo/generador-slugs" },
-    { nombre: "Contador de Caracteres SEO", link: "/seo/contador-caracteres" }
+    { nombre: "Generador de Slugs", link: "/seo/generador-slug" }
   ]
 },
 "tiempo-lectura": {
@@ -2411,8 +2382,8 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
   ],
   relacionados: [
     { nombre: "Contador de Palabras SEO", link: "/seo/contador-palabras" },
-    { nombre: "Generador de Slugs SEO", link: "/seo/generador-slugs" },
-    { nombre: "Densidad de Keywords", link: "/seo/densidad-keywords" }
+    { nombre: "Generador de Slugs SEO", link: "/seo/generador-slug" },
+    { nombre: "Densidad de Keywords", link: "/seo/contador-keywords" }
   ]
 },
 "calculadora-ctr": {
@@ -2441,7 +2412,7 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
   relacionados: [
     { nombre: "Contador de Caracteres SEO", link: "/seo/contador-caracteres" },
     { nombre: "Contador de Palabras SEO", link: "/seo/contador-palabras" },
-    { nombre: "Generador de Slugs SEO", link: "/seo/generador-slugs" }
+    { nombre: "Generador de Slugs SEO", link: "/seo/generador-slug" }
   ]
 },
 "tasa-conversion": {
@@ -2469,7 +2440,7 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
   ],
   relacionados: [
     { nombre: "Calculadora de CTR", link: "/seo/calculadora-ctr" },
-    { nombre: "Densidad de Keywords", link: "/seo/densidad-keywords" },
+    { nombre: "Densidad de Keywords", link: "/seo/contador-keywords" },
     { nombre: "Contador de Caracteres SEO", link: "/seo/contador-caracteres" }
   ]
 },
@@ -2499,7 +2470,7 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
   relacionados: [
     { nombre: "Tasa de Conversión", link: "/seo/tasa-conversion" },
     { nombre: "Calculadora de CTR", link: "/seo/calculadora-ctr" },
-    { nombre: "Generador de Slugs SEO", link: "/seo/generador-slugs" }
+    { nombre: "Generador de Slugs SEO", link: "/seo/generador-slug" }
   ]
 },
 "calculadora-cpc": {
@@ -2557,7 +2528,7 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
   relacionados: [
     { nombre: "Calculadora de CPC", link: "/seo/calculadora-cpc" },
     { nombre: "Calculadora de CTR", link: "/seo/calculadora-ctr" },
-    { nombre: "Generador de Slugs SEO", link: "/seo/generador-slugs" }
+    { nombre: "Generador de Slugs SEO", link: "/seo/generador-slug" }
   ]
 },
 "engagement-rate": {
@@ -2586,7 +2557,7 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
   relacionados: [
     { nombre: "Tasa de Conversión", link: "/seo/tasa-conversion" },
     { nombre: "ROI Marketing", link: "/seo/roi-marketing" },
-    { nombre: "Densidad de Keywords", link: "/seo/densidad-keywords" }
+    { nombre: "Densidad de Keywords", link: "/seo/contador-keywords" }
   ]
 },
 "calculadora-alcance": {
@@ -2614,7 +2585,7 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
   ],
   relacionados: [
     { nombre: "Engagement Rate", link: "/seo/engagement-rate" },
-    { nombre: "Densidad de Keywords", link: "/seo/densidad-keywords" },
+    { nombre: "Densidad de Keywords", link: "/seo/contador-keywords" },
     { nombre: "ROI Marketing", link: "/seo/roi-marketing" }
   ]
 },
@@ -2730,7 +2701,7 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
   ],
   relacionados: [
     { nombre: "Calculadora de CTR", link: "/seo/calculadora-ctr" },
-    { nombre: "Generador de Slugs", link: "/seo/generador-slugs" },
+    { nombre: "Generador de Slugs", link: "/seo/generador-slug" },
     { nombre: "Contador de Palabras SEO", link: "/seo/contador-palabras" }
   ]
 },
@@ -2760,7 +2731,7 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
   relacionados: [
     { nombre: "Analizador de Títulos", link: "/seo/analizador-titulos" },
     { nombre: "Calculadora de CTR", link: "/seo/calculadora-ctr" },
-    { nombre: "Generador de Slugs", link: "/seo/generador-slugs" }
+    { nombre: "Generador de Slugs", link: "/seo/generador-slug" }
   ]
 },
 "contador-keywords": {
@@ -2847,7 +2818,7 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
   relacionados: [
     { nombre: "Analizador de Títulos SEO", link: "/seo/analizador-titulos" },
     { nombre: "Longitud de Meta Description", link: "/seo/longitud-meta-description" },
-    { nombre: "Generador de Slugs", link: "/seo/generador-slugs" }
+    { nombre: "Generador de Slugs", link: "/seo/generador-slug" }
   ]
 },
 "ratio-texto-html": {
@@ -2904,7 +2875,7 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
   ],
   relacionados: [
     { nombre: "Contador de Keywords", link: "/seo/contador-keywords" },
-    { nombre: "Generador de Slugs", link: "/seo/generador-slugs" },
+    { nombre: "Generador de Slugs", link: "/seo/generador-slug" },
     { nombre: "Analizador de Títulos", link: "/seo/analizador-titulos" }
   ]
 },
@@ -2933,7 +2904,7 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
   ],
   relacionados: [
     { nombre: "Densidad de Enlaces", link: "/seo/densidad-enlaces-internos" },
-    { nombre: "Generador de Slugs", link: "/seo/generador-slugs" },
+    { nombre: "Generador de Slugs", link: "/seo/generador-slug" },
     { nombre: "Analizador de Títulos", link: "/seo/analizador-titulos" }
   ]
 },
@@ -4728,7 +4699,7 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
     "relacionados": [
       { "nombre": "Contador de Palabras", "link": "/utiles/contador-de-letras" },
       { "nombre": "Contador de Palabras Únicas", "link": "/utiles/contador-de-palabras-unicas" },
-      { "nombre": "Densidad de Keywords", "link": "/seo/densidad-keywords" }
+      { "nombre": "Densidad de Keywords", "link": "/seo/contador-keywords" }
     ]
   },
   "diferencia-entre-fechas": {
