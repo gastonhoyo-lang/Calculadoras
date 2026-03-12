@@ -5000,9 +5000,153 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
     ],
     "relacionados": [
       { "nombre": "Calculadora de Punto de Equilibrio", "link": "/negocios/punto-equilibrio" },
-      { "nombre": "Calculadora de Margen Bruto", "link": "/utiles/margen-bruto" },
+      { "nombre": "Calculadora de Margen Bruto", "link": "/utiles/calculadora-margen-bruto" },
       { "nombre": "Calculadora de Margen de Ganancia", "link": "/negocios/margen" }
     ]
   },
-
+  "calculadora-ticket-promedio": {
+    "faqs": [
+      {
+        "q": "¿Qué es el ticket promedio en ventas?",
+        "a": "Es un indicador que muestra el valor medio de cada transacción realizada en un negocio, obtenido al dividir la facturación total entre el número de pedidos."
+      },
+      {
+        "q": "¿Cómo se aumenta el ticket promedio de un ecommerce?",
+        "a": "Las formas más efectivas son ofrecer envío gratuito a partir de un monto mínimo, crear paquetes de productos y sugerir artículos complementarios antes de finalizar la compra."
+      },
+      {
+        "q": "¿Cuál es la diferencia entre ticket promedio y margen de ganancia?",
+        "a": "El ticket promedio se refiere al monto bruto de la venta, mientras que el margen de ganancia es el porcentaje de ese monto que queda como utilidad tras restar costos."
+      },
+      {
+        "q": "¿Por qué es importante medir el AOV?",
+        "a": "Es vital porque permite aumentar los ingresos sin necesidad de gastar más dinero en adquirir nuevos clientes, optimizando la rentabilidad de la base actual."
+      },
+      {
+        "q": "¿Qué significa un ticket promedio bajo?",
+        "a": "Puede indicar que los clientes solo compran productos económicos, que no estás ofreciendo complementos suficientes o que tus precios están por debajo del mercado."
+      }
+    ],
+    "relacionados": [
+      { "nombre": "Calculadora de Margen de Ganancia", "link": "/negocios/margen" },
+      { "nombre": "Calculadora de Costos Fijos y Variables", "link": "/utiles/calculadora-costos-fijos-variables" },
+      { "nombre": "Calculadora de Markup", "link": "/utiles/calculadora-de-markup" }
+    ]
+  },
+  "calculadora-ltv": {
+    "faqs": [
+      {
+        "q": "¿Qué es el LTV de un cliente?",
+        "a": "El Lifetime Value (LTV) es el valor económico total que un cliente aporta a un negocio durante todo el tiempo que mantiene su relación con la marca."
+      },
+      {
+        "q": "¿Por qué es importante el LTV en marketing?",
+        "a": "Es crucial porque determina cuánto dinero puedes invertir en captar a un cliente (CAC) manteniendo la rentabilidad a largo plazo."
+      },
+      {
+        "q": "¿Cómo se calcula el LTV neto?",
+        "a": "Se calcula multiplicando el ticket promedio por la frecuencia de compra anual, por la vida útil en años y, finalmente, por el margen de beneficio."
+      },
+      {
+        "q": "¿Cuál es la diferencia entre LTV y margen de beneficio?",
+        "a": "El margen es la ganancia de una sola venta, mientras que el LTV es la suma de todas las ganancias esperadas de un cliente a lo largo del tiempo."
+      },
+      {
+        "q": "¿Qué es un buen ratio LTV:CAC?",
+        "a": "Un ratio de 3:1 se considera ideal para la mayoría de negocios escalables, significando que cada cliente vale tres veces lo que costó adquirirlo."
+      }
+    ],
+    "relacionados": [
+      { "nombre": "Calculadora de Ticket Promedio", "link": "/utiles/calculadora-ticket-promedio" },
+      { "nombre": "Calculadora de Margen de Ganancia", "link": "/negocios/margen" },
+      { "nombre": "Calculadora de Markup", "link": "/utiles/calculadora-de-markup" }
+    ]
+  },
+  "calculadora-rentabilidad-producto": {
+    "faqs": [
+      {
+        "q": "¿Qué se considera una buena rentabilidad de producto?",
+        "a": "Depende de la industria, pero un margen de rentabilidad neto superior al 20% suele considerarse saludable para la mayoría de los negocios de venta minorista."
+      },
+      {
+        "q": "¿Cómo afectan las devoluciones a la rentabilidad?",
+        "a": "Las devoluciones son destructoras de margen, ya que generan costos de envío de ida y vuelta, además de posibles daños en el producto."
+      },
+      {
+        "q": "¿Debo incluir el costo de marketing en la rentabilidad?",
+        "a": "Sí, para un análisis real debes incluir el CPA (Costo por Adquisición) para saber cuánto te cuesta realmente poner ese producto en las manos del cliente."
+      },
+      {
+        "q": "¿Cuál es la diferencia entre margen y rentabilidad?",
+        "a": "El margen suele ser la diferencia bruta entre precio y costo de compra. La rentabilidad considera absolutamente todos los gastos para vender ese producto."
+      },
+      {
+        "q": "¿Puedo vender un producto con rentabilidad negativa?",
+        "a": "Solo como estrategia de 'producto gancho' para atraer clientes y venderles otros productos rentables, pero nunca como modelo de negocio principal."
+      }
+    ],
+    "relacionados": [
+      { "nombre": "Calculadora de Margen Bruto", "link": "/utiles/calculadora-margen-bruto" },
+      { "nombre": "Calculadora de Costos Fijos y Variables", "link": "/utiles/calculadora-costos-fijos-variables" },
+      { "nombre": "Calculadora de Markup", "link": "/utiles/calculadora-de-markup" }
+    ]
+  },
+  "calculadora-rentabilidad-ecommerce": {
+    "faqs": [
+      {
+        "q": "¿Qué es una buena rentabilidad neta en ecommerce?",
+        "a": "Generalmente, un margen neto de entre el 10% y el 20% se considera muy bueno. Menos del 5% es arriesgado ante cualquier imprevisto operativo."
+      },
+      {
+        "q": "¿Cómo incluyo las devoluciones en el cálculo?",
+        "a": "Debes restar el valor de las devoluciones de las 'Ventas Brutas' y sumar el costo logístico de la devolución en los gastos operativos."
+      },
+      {
+        "q": "¿Qué diferencia hay entre rentabilidad y ROAS?",
+        "a": "El ROAS mide solo la efectividad de la publicidad, mientras que la rentabilidad neta mide si el negocio gana dinero después de pagar todos los gastos, no solo los anuncios."
+      },
+      {
+        "q": "¿Por qué mi tienda vende mucho pero no es rentable?",
+        "a": "Suele deberse a un Costo de Adquisición (CAC) muy alto, márgenes de producto insuficientes o gastos fijos que la estructura de ventas actual no alcanza a cubrir."
+      },
+      {
+        "q": "¿Cómo mejorar la rentabilidad sin vender más?",
+        "a": "Puedes renegociar con proveedores para bajar el COGS, optimizar el gasto en software innecesario o mejorar el empaque para reducir costos de envío."
+      }
+    ],
+    "relacionados": [
+      { "nombre": "Calculadora de LTV", "link": "/utiles/calculadora-ltv" },
+      { "nombre": "Calculadora de Ticket Promedio", "link": "/utiles/calculadora-ticket-promedio" },
+      { "nombre": "Calculadora de Punto de Equilibrio", "link": "/negocios/punto-equilibrio" }
+    ]
+  },
+  "calculadora-impuestos-ventas": {
+    "faqs": [
+      {
+        "q": "¿Qué es el IVA y cómo se calcula?",
+        "a": "El IVA es el Impuesto al Valor Agregado. Se calcula multiplicando el precio base del producto por el porcentaje de la tasa impositiva vigente en tu país."
+      },
+      {
+        "q": "¿Cuál es la diferencia entre precio neto y precio bruto?",
+        "a": "El precio neto es el valor del producto sin impuestos, mientras que el precio bruto es el total final que incluye los impuestos aplicables."
+      },
+      {
+        "q": "¿Cómo quitar el impuesto a un precio final?",
+        "a": "Para desglosar el impuesto, divide el precio total entre (1 + tasa decimal). Por ejemplo, si el IVA es 21%, divide el total entre 1.21."
+      },
+      {
+        "q": "¿Qué productos suelen estar exentos de impuestos?",
+        "a": "Depende de la legislación, pero usualmente alimentos básicos, libros, servicios educativos y ciertos insumos médicos tienen tasas reducidas o nulas."
+      },
+      {
+        "q": "¿Por qué el Sales Tax varía en Estados Unidos?",
+        "a": "Porque en EE. UU. el impuesto sobre las ventas lo determinan los estados y, a veces, los condados o ciudades, creando tasas diferentes según la ubicación exacta."
+      }
+    ],
+    "relacionados": [
+      { "nombre": "Calculadora de Margen de Ganancia", "link": "/negocios/margen" },
+      { "nombre": "Calculadora de Inflación", "link": "/finanzas/inflacion" },
+      { "nombre": "Calculadora de Interés Compuesto", "link": "/finanzas/interes-compuesto" }
+    ]
+  },
 };

@@ -1498,4 +1498,58 @@ keywords: "interes simple, calculadora de intereses, formula interes simple, cal
   color: "cyan-600",
   keywords: "margen bruto, utilidad bruta, rentabilidad comercial, calcular margen, COGS, costos de ventas, finanzas retail"
 },
+{
+  titulo: "Calculadora de Costos Fijos y Variables",
+  descripcion: "Analiza la estructura de gastos de tu empresa, proyecta el costo total y descubre el costo medio por unidad producida.",
+  link: "/utiles/calculadora-costos-fijos-variables",
+  categoria: "utiles",
+  icon: "🏭",
+  color: "blue-600",
+  keywords: "costos fijos, costos variables, economia de escala, contabilidad de costos, calcular costo total, gestion financiera, analisis de gastos"
+},
+{
+  titulo: "Calculadora de Ticket Promedio",
+  descripcion: "Mide el valor medio de tus ventas (AOV) y analiza la eficiencia de tus estrategias de upselling y cross-selling.",
+  link: "/utiles/calculadora-ticket-promedio",
+  categoria: "utiles",
+  icon: "🛒",
+  color: "indigo-600",
+  keywords: "ticket promedio, AOV, ventas promedio, ecommerce kpi, valor medio de pedido, rentabilidad, marketing ventas"
+},
+{
+  titulo: "Calculadora de LTV",
+  descripcion: "Calcula el Valor de Vida del Cliente (Customer Lifetime Value) para optimizar tus presupuestos de marketing y retención.",
+  link: "/utiles/calculadora-ltv",
+  categoria: "utiles",
+  icon: "💎",
+  color: "emerald-600",
+  keywords: "LTV, lifetime value, valor de vida del cliente, retencion, métricas marketing, rentabilidad, CAC"
+},
+{
+  titulo: "Calculadora de Rentabilidad de Producto",
+  descripcion: "Analiza la viabilidad económica de tus artículos considerando costos de adquisición, logística y gastos de venta.",
+  link: "/utiles/calculadora-rentabilidad-producto",
+  categoria: "utiles",
+  icon: "📦",
+  color: "orange-600",
+  keywords: "rentabilidad de producto, margen comercial, utilidad unitaria, costos logisticos, ecommerce kpi, retorno de inversion producto"
+},
+{
+  titulo: "Calculadora de Rentabilidad Ecommerce",
+  descripcion: "Realiza un análisis financiero integral de tu tienda online considerando COGS, marketing, logística y gastos operativos.",
+  link: "/utiles/calculadora-rentabilidad-ecommerce",
+  categoria: "utiles",
+  icon: "🚀",
+  color: "cyan-600",
+  keywords: "rentabilidad ecommerce, margen neto tienda online, finanzas ecommerce, ROAS vs rentabilidad, kpi ecommerce, beneficio neto"
+},
+{
+  titulo: "Calculadora de Impuestos de Ventas",
+  descripcion: "Calcula de forma rápida el IVA o Sales Tax aplicable a cualquier producto o servicio para conocer el precio final.",
+  link: "/utiles/calculadora-impuestos-ventas",
+  categoria: "utiles",
+  icon: "⚖️",
+  color: "blue-600",
+  keywords: "calculadora de impuestos, calcular IVA, sales tax, precio neto a bruto, desglose de impuestos, calculadora fiscal consumo"
+}
 ];
