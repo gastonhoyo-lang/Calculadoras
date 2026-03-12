@@ -2219,7 +2219,7 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
     ],
     "relacionados": [
       { "nombre": "Calculadora de Regla de Tres", "link": "/utiles/regla-de-tres" },
-      { "nombre": " Calculadora de Ecuaciones", "link": "/matematica/ecuaciones-" },
+      { "nombre": " Calculadora de Ecuaciones", "link": "/utiles/ecuaciones" },
       { "nombre": "Calculadora de Porcentajes", "link": "/finanzas/porcentaje" }
     ]
   },
