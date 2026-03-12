@@ -124,14 +124,6 @@ export const calculadoras = [
     keywords: "costo, pvp, cuanto cobrar, negocio, mercaderia"
   },
   {
-    titulo: "roi",
-    descripcion: "Medí la rentabilidad de tus inversiones y negocios.",
-    link: "/negocios/roi",
-    icon: "🔄",
-    color: "indigo",
-    keywords: "retorno inversion, ganancia, finanzas, capital, rendimiento"
-  },
-  {
     titulo: "Interés Simple",
     descripcion: "Calculá el interés de préstamos y ahorros básicos.",
     link: "/finanzas/interes-simple",
@@ -477,14 +469,6 @@ keywords: "interes simple, calculadora de intereses, formula interes simple, cal
     icon: "🤝",
     color: "indigo",
     keywords: "viaje, amigos, deudas, plata, cuentas"
-  },
-  {
-    titulo: "Calculadora de Metros Cuadrados",
-    descripcion: "Calculá la superficie de cualquier habitación o terreno de forma rápida.",
-    link: "/hogar/metros-cuadrados",
-    icon: "📐",
-    color: "blue",
-    keywords: "m2, superficie, area, terreno, habitacion"
   },
   {
     titulo: "Calculadora de Fracciones",
