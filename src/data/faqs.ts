@@ -4702,4 +4702,33 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
       { "nombre": "Generador de Contraseñas", "link": "/utiles/generador-contrasenas" }
     ]
   },
+  "tiempo-de-lectura": {
+    "faqs": [
+      {
+        "q": "¿Qué es la velocidad media de lectura?",
+        "a": "En adultos, la velocidad media de lectura en silencio es de aproximadamente 200 a 250 palabras por minuto (wpm) para textos generales."
+      },
+      {
+        "q": "¿Por qué es importante mostrar el tiempo de lectura en un blog?",
+        "a": "Ayuda a gestionar las expectativas del lector, mejora la experiencia de usuario y puede aumentar el tiempo de permanencia en la página al reducir la incertidumbre."
+      },
+      {
+        "q": "¿Cómo se calcula el tiempo de lectura para YouTube?",
+        "a": "Para guiones hablados, la velocidad es menor, alrededor de 150-160 palabras por minuto, ya que el habla natural requiere pausas y entonación."
+      },
+      {
+        "q": "¿El tiempo de lectura incluye el análisis de imágenes?",
+        "a": "Nuestra calculadora se basa en el recuento de palabras. Algunos algoritmos añaden 10-12 segundos adicionales por cada imagen presente en el artículo."
+      },
+      {
+        "q": "¿Afecta el tiempo de lectura al ranking de Google?",
+        "a": "No directamente, pero sí influye en señales de comportamiento como el porcentaje de rebote y la duración de la sesión, que son factores de calidad para el SEO."
+      }
+    ],
+    "relacionados": [
+      { "nombre": "Contador de Palabras", "link": "/utiles/contador-de-letras" },
+      { "nombre": "Contador de Palabras Únicas", "link": "/utiles/contador-de-palabras-unicas" },
+      { "nombre": "Densidad de Keywords", "link": "/seo/densidad-keywords" }
+    ]
+  },
 };

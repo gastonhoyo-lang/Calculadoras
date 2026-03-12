@@ -1417,5 +1417,14 @@ keywords: "interes simple, calculadora de intereses, formula interes simple, cal
   icon: "✍️",
   color: "violet-600",
   keywords: "contador de caracteres, contador de palabras, contar caracteres online, herramienta de redaccion, limites redes sociales, tiempo de lectura"
+},
+{
+  titulo: "Calculadora de Tiempo de Lectura",
+  descripcion: "Estimá cuánto tiempo tardará un usuario en leer tu contenido. Ajustá la velocidad de palabras por minuto para máxima precisión.",
+  link: "/seo/tiempo-de-lectura",
+  categoria: "seo",
+  icon: "⏱️",
+  color: "emerald-600",
+  keywords: "tiempo de lectura, estimated reading time, calcular lectura blog, velocidad de lectura, optimizacion seo, redaccion de contenidos"
 }
 ];
