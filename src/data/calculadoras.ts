@@ -1445,4 +1445,13 @@ keywords: "interes simple, calculadora de intereses, formula interes simple, cal
   color: "cyan-600",
   keywords: "proporciones, calcular proporcion, igualdad de razones, regla de tres, matematicas, hallar x, escala"
 },
+{
+  titulo: "Calculadora de Escalas",
+  descripcion: "Calcula dimensiones reales a partir de planos o mapas y viceversa. Soporta escalas arquitectónicas, cartográficas y de modelismo.",
+  link: "/utiles/calculadora-de-escalas",
+  categoria: "utiles",
+  icon: "📐",
+  color: "emerald-600",
+  keywords: "calculadora de escalas, escala 1:50, escala 1:100, pasar de plano a realidad, medidas de mapas, escalimetro online"
+},
 ];

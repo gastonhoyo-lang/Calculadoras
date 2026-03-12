@@ -3262,27 +3262,6 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
       { "nombre": "Calculadora de Mediana", "link": "/matematica/promedio-mediana-moda" }
     ]
 },
-"desviacion-media": {
-  faqs: [
-    {
-      q: "¿Para qué sirve la desviación media?",
-      a: "Sirve para conocer qué tan dispersos están los valores de un conjunto. Una desviación media baja indica que los datos están muy cerca del promedio (son uniformes)."
-    },
-    {
-      q: "¿Es lo mismo que la desviación estándar?",
-      a: "No. La desviación media usa valores absolutos $|x - \bar{x}|$, mientras que la estándar usa cuadrados $(x - \bar{x})^2$. La estándar es más común en ciencia, pero la media es más intuitiva."
-    },
-    {
-      q: "¿Cuándo es mejor usar la desviación media?",
-      a: "Cuando quieres una medida de dispersión que no penalice tanto los valores extremos o cuando buscas explicar la variabilidad a personas no expertas en estadística."
-    }
-  ],
-  relacionados: [
-    { nombre: "Media Ponderada", link: "/matematica/media-ponderada" },
-    { nombre: "Calculadora de Percentil", link: "/matematica/calculadora-percentil" },
-    { nombre: "Proporciones", link: "/matematica/calculadora-proporcion" }
-  ]
-},
 "rango-estadistico": {
   faqs: [
     {
@@ -4751,5 +4730,62 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
       { "nombre": "Calculadora de Probabilidades", "link": "/utiles/probabilidad" }
     ]
   },
-
+  "calculadora-de-proporciones": {
+    "faqs": [
+      {
+        "q": "¿Qué es una proporción en matemáticas?",
+        "a": "Es una igualdad entre dos razones. Se representa como A/B = C/D, lo que indica que la relación entre los dos primeros números es la misma que entre los dos últimos."
+      },
+      {
+        "q": "¿Cómo saber si dos razones forman una proporción?",
+        "a": "Multiplica en cruz: si el resultado de A x D es igual al de B x C, entonces los números forman una proporción perfecta."
+      },
+      {
+        "q": "¿Cuál es la diferencia entre razón y proporción?",
+        "a": "La razón es el cociente entre dos números (una sola fracción), mientras que la proporción es la comparación de igualdad entre dos de esas razones."
+      },
+      {
+        "q": "¿Qué es la propiedad fundamental de las proporciones?",
+        "a": "Establece que en toda proporción, el producto de los extremos es igual al producto de los medios. Es la base para despejar cualquier incógnita."
+      },
+      {
+        "q": "¿Dónde se aplican las proporciones en la vida real?",
+        "a": "Se aplican en el ajuste de recetas, escalas de mapas, dimensionamiento de imágenes, cálculo de dosis de medicamentos y conversión de divisas."
+      }
+    ],
+    "relacionados": [
+      { "nombre": "Regla de Tres Simple", "link": "/matematica/regla-de-tres" },
+      { "nombre": "Calculadora de Porcentajes", "link": "/finanzas/porcentaje" },
+      { "nombre": "Calculadora de Escalas", "link": "/utiles/escalas" }
+    ]
+  },
+  "calculadora-de-escalas": {
+    "faqs": [
+      {
+        "q": "¿Qué significa una escala 1:100?",
+        "a": "Significa que cada unidad medida en el plano representa 100 unidades iguales en la realidad. Por ejemplo, 1 cm en el papel son 100 cm (1 metro) reales."
+      },
+      {
+        "q": "¿Cómo calcular la escala de un dibujo si conozco la medida real?",
+        "a": "Debes dividir la medida real por la medida del dibujo (siempre en las mismas unidades). El resultado será el denominador de tu escala 1:N."
+      },
+      {
+        "q": "¿Cuál es la mejor escala para un plano de una casa?",
+        "a": "Las escalas más comunes en arquitectura para planos de plantas y cortes son 1:50 y 1:100, ya que ofrecen un buen equilibrio entre detalle y tamaño de papel."
+      },
+      {
+        "q": "¿Qué es una escala de reducción?",
+        "a": "Es aquella donde el dibujo es más pequeño que el objeto real. Se identifica porque el primer número es menor que el segundo (ej. 1:20)."
+      },
+      {
+        "q": "¿Cómo pasar de escala 1:50 a 1:100?",
+        "a": "La escala 1:100 es la mitad de tamaño que la 1:50. Si tienes un dibujo en 1:50 y quieres pasarlo a 1:100, debes reducir todas las medidas a la mitad."
+      }
+    ],
+    "relacionados": [
+      { "nombre": "Calculadora de Proporciones", "link": "/utiles/calculadora-de-proporciones" },
+      { "nombre": "Conversor de Unidades", "link": "/utiles/conversor-unidades" },
+      { "nombre": "Regla de Tres Simple", "link": "/utiles/regla-de-tres-simple" }
+    ]
+  },
 };
