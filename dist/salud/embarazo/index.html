@@ -92,34 +92,73 @@ Herramientas diseñadas para ayudarte a entender mejor tus números y
           `¡Guardanos en tus favoritos!\n\nPresioná ${isMac ? "Cmd + D" : "Ctrl + D"} para tenernos a mano.`,
         );
       <script is:inline>
-  // Esta función se ejecuta cada vez que el usuario hace clic en un botón de calcular
-  document.addEventListener('click', (e) => {
-    // Si el clic fue en un botón de "Calcular" (buscamos por ID o clase)
-    if (e.target.id?.includes('btn') || e.target.innerText.toLowerCase().includes('calcular')) {
-      
-      // Esperamos un milisegundo a que tus scripts actuales muestren el resultado
-      setTimeout(() => {
-        const resultBoxes = document.querySelectorAll('[id*="res"], [id*="Result"], .animate-in');
-        
-        resultBoxes.forEach(box => {
-          if (!box.classList.contains('hidden') && !box.querySelector('.btn-share-auto')) {
-            // Creamos el botón dinámicamente
-            const btn = document.createElement('button');
-            btn.className = "btn-share-auto mt-4 w-full bg-green-600 text-white font-bold py-3 px-4 rounded-xl flex items-center justify-center gap-2 transition-all active:scale-95";
-            btn.innerHTML = `<span>Compartir en WhatsApp</span>`;
+      let deferredPrompt;
+      const favBtn = document.getElementById("favBtn");
+      const favIcon = document.getElementById("favIcon");
+
+      const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+      const isiOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+
+      // Lógica de Instalación PWA
+      window.addEventListener("beforeinstallprompt", (e) => {
+        e.preventDefault();
+        deferredPrompt = e;
+        if (favBtn && favIcon) {
+          favIcon.textContent = "📲";
+          favBtn.innerHTML = "<span>📲</span> Instalar App";
+          favBtn.classList.replace("bg-slate-900", "bg-blue-600");
+        }
+      });
+
+      favBtn?.addEventListener("click", async () => {
+        if (deferredPrompt) {
+          deferredPrompt.prompt();
+          await deferredPrompt.userChoice;
+          deferredPrompt = null;
+          return;
+        }
+
+        if (isiOS) {
+          alert('Para instalar en tu iPhone:\n\n1. Toca el botón "Compartir" (cuadrado con flecha).\n2. Selecciona "Agregar a inicio".');
+          return;
+        }
+
+        if (isMobile) {
+          alert('¡Guardanos en tu inicio!\n\nTocá los tres puntos (⋮) y seleccioná "Instalar aplicación" o "Agregar a pantalla de inicio".');
+          return;
+        }
+
+        const isMac = navigator.platform.toUpperCase().indexOf("MAC") >= 0;
+        alert(`¡Guardanos en tus favoritos!\n\nPresioná ${isMac ? "Cmd + D" : "Ctrl + D"} para tenernos a mano.`);
+      });
+
+      // Lógica del Botón de WhatsApp Automático
+      document.addEventListener('click', (e) => {
+        if (e.target.id?.includes('btn') || e.target.innerText.toLowerCase().includes('calcular')) {
+          setTimeout(() => {
+            // Buscamos los paneles de resultados que NO estén ocultos
+            const resultBoxes = document.querySelectorAll('[id*="res"], [id*="Result"], .animate-in');
             
-            btn.onclick = () => {
-              const texto = box.innerText.replace(/[\n\r]+/g, '\n').trim();
-              const msg = `📊 *Resultado de Chieffin*\n\n${texto}\n\n👉 ${window.location.href}`;
-              window.open(`https://wa.me/?text=${encodeURIComponent(msg)}`, '_blank');
-            };
-            
-            box.appendChild(btn);
-          }
-        });
-      }, 100);
-    }
-  });
-</script>
+            resultBoxes.forEach(box => {
+              if (!box.classList.contains('hidden') && !box.querySelector('.btn-share-auto')) {
+                const btn = document.createElement('button');
+                btn.className = "btn-share-auto mt-4 w-full bg-green-600 text-white font-bold py-3 px-4 rounded-xl flex items-center justify-center gap-2 transition-all active:scale-95";
+                btn.innerHTML = `<span>Compartir en WhatsApp</span>`;
+                
+                btn.onclick = (event) => {
+                  event.preventDefault();
+                  // Limpiamos un poco el texto para que no sea un bloque gigante
+                  const texto = box.innerText.split('Compartir')[0].replace(/[\n\r]+/g, '\n').trim();
+                  const msg = `📊 *Resultado en Chieffin*\n\n${texto}\n\n👉 ${window.location.href}`;
+                  window.open(`https://wa.me/?text=${encodeURIComponent(msg)}`, '_blank');
+                };
+                
+                box.appendChild(btn);
+              }
+            });
+          }, 150); // Un poco más de delay para asegurar que el DOM se actualizó
+        }
+      });
+    </script>
 });
 </body> </html> 

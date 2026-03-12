@@ -5233,7 +5233,7 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
     "relacionados": [
       { "nombre": "Calculadora de Margen de Ganancia", "link": "/negocios/margen" },
       { "nombre": "Calculadora de Tasa de Conversión", "link": "/seo/tasa-conversion" },
-      { "nombre": "Calculadora de Valor de Vida del Cliente (LTV)", "link": "/utiles/calcualdora-ltv" }
+      { "nombre": "Calculadora de Valor de Vida del Cliente (LTV)", "link": "/utiles/calculadora-ltv" }
     ]
   },
   "calculadora-beneficio-unidad": {
