@@ -692,9 +692,9 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
       }
     ],
     relacionados: [
-      { nombre: "Cálculo de Hormigón", link: "/finanzas/calculadora-hormigon" },
-      { nombre: "Consumo Eléctrico", link: "/finanzas/consumo-electrico" },
-      { nombre: "Calculadora de IVA", link: "/finanzas/calculadora-iva" }
+      { nombre: "Cálculo de Hormigón", link: "/hogar/hormigon" },
+      { nombre: "Consumo Eléctrico", link: "/hogar/consumo-electrico" },
+      { nombre: "Calculadora de IVA", link: "/finanzas/iva" }
     ]
   },
 
