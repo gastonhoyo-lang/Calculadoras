@@ -1,0 +1,166 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import InputField from "/src/components/InputField.astro";
+import ResultBox from "../../components/ResultBox.astro";
+const fMillasKm = "$$ km = millas \\times 1.60934 $$";
+const fKmMillas = "$$ millas = \\frac{km}{1.60934} $$";
+---
+
+<Layout
+  title="Conversor de Millas a Kilómetros | Preciso y Rápido"
+  description="Convierte millas a km y viceversa. Aprende la fórmula, la diferencia entre milla terrestre y náutica, y ejemplos prácticos de velocidad."
+>
+  <main class="max-w-5xl mx-auto px-4 py-12">
+    <header class="text-center mb-16">
+      <h1
+        class="text-4xl md:text-6xl font-black text-slate-900 mb-4 tracking-tight"
+      >
+        Conversor de <span class="text-blue-600">Millas a KM</span> 🚗
+      </h1>
+      <p class="text-slate-500 text-lg font-medium max-w-2xl mx-auto">
+        La herramienta más rápida para convertir distancias terrestres con
+        precisión decimal.
+      </p>
+    </header>
+
+    <section
+      class="bg-white p-6 md:p-12 rounded-[3rem] border border-slate-100 shadow-2xl max-w-4xl mx-auto mb-20"
+    >
+      <div class="grid md:grid-cols-2 gap-8 mb-8">
+        <div class="space-y-4">
+          <label
+            for="inputMillas"
+            class="block text-xs font-bold text-slate-400 uppercase tracking-widest ml-2"
+            >Millas (mi)</label
+          >
+          <input
+            type="number"
+            id="inputMillas"
+            step="any"
+            placeholder="Ej: 1"
+            class="w-full p-4 bg-slate-50 rounded-2xl border-2 border-transparent focus:border-blue-500 outline-none transition-all shadow-inner font-bold"
+          />
+        </div>
+        <div class="space-y-4">
+          <label
+            for="inputKm"
+            class="block text-xs font-bold text-slate-400 uppercase tracking-widest ml-2"
+            >Kilómetros (km)</label
+          >
+          <input
+            type="number"
+            id="inputKm"
+            step="any"
+            placeholder="Resultado..."
+            class="w-full p-4 bg-slate-50 rounded-2xl border-2 border-transparent focus:border-blue-500 outline-none transition-all shadow-inner font-bold"
+          />
+        </div>
+      </div>
+
+      <div class="text-center text-slate-400 text-sm font-medium">
+        Fórmula utilizada: <span class="text-blue-600">1 mi ≈ 1.61 km</span>
+      </div>
+    </section>
+
+    <article
+      class="prose prose-slate max-w-none border-t border-slate-200 pt-16 text-slate-700 font-light leading-relaxed"
+    >
+      <h2 class="text-3xl font-black text-slate-900 mb-6 italic">
+        Cómo convertir Millas a Kilómetros con precisión
+      </h2>
+      <p>
+        La conversión de millas a kilómetros es una de las necesidades más
+        comunes para viajeros y conductores en países que utilizan el sistema
+        imperial, como Estados Unidos o el Reino Unido. Una milla terrestre
+        internacional equivale exactamente a <strong>1.609344 kilómetros</strong
+        >.
+      </p>
+
+      <h3 class="text-2xl font-bold text-slate-800 mb-4">
+        La Fórmula de Conversión
+      </h3>
+      <div
+        class="bg-slate-50 p-8 rounded-3xl mb-10 border border-slate-100 text-center text-xl"
+      >
+        {fMillasKm}
+      </div>
+
+      <h3 class="text-2xl font-bold text-slate-800 mb-4">
+        Milla Terrestre vs. Milla Náutica
+      </h3>
+      <p>
+        Es un error común confundirlas. La milla terrestre (utilizada en
+        carreteras) es la que calculamos aquí. Sin embargo, en navegación
+        marítima y aérea se usa la <strong>milla náutica</strong>, que equivale
+        a <strong>1.852 km</strong>. Esta diferencia del 15% es crítica en
+        planificación de rutas.
+      </p>
+
+      <h2 class="text-3xl font-black text-slate-900 mb-8 italic">
+        Tabla de Conversión Rápida
+      </h2>
+      <div class="overflow-x-auto mb-12">
+        <table class="w-full text-left border-collapse">
+          <thead>
+            <tr class="bg-slate-900 text-white">
+              <th class="p-4 rounded-tl-xl">Millas</th>
+              <th class="p-4 rounded-tr-xl">Kilómetros</th>
+            </tr>
+          </thead>
+          <tbody class="bg-white">
+            <tr class="border-b border-slate-100"
+              ><td class="p-4 font-bold">1 mi</td><td class="p-4">1.61 km</td
+              ></tr
+            >
+            <tr class="border-b border-slate-100"
+              ><td class="p-4 font-bold">5 mi</td><td class="p-4">8.05 km</td
+              ></tr
+            >
+            <tr class="border-b border-slate-100"
+              ><td class="p-4 font-bold">10 mi</td><td class="p-4">16.09 km</td
+              ></tr
+            >
+            <tr class="border-b border-slate-100"
+              ><td class="p-4 font-bold">60 mi</td><td class="p-4">96.56 km</td
+              ></tr
+            >
+          </tbody>
+        </table>
+      </div>
+
+      <h2 class="text-3xl font-black text-slate-900 mb-8 italic">
+        Ejemplos Prácticos
+      </h2>
+      <div class="space-y-8 mb-20">
+        <div class="p-8 bg-blue-50 rounded-[2.5rem] border border-blue-100">
+          <h3 class="text-xl font-bold text-blue-900 mb-2">
+            Ejemplo 1: Límites de velocidad
+          </h3>
+          <p>
+            Si ves una señal de 65 mph en EE.UU., ¿a cuánto vas en km/h?
+            Multiplicas 65 x 1.609 = <strong>104.58 km/h</strong>.
+          </p>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <script is:inline>
+    (function () {
+      const miInput = document.getElementById("inputMillas");
+      const kmInput = document.getElementById("inputKm");
+
+      miInput.addEventListener("input", () => {
+        const val = parseFloat(miInput.value);
+        if (!isNaN(val)) kmInput.value = (val * 1.609344).toFixed(2);
+        else kmInput.value = "";
+      });
+
+      kmInput.addEventListener("input", () => {
+        const val = parseFloat(kmInput.value);
+        if (!isNaN(val)) miInput.value = (val / 1.609344).toFixed(2);
+        else miInput.value = "";
+      });
+    })();
+  </script>
+</Layout>
