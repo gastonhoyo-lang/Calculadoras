@@ -782,7 +782,7 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
       }
     ],
     relacionados: [
-      { nombre: "Metros Cuadrados", link: "/herramientas/metros-cuadrados" },
+      { nombre: "Metros Cuadrados", link: "/hogar/metros-cuadrados" },
       { nombre: "Cálculo de Ladrillos", link: "/construccion/ladrillos" },
       { nombre: "Consumo Eléctrico", link: "/hogar/consumo-electrico" }
     ]
@@ -812,9 +812,9 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
       }
     ],
     relacionados: [
-      { nombre: "Metros Cuadrados", link: "/herramientas/metros-cuadrados" },
+      { nombre: "Metros Cuadrados", link: "/hogar/metros-cuadrados" },
       { nombre: "Calculadora de Pintura", link: "/hogar/pintura" },
-      { nombre: "Cálculo de Hormigón", link: "/construccion/hormigon" }
+      { nombre: "Cálculo de Hormigón", link: "/hogar/hormigon" }
     ]
   },
 
@@ -842,9 +842,9 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
       }
     ],
     relacionados: [
-      { nombre: "Metros Cuadrados", link: "/herramientas/metros-cuadrados" },
-      { nombre: "Calculadora de Círculo", link: "/herramientas/circulo" },
-      { nombre: "Cálculo de Ladrillos", link: "/construccion/ladrillos" }
+      { nombre: "Metros Cuadrados", link: "/hogar/metros-cuadrados" },
+      { nombre: "Calculadora de Círculo", link: "/matematica/circulo" },
+      { nombre: "Cálculo de Ladrillos", link: "/hogar/ladrillos" }
     ]
   },
 
@@ -873,7 +873,7 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
     ],
     relacionados: [
       { nombre: "Calculadora de IVA", link: "/finanzas/iva" },
-      { nombre: "Metros Cuadrados", link: "/herramientas/metros-cuadrados" },
+      { nombre: "Metros Cuadrados", link: "/hogar/metros-cuadrados" },
       { nombre: "Calcualdora de ROI", link: "/seo/roi-marketing/" }
     ]
   },
@@ -902,9 +902,9 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
       }
     ],
     relacionados: [
-      { nombre: "Calculadora de Pitágoras", link: "/herramientas/pitagoras" },
-      { nombre: "Metros Cuadrados", link: "/herramientas/metros-cuadrados" },
-      { nombre: "Calculadora de Círculo", link: "/herramientas/circulo" }
+      { nombre: "Calculadora de Pitágoras", link: "/matematica/pitagoras" },
+      { nombre: "Metros Cuadrados", link: "/hogar/metros-cuadrados" },
+      { nombre: "Calculadora de Círculo", link: "/matematica/circulo" }
     ]
   },
 
@@ -933,7 +933,7 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
     ],
     relacionados: [
       { nombre: "Calculadora de IVA", link: "/finanzas/iva" },
-      { nombre: "Regla de Tres Simple", link: "/herramientas/regla-de-tres" },
+      { nombre: "Regla de Tres Simple", link: "/matematica/regla-de-tres" },
       { nombre: "Calculadora de Descuentos", link: "/finanzas/descuentos" }
     ]
   },
@@ -964,7 +964,7 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
     relacionados: [
       { nombre: "Comisiones de Venta", link: "/finanzas/comisiones" },
       { nombre: "Calculadora de IVA", link: "/finanzas/iva" },
-      { nombre: "Regla de Tres Simple", link: "/herramientas/regla-de-tres" }
+      { nombre: "Regla de Tres Simple", link: "/matematica/regla-de-tres" }
     ]
   },
 
