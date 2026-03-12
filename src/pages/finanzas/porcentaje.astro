@@ -2,200 +2,356 @@
 import Layout from "../../layouts/Layout.astro";
 import InputField from "/src/components/InputField.astro";
 import ResultBox from "../../components/ResultBox.astro";
+// Definimos las fórmulas como constantes para evitar que Astro procese las llaves en el HTML
+const formulaBasica =
+  "$$ \\text{Resultado} = \\left( \\frac{\\text{Porcentaje}}{100} \\right) \\times \\text{Cantidad} $$";
+const formulaVariacion =
+  "$$ \\text{Variación \\%} = \\left( \\frac{\\text{Valor Final} - \\text{Valor Inicial}}{\\text{Valor Inicial}} \\right) \\times 100 $$";
 ---
 
 <Layout
-  title="Calculadora de Porcentajes Online | Rápida y Precisa"
-  description="Calculá porcentajes, descuentos, aumentos y variaciones entre dos números. Tres herramientas en una para resolver tus dudas matemáticas al instante."
+  title="Calculadora de Porcentajes Online | Calcular % Gratis"
+  description="Calculá porcentajes de forma rápida y fácil. Incrementos, descuentos, variaciones y proporciones con nuestra calculadora interactiva y guía paso a paso."
 >
-  <div class="max-w-4xl mx-auto px-4">
-    <header class="text-center mb-12">
+  <main class="max-w-5xl mx-auto px-4 py-12">
+    <header class="text-center mb-16">
       <h1
-        class="text-4xl md:text-6xl font-black text-slate-900 tracking-tight mb-4"
+        class="text-4xl md:text-6xl font-black text-slate-900 mb-4 tracking-tight"
       >
-        Calculadora de <span class="text-blue-600">Porcentajes</span>
+        Calculadora de <span class="text-emerald-600">Porcentajes</span> 📊
       </h1>
-      <p class="text-slate-500 text-lg font-medium max-w-2xl mx-auto">
-        Resolvé cualquier cálculo de porcentaje en segundos: descuentos,
-        incrementos y proporciones.
+      <p
+        class="text-slate-500 text-lg font-medium max-w-2xl mx-auto text-balance"
+      >
+        Resolvé cualquier problema de porcentajes en segundos: descuentos,
+        aumentos, variaciones y partes de un total.
       </p>
     </header>
 
-    <div class="grid md:grid-cols-2 gap-8 mb-16">
-      <div
-        class="bg-white p-8 rounded-[2.5rem] border border-slate-100 shadow-sm hover:shadow-md transition-shadow"
-      >
-        <h2
-          class="text-sm font-black text-blue-600 uppercase tracking-widest mb-6"
-        >
-          1. Obtener un valor
-        </h2>
-        <div class="space-y-6 text-xl text-slate-700 font-medium">
-          <p>¿Cuánto es el</p>
-          <div class="flex items-center gap-2">
-            <input
-              type="number"
-              id="p1_porc"
-              placeholder="10"
-              class="w-20 border-b-4 border-blue-500 text-center outline-none font-black text-blue-600 focus:bg-blue-50 transition-all pb-1"
-            />
-            <span>% de</span>
-            <input
-              type="number"
-              id="p1_num"
-              placeholder="500"
-              class="w-32 border-b-4 border-blue-500 text-center outline-none font-black text-blue-600 focus:bg-blue-50 transition-all pb-1"
-            />
-          </div>
-          <button
-            id="btn1"
-            class="w-full bg-slate-900 text-white p-4 rounded-2xl font-bold hover:bg-blue-600 transition-all shadow-lg shadow-blue-100"
-            >Calcular</button
-          >
-          <div id="res1" class="hidden p-4 bg-blue-50 rounded-2xl text-center">
-            <span class="text-sm text-blue-600 block mb-1 font-bold uppercase"
-              >Resultado</span
-            >
+    <section
+      class="bg-white p-8 md:p-12 rounded-[3rem] border border-slate-100 shadow-2xl max-w-4xl mx-auto mb-20"
+    >
+      <div class="grid md:grid-cols-1 gap-12">
+        <div class="space-y-6">
+          <h3 class="text-xl font-bold text-slate-800 flex items-center gap-2">
             <span
-              id="val1"
-              class="text-3xl font-black text-blue-700 tracking-tighter"></span>
+              class="bg-emerald-100 text-emerald-600 w-8 h-8 rounded-full flex items-center justify-center text-sm"
+              >1</span
+            >
+            ¿Cuánto es el X% de Y?
+          </h3>
+          <div class="grid md:grid-cols-3 gap-4 items-end">
+            <div class="space-y-2">
+              <label
+                for="percInput1"
+                class="block text-[10px] font-bold text-slate-400 uppercase tracking-widest ml-2"
+                >Porcentaje (%)</label
+              >
+              <input
+                type="number"
+                id="percInput1"
+                placeholder="Ej: 20"
+                class="w-full p-4 bg-slate-50 rounded-2xl border-2 border-transparent focus:border-emerald-500 font-bold outline-none transition-all shadow-inner"
+              />
+            </div>
+            <div class="space-y-2">
+              <label
+                for="valInput1"
+                class="block text-[10px] font-bold text-slate-400 uppercase tracking-widest ml-2"
+                >De la cantidad</label
+              >
+              <input
+                type="number"
+                id="valInput1"
+                placeholder="Ej: 500"
+                class="w-full p-4 bg-slate-50 rounded-2xl border-2 border-transparent focus:border-emerald-500 font-bold outline-none transition-all shadow-inner"
+              />
+            </div>
+            <button
+              id="btnCalc1"
+              class="w-full bg-slate-900 text-white p-4 rounded-2xl font-bold hover:bg-emerald-600 transition-all shadow-lg active:scale-95"
+              >Calcular</button
+            >
           </div>
-        </div>
-      </div>
-
-      <div
-        class="bg-white p-8 rounded-[2.5rem] border border-slate-100 shadow-sm hover:shadow-md transition-shadow"
-      >
-        <h2
-          class="text-sm font-black text-indigo-600 uppercase tracking-widest mb-6"
-        >
-          2. Obtener el porcentaje
-        </h2>
-        <div class="space-y-6 text-xl text-slate-700 font-medium">
-          <p>¿Qué porcentaje es</p>
-          <div class="flex items-center gap-2">
-            <input
-              type="number"
-              id="p2_num1"
-              placeholder="50"
-              class="w-24 border-b-4 border-indigo-500 text-center outline-none font-black text-indigo-600 focus:bg-indigo-50 transition-all pb-1"
-            />
-            <span>de</span>
-            <input
-              type="number"
-              id="p2_num2"
-              placeholder="200"
-              class="w-32 border-b-4 border-indigo-500 text-center outline-none font-black text-indigo-600 focus:bg-indigo-50 transition-all pb-1"
-            />
-          </div>
-          <button
-            id="btn2"
-            class="w-full bg-slate-900 text-white p-4 rounded-2xl font-bold hover:bg-indigo-600 transition-all shadow-lg shadow-indigo-100"
-            >Calcular %</button
-          >
           <div
-            id="res2"
-            class="hidden p-4 bg-indigo-50 rounded-2xl text-center"
+            id="resBox1"
+            class="hidden p-4 bg-emerald-50 border border-emerald-100 rounded-2xl text-emerald-800 font-bold text-center animate-in fade-in duration-300"
           >
-            <span class="text-sm text-indigo-600 block mb-1 font-bold uppercase"
-              >Es el</span
-            >
+          </div>
+        </div>
+
+        <hr class="border-slate-100" />
+
+        <div class="space-y-6">
+          <h3 class="text-xl font-bold text-slate-800 flex items-center gap-2">
             <span
-              id="val2"
-              class="text-3xl font-black text-indigo-700 tracking-tighter"
-            ></span>
+              class="bg-blue-100 text-blue-600 w-8 h-8 rounded-full flex items-center justify-center text-sm"
+              >2</span
+            >
+            ¿Qué porcentaje es X de Y?
+          </h3>
+          <div class="grid md:grid-cols-3 gap-4 items-end">
+            <div class="space-y-2">
+              <label
+                for="valInput2A"
+                class="block text-[10px] font-bold text-slate-400 uppercase tracking-widest ml-2"
+                >La cantidad X</label
+              >
+              <input
+                type="number"
+                id="valInput2A"
+                placeholder="Ej: 50"
+                class="w-full p-4 bg-slate-50 rounded-2xl border-2 border-transparent focus:border-blue-500 font-bold outline-none transition-all shadow-inner"
+              />
+            </div>
+            <div class="space-y-2">
+              <label
+                for="valInput2B"
+                class="block text-[10px] font-bold text-slate-400 uppercase tracking-widest ml-2"
+                >Del total Y</label
+              >
+              <input
+                type="number"
+                id="valInput2B"
+                placeholder="Ej: 200"
+                class="w-full p-4 bg-slate-50 rounded-2xl border-2 border-transparent focus:border-blue-500 font-bold outline-none transition-all shadow-inner"
+              />
+            </div>
+            <button
+              id="btnCalc2"
+              class="w-full bg-slate-900 text-white p-4 rounded-2xl font-bold hover:bg-blue-600 transition-all shadow-lg active:scale-95"
+              >Calcular %</button
+            >
+          </div>
+          <div
+            id="resBox2"
+            class="hidden p-4 bg-blue-50 border border-blue-100 rounded-2xl text-blue-800 font-bold text-center animate-in fade-in duration-300"
+          >
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
     <article
-      class="prose prose-slate max-w-none border-t border-slate-200 pt-16 pb-20"
+      class="prose prose-slate max-w-none border-t border-slate-200 pt-16 text-slate-700 font-light leading-relaxed"
     >
-      <h2 class="text-3xl font-black text-slate-800 mb-6">
-        ¿Cómo calcular porcentajes manualmente?
+      <h2 class="text-3xl font-black text-slate-900 mb-6">
+        ¿Qué es un porcentaje y cómo se calcula realmente?
       </h2>
-      <p class="text-slate-600 text-lg leading-relaxed mb-6">
-        Entender cómo funcionan los porcentajes es fundamental para las finanzas
-        personales, compras y estudios. Un porcentaje representa una fracción
-        con denominador 100.
+
+      <p class="mb-6">
+        El concepto de <strong>porcentaje</strong> es una de las herramientas matemáticas
+        más utilizadas en nuestra vida cotidiana. Desde entender los descuentos en
+        un centro comercial hasta analizar las tasas de interés bancarias o el crecimiento
+        poblacional, el porcentaje nos permite expresar una cantidad como una fracción
+        de 100 partes iguales. Etimológicamente, proviene del latín "per centum",
+        que significa literalmente "por cada ciento".
       </p>
 
-      <div class="grid md:grid-cols-2 gap-8 my-10">
-        <div class="p-8 bg-slate-50 rounded-3xl">
-          <h3 class="text-xl font-bold mb-4">La regla de tres simple</h3>
-          <p class="text-sm text-slate-600 mb-4">
-            Es el método más confiable. Si 500 es el 100%, ¿cuánto es el 10%?
+      <p class="mb-6">
+        Calcular un porcentaje no es más que realizar una regla de tres simple o
+        una multiplicación fraccionaria. Cuando decimos que algo tiene un 20% de
+        descuento, estamos indicando que por cada 100 unidades de valor, se
+        restarán 20. Esta estandarización facilita enormemente la comparación
+        entre magnitudes de diferentes tamaños, permitiéndonos entender
+        proporciones de manera intuitiva.
+      </p>
+
+      <h3 class="text-2xl font-bold text-slate-800 mb-4">
+        La Fórmula Universal del Porcentaje
+      </h3>
+      <p class="mb-4">
+        Para obtener un porcentaje específico de una cantidad, utilizamos la
+        siguiente expresión matemática:
+      </p>
+
+      <div
+        class="bg-slate-50 p-8 rounded-3xl mb-10 border border-slate-100 text-center"
+      >
+        {formulaBasica}
+      </div>
+
+      <p class="mb-6">Donde las variables representan:</p>
+      <ul class="list-disc pl-6 mb-8 space-y-2">
+        <li>
+          <strong>Porcentaje:</strong> La tasa o proporción que deseamos hallar (por
+          ejemplo, 15, 20, 50).
+        </li>
+        <li>
+          <strong>Cantidad:</strong> El valor total o base sobre el cual se aplica
+          el cálculo.
+        </li>
+        <li>
+          <strong>Resultado:</strong> El valor numérico equivalente a esa proporción.
+        </li>
+      </ul>
+
+      <h3 class="text-2xl font-bold text-slate-800 mb-4">
+        Cómo calcular variaciones porcentuales (Aumentos y Disminuciones)
+      </h3>
+      <p class="mb-6">
+        A menudo necesitamos saber cuánto ha cambiado un valor respecto a su
+        estado original. Esto es vital en economía para medir la inflación o en
+        negocios para ver el crecimiento de ventas. La fórmula de variación
+        porcentual es:
+      </p>
+
+      <div
+        class="bg-slate-50 p-8 rounded-3xl mb-10 border border-slate-100 text-center"
+      >
+        {formulaVariacion}
+      </div>
+
+      <h3 class="text-2xl font-bold text-slate-800 mb-4">
+        Ejemplos Prácticos de la Vida Real
+      </h3>
+
+      <div class="space-y-8 mb-12">
+        <div
+          class="p-8 bg-white border border-slate-100 rounded-[2rem] shadow-sm"
+        >
+          <h4 class="font-bold text-emerald-600 mb-3 text-xl">
+            1. Calculando un Descuento en Tiendas
+          </h4>
+          <p class="mb-4 italic text-sm text-slate-500">
+            Escenario: Querés comprar una campera que cuesta $12.500 y tiene un
+            25% de descuento.
           </p>
-          <div
-            class="bg-white p-4 rounded-xl font-mono text-sm border border-slate-200"
-          >
-            (10 × 500) ÷ 100 = 50
-          </div>
+          <p class="leading-relaxed">
+            Primero calculamos el monto del descuento: $$ (25 / 100) \times
+            12.500 = 3.125 $$. <br />
+            Luego lo restamos del precio original: $$ 12.500 - 3.125 = 9.375 $$. <br
+            />
+            <strong>Resultado:</strong> Pagarás $9.375 por la campera.
+          </p>
         </div>
-        <div class="p-8 bg-slate-50 rounded-3xl">
-          <h3 class="text-xl font-bold mb-4">Multiplicación por decimales</h3>
-          <p class="text-sm text-slate-600 mb-4">
-            La forma más rápida. Para el 21%, multiplicá el valor por 0.21.
+
+        <div
+          class="p-8 bg-white border border-slate-100 rounded-[2rem] shadow-sm"
+        >
+          <h4 class="font-bold text-emerald-600 mb-3 text-xl">
+            2. Propinas en Restaurantes
+          </h4>
+          <p class="mb-4 italic text-sm text-slate-500">
+            Escenario: La cuenta de la cena fue de $8.400 y querés dejar el 10%
+            de propina sugerida.
           </p>
-          <div
-            class="bg-white p-4 rounded-xl font-mono text-sm border border-slate-200"
-          >
-            1500 × 0.21 = 315
-          </div>
+          <p class="leading-relaxed">
+            Cálculo rápido: $$ 8.400 \times 0.10 = 840 $$. <br />
+            <strong>Resultado:</strong> Deberías dejar $840 de propina.
+          </p>
+        </div>
+
+        <div
+          class="p-8 bg-white border border-slate-100 rounded-[2rem] shadow-sm"
+        >
+          <h4 class="font-bold text-emerald-600 mb-3 text-xl">
+            3. Incremento Salarial
+          </h4>
+          <p class="mb-4 italic text-sm text-slate-500">
+            Escenario: Ganás $450.000 y te anuncian un aumento del 12% por
+            paritarias.
+          </p>
+          <p class="leading-relaxed">
+            Cálculo del aumento: $$ 450.000 \times 0.12 = 54.000 $$. <br />
+            Nuevo total: $$ 450.000 + 54.000 = 504.000 $$. <br />
+            <strong>Resultado:</strong> Tu nuevo sueldo será de $504.000.
+          </p>
         </div>
       </div>
 
       <h3 class="text-2xl font-bold text-slate-800 mb-4">
-        Casos comunes de uso
+        Ejercicios para entrenar la mente
       </h3>
-      <ul class="space-y-4 text-slate-600">
+      <p class="mb-6">
+        Intentá resolver estos casos antes de usar la calculadora para agilizar
+        tu razonamiento lógico:
+      </p>
+      <ol class="list-decimal pl-6 mb-8 space-y-4">
         <li>
-          <strong>IVA:</strong> Multiplicá por 0.21 para obtener el impuesto.
+          <strong>El IVA:</strong> Si un producto neto cuesta $1.000 y el IVA es del
+          21%, ¿cuánto es el total? (Respuesta: $1.210).
         </li>
         <li>
-          <strong>Descuentos:</strong> Restá el porcentaje del total inicial.
+          <strong>Rendimiento académico:</strong> Si un examen tiene 40 preguntas
+          y respondiste bien 32, ¿qué porcentaje de aciertos tuviste? (Respuesta:
+          80%).
         </li>
-      </ul>
+        <li>
+          <strong>Capacidad:</strong> Una batería de celular tiene 5.000 mAh. Si está
+          al 15%, ¿cuántos mAh le quedan? (Respuesta: 750 mAh).
+        </li>
+      </ol>
+
+      <h3 class="text-2xl font-bold text-slate-800 mb-4">
+        Preguntas Frecuentes sobre Porcentajes
+      </h3>
+      <p class="mb-6 text-balance">
+        Muchas personas se confunden al intentar "volver atrás" en un
+        porcentaje. Por ejemplo, si un precio sube un 20% y luego baja un 20%, <strong
+          >no vuelve al precio original</strong
+        >. Esto sucede porque la base del segundo cálculo es mayor que la del
+        primero. Entender estas sutilezas es lo que diferencia a un usuario
+        promedio de alguien con verdadera educación financiera.
+      </p>
+
+      <footer
+        class="bg-slate-900 text-white p-12 rounded-[3rem] text-center italic mt-12 shadow-2xl"
+      >
+        <p class="text-emerald-400 font-bold mb-2">Tip de Experto:</p>
+        <p class="text-sm text-slate-400">
+          Para calcular el 10% de cualquier número, simplemente mové la coma
+          decimal un lugar hacia la izquierda. ¡Es el truco más rápido para el
+          día a día!
+        </p>
+      </footer>
     </article>
-  </div>
+  </main>
+
+  <script>
+    // Usamos IDs únicos para evitar colisiones
+    const setupPercentageCalc = () => {
+      // Caso 1
+      const btn1 = document.getElementById("btnCalc1");
+      btn1?.addEventListener("click", () => {
+        const p = parseFloat(
+          (document.getElementById("percInput1") as HTMLInputElement).value,
+        );
+        const v = parseFloat(
+          (document.getElementById("valInput1") as HTMLInputElement).value,
+        );
+        const resBox = document.getElementById("resBox1");
+
+        if (!isNaN(p) && !isNaN(v)) {
+          const res = (p / 100) * v;
+          if (resBox) {
+            resBox.innerText = `El ${p}% de ${v} es: ${res.toLocaleString()}`;
+            resBox.classList.remove("hidden");
+          }
+        }
+      });
+
+      // Caso 2
+      const btn2 = document.getElementById("btnCalc2");
+      btn2?.addEventListener("click", () => {
+        const a = parseFloat(
+          (document.getElementById("valInput2A") as HTMLInputElement).value,
+        );
+        const b = parseFloat(
+          (document.getElementById("valInput2B") as HTMLInputElement).value,
+        );
+        const resBox = document.getElementById("resBox2");
+
+        if (!isNaN(a) && !isNaN(b) && b !== 0) {
+          const res = (a / b) * 100;
+          if (resBox) {
+            resBox.innerText = `${a} es el ${res.toFixed(2)}% de ${b}`;
+            resBox.classList.remove("hidden");
+          }
+        }
+      });
+    };
+
+    setupPercentageCalc();
+  </script>
 </Layout>
-<script>
-  // Lógica para la primera calculadora
-  const btn1 = document.getElementById("btn1");
-  btn1?.addEventListener("click", () => {
-    const p = parseFloat(
-      (document.getElementById("p1_porc") as HTMLInputElement).value,
-    );
-    const n = parseFloat(
-      (document.getElementById("p1_num") as HTMLInputElement).value,
-    );
-    const resDiv = document.getElementById("res1");
-    const valSpan = document.getElementById("val1");
-
-    if (p && n && resDiv && valSpan) {
-      const resultado = (p * n) / 100;
-      valSpan.textContent = resultado.toLocaleString();
-      resDiv.classList.remove("hidden");
-    }
-  });
-
-  // Lógica para la segunda calculadora
-  const btn2 = document.getElementById("btn2");
-  btn2?.addEventListener("click", () => {
-    const n1 = parseFloat(
-      (document.getElementById("p2_num1") as HTMLInputElement).value,
-    );
-    const n2 = parseFloat(
-      (document.getElementById("p2_num2") as HTMLInputElement).value,
-    );
-    const resDiv = document.getElementById("res2");
-    const valSpan = document.getElementById("val2");
-
-    if (n1 && n2 && resDiv && valSpan) {
-      const resultado = (n1 / n2) * 100;
-      valSpan.textContent = resultado.toFixed(2) + "%";
-      resDiv.classList.remove("hidden");
-    }
-  });
-</script>
