@@ -362,7 +362,7 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
       }
     ],
     relacionados: [
-      { nombre: "Calculadora de ROI", link: "/negocios/roi/" },
+      { nombre: "Calculadora de ROI", link: "/seo/roi-marketing/" },
       { nombre: "Calculadora de Porcentaje", link: "/finanzas/porcentaje/" },
       { nombre: "Impuesto a las Ganancias", link: "/finanzas/ganancias" }
     ]
@@ -874,7 +874,7 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
     relacionados: [
       { nombre: "Calculadora de IVA", link: "/finanzas/iva" },
       { nombre: "Metros Cuadrados", link: "/herramientas/metros-cuadrados" },
-      { nombre: "Calcualdora de ROI", link: "/negocios/roi/" }
+      { nombre: "Calcualdora de ROI", link: "/seo/roi-marketing/" }
     ]
   },
 
@@ -1058,36 +1058,6 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
     ]
   },
 
-  "roi": {
-    faqs: [
-      { 
-        q: "¿Qué significa un ROI del 100%?", 
-        a: "Significa que recuperaste tu inversión inicial y ganaste exactamente la misma cantidad encima. Es decir, duplicaste tu dinero. Un ROI del 0% significa que quedaste 'hecho' (recuperaste lo invertido pero no ganaste nada)." 
-      },
-      { 
-        q: "¿Puede el ROI ser negativo?", 
-        a: "Sí. Un ROI negativo indica que el retorno fue menor a la inversión inicial, por lo tanto, hubo una pérdida de capital. Por ejemplo, un ROI de -20% significa que perdiste el 20% de lo que invertiste." 
-      },
-      { 
-        q: "¿Cuál es la diferencia entre ROI y ROAS?", 
-        a: "El ROI mide la rentabilidad general del negocio (considerando todos los costos). El ROAS (Return on Ad Spend) se usa específicamente en publicidad para medir el ingreso bruto por cada peso gastado en anuncios, sin descontar otros costos operativos." 
-      },
-      { 
-        q: "¿Qué se considera un 'buen' ROI?", 
-        a: "Depende del riesgo y del tiempo. En marketing digital, un ROI del 5:1 (500%) suele ser excelente. En inversiones inmobiliarias o bolsa, los porcentajes son menores pero suelen ser más estables a largo plazo." 
-      },
-      { 
-        q: "¿Cómo influye el tiempo en el ROI?", 
-        a: "La fórmula estándar no considera el tiempo. No es lo mismo ganar un 50% en un mes que en cinco años. Para comparar inversiones de distinta duración, los financieros suelen usar el ROI anualizado." 
-      }
-    ],
-    relacionados: [
-      { nombre: "Margen de Ganancia", link: "/finanzas/margen-ganancia" },
-      { nombre: "Punto de Equilibrio", link: "/finanzas/punto-equilibrio" },
-      { nombre: "Calculadora de IVA", link: "/finanzas/iva" }
-    ]
-  },
-
   "tarifa-freelance": {
     faqs: [
       { 
@@ -1113,7 +1083,7 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
     ],
     relacionados: [
       { nombre: "Punto de Equilibrio", link: "/finanzas/punto-equilibrio" },
-      { nombre: "Calculadora de ROI", link: "/finanzas/roi" },
+      { nombre: "Calculadora de ROI", link: "/seo/roi-marketing" },
       { nombre: "Calculadora de IVA", link: "/finanzas/iva" }
     ]
   },
@@ -1143,7 +1113,7 @@ export const dataFaqs: Record<string, { faqs: FAQItem[]; relacionados: Relaciona
     ],
     relacionados: [
       { nombre: "Punto de Equilibrio", link: "/finanzas/punto-equilibrio" },
-      { nombre: "ROI de Proyectos", link: "/finanzas/roi" },
+      { nombre: "ROI de Proyectos", link: "/seo/roi-marketing" },
       { nombre: "Markup vs Margen", link: "/finanzas/markup-margen" }
     ]
   },
