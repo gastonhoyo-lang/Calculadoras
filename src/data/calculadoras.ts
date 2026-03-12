@@ -665,7 +665,7 @@ keywords: "interes simple, calculadora de intereses, formula interes simple, cal
 {
   titulo: "Generador de Slugs",
   descripcion: "Convertí títulos complejos en URLs amigables y optimizadas para SEO en un segundo.",
-  link: "/seo/generador-slugs",
+  link: "/seo/generador-slug",
   categoria: "seo",
   icon: "🔗",
   color: "indigo",
