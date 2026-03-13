@@ -148,60 +148,7 @@ const canonicalURL = new URL(Astro.url.pathname, "https://chieffin.com");
       <FAQ />
     </main>
 
-    <footer class="bg-white border-t border-slate-200 py-12 mt-20">
-      <div
-        class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8 text-sm text-slate-500"
-      >
-        <div>
-          <p class="font-bold text-lg mb-4 text-slate-900">Chieffin</p>
-          <p>
-            Herramientas diseñadas para ayudarte a entender mejor tus números y
-            tomar decisiones informadas.
-          </p>
-        </div>
-        <div>
-          <p class="font-bold mb-4 text-slate-900">Categorías Populares</p>
-          <ul class="space-y-2">
-            <li>
-              <a href="/finanzas/prestamo" class="hover:text-blue-600"
-                >Préstamos</a
-              >
-            </li>
-            <li>
-              <a href="/finanzas/interes-compuesto" class="hover:text-blue-600"
-                >Interés Compuesto</a
-              >
-            </li>
-            <li>
-              <a href="/hogar/hormigon" class="hover:text-blue-600"
-                >Construcción</a
-              >
-            </li>
-          </ul>
-        </div>
-        <div>
-          <p class="font-bold mb-4 text-slate-900">Legal y Ayuda</p>
-          <ul class="space-y-2">
-            <li>
-              <a href="/privacidad" class="hover:text-blue-600"
-                >Política de Privacidad</a
-              >
-            </li>
-            <li>
-              <a href="/contacto" class="hover:text-blue-600"
-                >Contacto y Sugerencias</a
-              >
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div
-        class="max-w-6xl mx-auto px-4 mt-12 pt-8 border-t border-slate-100 text-center text-slate-400 text-xs"
-      >
-        &copy; {new Date().getFullYear()} Chieffin.com - Herramientas gratuitas para
-        uso cotidiano.
-      </div>
-    </footer>
+    <footer class="bg-white border-t border-slate-200 py-12 mt-20"></footer>
 
     <script is:inline>
       let deferredPrompt;
@@ -211,6 +158,7 @@ const canonicalURL = new URL(Astro.url.pathname, "https://chieffin.com");
       const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
       const isiOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
 
+      // --- Lógica de Instalación PWA ---
       window.addEventListener("beforeinstallprompt", (e) => {
         e.preventDefault();
         deferredPrompt = e;
@@ -231,91 +179,58 @@ const canonicalURL = new URL(Astro.url.pathname, "https://chieffin.com");
 
         if (isiOS) {
           alert(
-            'Para instalar en tu iPhone:\n\n1. Toca el botón "Compartir" (cuadrado con flecha).\n2. Selecciona "Agregar a inicio".',
-          );
-          return;
-        }
-
-        if (isMobile) {
-          alert(
-            '¡Guardanos en tu inicio!\n\nTocá los tres puntos (⋮) y seleccioná "Instalar aplicación" o "Agregar a pantalla de inicio".',
+            'Para instalar en tu iPhone:\n\n1. Toca el botón "Compartir".\n2. Selecciona "Agregar a inicio".',
           );
           return;
         }
 
         const isMac = navigator.platform.toUpperCase().indexOf("MAC") >= 0;
         alert(
-          `¡Guardanos en tus favoritos!\n\nPresioná ${isMac ? "Cmd + D" : "Ctrl + D"} para tenernos a mano.`,
+          isMobile
+            ? '¡Guardanos en tu inicio! Tocá los tres puntos (⋮) y seleccioná "Instalar aplicación".'
+            : `¡Guardanos en favoritos! Presioná ${isMac ? "Cmd + D" : "Ctrl + D"}.`,
         );
-      <script is:inline>
-      let deferredPrompt;
-      const favBtn = document.getElementById("favBtn");
-      const favIcon = document.getElementById("favIcon");
-
-      const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-      const isiOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
-
-      // Lógica de Instalación PWA
-      window.addEventListener("beforeinstallprompt", (e) => {
-        e.preventDefault();
-        deferredPrompt = e;
-        if (favBtn && favIcon) {
-          favIcon.textContent = "📲";
-          favBtn.innerHTML = "<span>📲</span> Instalar App";
-          favBtn.classList.replace("bg-slate-900", "bg-blue-600");
-        }
       });
 
-      favBtn?.addEventListener("click", async () => {
-        if (deferredPrompt) {
-          deferredPrompt.prompt();
-          await deferredPrompt.userChoice;
-          deferredPrompt = null;
-          return;
-        }
-
-        if (isiOS) {
-          alert('Para instalar en tu iPhone:\n\n1. Toca el botón "Compartir" (cuadrado con flecha).\n2. Selecciona "Agregar a inicio".');
-          return;
-        }
-
-        if (isMobile) {
-          alert('¡Guardanos en tu inicio!\n\nTocá los tres puntos (⋮) y seleccioná "Instalar aplicación" o "Agregar a pantalla de inicio".');
-          return;
-        }
-
-        const isMac = navigator.platform.toUpperCase().indexOf("MAC") >= 0;
-        alert(`¡Guardanos en tus favoritos!\n\nPresioná ${isMac ? "Cmd + D" : "Ctrl + D"} para tenernos a mano.`);
-      });
-
-      // Lógica del Botón de WhatsApp Automático
-      document.addEventListener('click', (e) => {
-        if (e.target.id?.includes('btn') || e.target.innerText.toLowerCase().includes('calcular')) {
+      // --- Lógica del Botón de WhatsApp Automático ---
+      document.addEventListener("click", (e) => {
+        // Detectamos si el click fue en un botón de calcular
+        if (
+          e.target.innerText?.toLowerCase().includes("calcular") ||
+          e.target
+            .closest("button")
+            ?.innerText.toLowerCase()
+            .includes("calcular")
+        ) {
           setTimeout(() => {
-            // Buscamos los paneles de resultados que NO estén ocultos
-            const resultBoxes = document.querySelectorAll('[id*="res"], [id*="Result"], .animate-in');
-            
-            resultBoxes.forEach(box => {
-              if (!box.classList.contains('hidden') && !box.querySelector('.btn-share-auto')) {
-                const btn = document.createElement('button');
-                btn.className = "btn-share-auto mt-4 w-full bg-green-600 text-white font-bold py-3 px-4 rounded-xl flex items-center justify-center gap-2 transition-all active:scale-95";
+            const resultBoxes = document.querySelectorAll(
+              '[id*="res"], [id*="Result"], .animate-in',
+            );
+
+            resultBoxes.forEach((box) => {
+              if (
+                !box.classList.contains("hidden") &&
+                !box.querySelector(".btn-share-auto")
+              ) {
+                const btn = document.createElement("button");
+                btn.className =
+                  "btn-share-auto mt-4 w-full bg-green-600 text-white font-bold py-3 px-4 rounded-xl flex items-center justify-center gap-2 transition-all active:scale-95";
                 btn.innerHTML = `<span>Compartir en WhatsApp</span>`;
-                
+
                 btn.onclick = (event) => {
                   event.preventDefault();
-                  // Limpiamos un poco el texto para que no sea un bloque gigante
-                  const texto = box.innerText.split('Compartir')[0].replace(/[\n\r]+/g, '\n').trim();
+                  const texto = box.innerText.split("Compartir")[0].trim();
                   const msg = `📊 *Resultado en Chieffin*\n\n${texto}\n\n👉 ${window.location.href}`;
-                  window.open(`https://wa.me/?text=${encodeURIComponent(msg)}`, '_blank');
+                  window.open(
+                    `https://wa.me/?text=${encodeURIComponent(msg)}`,
+                    "_blank",
+                  );
                 };
-                
                 box.appendChild(btn);
               }
             });
-          }, 150); // Un poco más de delay para asegurar que el DOM se actualizó
+          }, 200);
         }
-      });
-    </script>
       });
     </script>
   </body>

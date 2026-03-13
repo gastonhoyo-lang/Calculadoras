@@ -2,7 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import { calculadoras } from "../data/calculadoras";
 import unidades from "../data/unidades.json"; // <--- IMPORTANTE: Importamos el motor masivo
-
+export const prerender = true;
 const categorias = [
   {
     id: "finanzas",
@@ -81,118 +81,85 @@ const unidadesDestacadas = unidades.slice(0, 6);
         > herramientas de precisión. Gratis, instantáneo y diseñado para profesionales.
       </p>
 
-      <div class="relative max-w-2xl mx-auto">
+      <div class="relative max-w-2xl mx-auto px-4">
         <input
           type="text"
           id="searchBox"
-          placeholder="¿Qué necesitás calcular? (ej: millas, IVA, descuento...)"
-          class="w-full p-8 pl-16 bg-slate-50 border-2 border-transparent focus:border-indigo-500 rounded-[2.5rem] shadow-xl outline-none font-bold text-xl transition-all"
+          placeholder="¿Qué necesitás calcular?"
+          class="w-full p-6 pl-14 bg-white border-2 border-slate-200 rounded-2xl shadow-lg outline-none focus:border-indigo-500 text-lg transition-all"
         />
-        <span class="absolute left-6 top-8 text-3xl text-slate-300">🔍</span>
-      </div>
-    </div>
-  </section>
+        <span class="absolute left-8 top-6 text-2xl text-slate-300">🔍</span>
 
-  <main class="max-w-6xl mx-auto px-4 py-20">
-    {
-      categorias.map((cat) => (
-        <div class="mb-24 category-section" data-category={cat.id}>
-          <div class="flex items-center justify-between mb-10">
-            <div class="flex items-center gap-4">
-              <div
-                class={`${cat.color} w-14 h-14 rounded-2xl flex items-center justify-center text-3xl shadow-sm`}
-              >
-                {cat.icon}
-              </div>
-              <h2 class="text-4xl font-black text-slate-900 tracking-tight">
-                {cat.nombre}
-              </h2>
-            </div>
-            {cat.id === "unidades" && (
-              <a
-                href="/utiles"
-                class="text-indigo-600 font-bold hover:underline"
-              >
-                Ver todas (60,000+) →
-              </a>
-            )}
-          </div>
-
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* RENDERIZADO DE CALCULADORAS MANUALES */}
-            {getCalcsByCat(cat.id).map((calc) => (
-              <a
-                href={calc.link}
-                class="group bg-white p-8 rounded-[3rem] border border-slate-100 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 flex flex-col h-full card-calc"
-                data-keywords={(
-                  calc.titulo +
-                  " " +
-                  (calc.description || "") +
-                  " " +
-                  (calc.keywords || "")
-                ).toLowerCase()}
-              >
-                <div class="text-5xl mb-6 group-hover:rotate-12 transition-transform duration-300 origin-left">
-                  {calc.icon}
-                </div>
-                <h3 class="text-2xl font-black text-slate-900 mb-4 group-hover:text-indigo-600 transition-colors">
-                  {calc.titulo}
-                </h3>
-                <p class="text-slate-500 font-medium leading-relaxed">
-                  {calc.description}
-                </p>
-                <div class="mt-auto pt-8 flex items-center text-indigo-600 font-bold">
-                  Calcular ahora{" "}
-                  <span class="ml-2 group-hover:translate-x-2 transition-transform">
-                    →
-                  </span>
-                </div>
-              </a>
-            ))}
-
-            {/* RENDERIZADO DE MUESTRA MASIVA (Solo si es la categoría Unidades) */}
-            {cat.id === "unidades" &&
-              unidadesDestacadas.map((u) => (
-                <a
-                  href={`/utiles/${u.slug}`}
-                  class="group bg-slate-50 p-8 rounded-[3rem] border border-transparent hover:border-indigo-100 hover:bg-white shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 flex flex-col h-full card-calc"
-                  data-keywords={(
-                    u.titulo +
-                    " " +
-                    u.h1 +
-                    " unidades"
-                  ).toLowerCase()}
-                >
-                  <div class="text-5xl mb-6 opacity-80 group-hover:opacity-100">
-                    ↔️
-                  </div>
-                  <h3 class="text-2xl font-black text-slate-900 mb-4">
-                    {u.titulo}
-                  </h3>
-                  <p class="text-slate-500 font-medium italic">
-                    Conversión de {u.h1}
-                  </p>
-                  <div class="mt-auto pt-8 flex items-center text-indigo-400 font-bold group-hover:text-indigo-600">
-                    Ver conversor <span class="ml-2">→</span>
-                  </div>
-                </a>
-              ))}
-          </div>
+        <div
+          id="search-suggestions"
+          class="absolute z-50 w-[calc(100%-2rem)] mt-2 bg-white rounded-xl shadow-2xl border border-slate-100 hidden"
+        >
+          <div id="suggestions-list" class="max-h-80 overflow-y-auto p-2"></div>
         </div>
-      ))
-    }
-
-    <div id="noResults" class="hidden text-center py-20">
-      <div class="text-7xl mb-6">🛸</div>
-      <h3 class="text-3xl font-black text-slate-800">
-        No encontramos esa herramienta
-      </h3>
-      <p class="text-slate-500 text-lg">Pero podemos crearla. ¡Escribinos!</p>
+      </div>
+      // Tu script de búsqueda actual funciona perfecto, no hace falta cambiarlo.
+      // Solo asegúrate de que el selector sea el correcto.
     </div>
-  </main>
-</Layout>
+    <script>
+      // Importamos el JSON (Astro lo optimiza automáticamente)
+      import unidades from "../data/unidades.json";
 
-<script>
-  // Tu script de búsqueda actual funciona perfecto, no hace falta cambiarlo.
-  // Solo asegúrate de que el selector sea el correcto.
-</script>
+      const input = document.getElementById("searchBox");
+      const suggestions = document.getElementById("search-suggestions");
+      const list = document.getElementById("suggestions-list");
+      const sections = document.querySelectorAll(".category-section");
+
+      input.addEventListener("input", (e) => {
+        const value = e.target.value.toLowerCase().trim();
+
+        // 1. LÓGICA DE FILTRADO VISUAL (Categorías manuales)
+        sections.forEach((section) => {
+          const cards = section.querySelectorAll(".card-calc");
+          let sectionVisible = false;
+
+          cards.forEach((card) => {
+            const keywords = card.getAttribute("data-keywords") || "";
+            if (keywords.includes(value)) {
+              card.style.display = "flex";
+              sectionVisible = true;
+            } else {
+              card.style.display = "none";
+            }
+          });
+          // Ocultamos la sección completa si no hay coincidencias
+          section.style.display = sectionVisible ? "block" : "none";
+        });
+
+        // 2. LÓGICA DEL DESPLEGABLE (JSON masivo)
+        if (value.length < 3) {
+          suggestions.classList.add("hidden");
+          return;
+        }
+
+        const matches = unidades
+          .filter((u) => u.titulo.toLowerCase().includes(value))
+          .slice(0, 8); // Solo mostramos los primeros 8
+
+        if (matches.length > 0) {
+          list.innerHTML = matches
+            .map(
+              (m) => `
+        <a href="/utiles/${m.slug}" class="block p-4 hover:bg-indigo-50 text-left rounded-lg transition-colors border-b border-slate-50 last:border-0">
+          <span class="font-bold text-slate-800">🧮 ${m.titulo}</span>
+        </a>
+      `,
+            )
+            .join("");
+          suggestions.classList.remove("hidden");
+        } else {
+          suggestions.classList.add("hidden");
+        }
+      });
+
+      // Cerrar al clickear fuera
+      document.addEventListener("click", (e) => {
+        if (!input.contains(e.target)) suggestions.classList.add("hidden");
+      });
+    </script>
+  </section></Layout
+>

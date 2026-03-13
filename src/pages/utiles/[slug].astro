@@ -1,9 +1,8 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import unidades from "../../data/unidades.json";
-
 export async function getStaticPaths() {
-  console.log(`🚀 Intentando generar ${unidades.length} páginas...`);
+  export const prerender = false;
   return unidades.map((u) => ({
     params: { slug: u.slug },
     props: { info: u },
@@ -12,71 +11,173 @@ export async function getStaticPaths() {
 
 const { info } = Astro.props;
 
-// JSON-LD para Google (SEO de Élite)
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "Question",
-  name: info.titulo,
-  acceptedAnswer: {
-    "@type": "Answer",
-    text: info.faq_respuesta,
-  },
-};
+// Metadescripción dinámica para SEO
+const seoDescription = `Calculá gratis: ${info.titulo}. Herramienta rápida, precisa y fácil de usar en Chieffin.`;
 ---
 
-<Layout title={info.titulo} description={info.faq_respuesta}>
-  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+<Layout title={info.titulo} description={seoDescription}>
+  <div
+    id="calc-metadata"
+    data-valor={info.valor}
+    data-tipo={info.tipo}
+    data-origen={info.unidad_origen}
+    data-destino={info.unidad_destino}
+    class="hidden"
+  >
+  </div>
 
-  <main class="max-w-4xl mx-auto py-12 px-4">
-    <div
-      class="mb-10 p-8 bg-gradient-to-br from-blue-600 to-indigo-700 rounded-[2rem] text-white shadow-2xl"
-    >
-      <h1 class="text-4xl font-black mb-4">{info.h1}</h1>
-      <div
-        class="flex items-center gap-4 bg-white/10 p-6 rounded-2xl backdrop-blur-sm"
+  <section
+    class="py-12 px-4 bg-gradient-to-b from-blue-50 to-slate-50 min-h-[80vh]"
+  >
+    <div class="max-w-3xl mx-auto">
+      <nav
+        class="flex mb-8 text-sm font-medium text-slate-500"
+        aria-label="Breadcrumb"
       >
-        <input
-          type="number"
-          id="input1"
-          value={info.unidad_origen.split(" ")[0]}
-          class="w-1/2 bg-white text-slate-900 p-4 rounded-xl font-bold text-2xl outline-none"
-        />
-        <span class="text-3xl">➔</span>
-        <input
-          type="number"
-          id="input2"
-          readonly
-          class="w-1/2 bg-transparent text-white p-4 rounded-xl font-bold text-2xl border-2 border-white/20"
-        />
+        <a href="/" class="hover:text-blue-600 transition">Inicio</a>
+        <span class="mx-2">/</span>
+        <a href="/utiles" class="hover:text-blue-600 transition">Herramientas</a
+        >
+        <span class="mx-2">/</span>
+        <span class="text-slate-900 truncate">{info.h1}</span>
+      </nav>
+
+      <div
+        class="bg-white rounded-3xl shadow-2xl shadow-blue-900/5 border border-slate-100 overflow-hidden"
+      >
+        <div class="p-8 sm:p-12">
+          <header class="mb-10 text-center">
+            <span
+              class="inline-block px-4 py-1.5 mb-4 text-xs font-bold tracking-widest text-blue-600 uppercase bg-blue-50 rounded-full"
+            >
+              {info.tipo === "unidades" ? "Conversor" : "Finanzas"}
+            </span>
+            <h1
+              class="text-3xl sm:text-4xl font-black text-slate-900 leading-tight"
+            >
+              {info.h1}
+            </h1>
+          </header>
+
+          <div class="grid gap-6">
+            <div class="relative">
+              <label
+                for="input-main"
+                class="block text-sm font-bold text-slate-700 mb-2 ml-1"
+              >
+                Ingresá el valor a {
+                  info.tipo === "unidades" ? "convertir" : "calcular"
+                }
+              </label>
+              <input
+                type="number"
+                id="input-main"
+                placeholder="0.00"
+                class="w-full p-6 bg-slate-50 border-2 border-slate-100 rounded-2xl text-3xl font-bold text-slate-900 focus:border-blue-500 focus:bg-white outline-none transition-all placeholder:text-slate-300"
+              />
+            </div>
+
+            <div class="flex justify-center">
+              <div
+                class="bg-blue-600 p-3 rounded-full shadow-lg shadow-blue-200"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-6 h-6 text-white"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="3"
+                    d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                </svg>
+              </div>
+            </div>
+
+            <div id="panel-resultado" class="relative group">
+              <div
+                class="absolute -inset-1 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl blur opacity-20 group-hover:opacity-30 transition duration-1000"
+              >
+              </div>
+              <div
+                class="relative p-8 bg-white border border-slate-100 rounded-2xl text-center"
+              >
+                <p
+                  class="text-sm font-bold text-slate-500 uppercase tracking-widest mb-2"
+                >
+                  Resultado Final
+                </p>
+                <div
+                  id="resultado-texto"
+                  class="text-4xl sm:text-5xl font-black text-blue-600 italic"
+                >
+                  --
+                </div>
+                <p id="sub-texto" class="mt-2 text-slate-400 font-medium">
+                  Esperando datos...
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-slate-50 border-t border-slate-100 p-8">
+          <h3 class="font-bold text-slate-900 mb-2">¿Cómo se calcula?</h3>
+          <p class="text-slate-600 leading-relaxed text-sm">
+            {info.faq_respuesta}
+          </p>
+        </div>
       </div>
+
+      <article class="mt-12 prose prose-slate max-w-none">
+        <h2 class="text-2xl font-bold text-slate-900">
+          Más información sobre {info.h1}
+        </h2>
+        <p class="text-slate-600">
+          Esta herramienta gratuita de Chieffin te permite realizar el cálculo
+          de <strong>{info.h1}</strong> de forma instantánea. Nuestros algoritmos
+          utilizan los factores de conversión más actualizados para garantizar precisión
+          en cada resultado.
+        </p>
+      </article>
     </div>
+  </section>
 
-    <section
-      class="prose prose-lg max-w-none bg-white p-10 rounded-[2rem] border border-slate-100 shadow-sm"
-    >
-      <h2>Preguntas Frecuentes sobre {info.h1}</h2>
-      <div class="bg-slate-50 p-6 rounded-2xl border-l-4 border-blue-500">
-        <p class="font-bold text-slate-900 mb-2">{info.faq_pregunta}</p>
-        <p class="text-slate-600">{info.faq_respuesta}</p>
-      </div>
+  <script>
+    const meta = document.getElementById("calc-metadata");
+    const factor = parseFloat(meta.dataset.valor);
+    const tipo = meta.dataset.tipo;
+    const destino = meta.dataset.destino;
 
-      <h3 class="mt-8">Uso en {info.contexto}</h3>
-      <p>
-        Esta conversión es vital en el sector de la {info.contexto}. Mantener la
-        precisión evita errores de cálculo en proyectos profesionales y
-        domésticos.
-      </p>
-    </section>
-  </main>
+    const input = document.getElementById("input-main");
+    const display = document.getElementById("resultado-texto");
+    const subTexto = document.getElementById("sub-texto");
 
-  <script is:inline define:vars={{ factor: info.valor }}>
-    const i1 = document.getElementById("input1");
-    const i2 = document.getElementById("input2");
+    input.addEventListener("input", (e) => {
+      const v = parseFloat(e.target.value);
 
-    const calc = () => {
-      i2.value = (parseFloat(i1.value) * factor).toFixed(4);
-    };
-    i1.addEventListener("input", calc);
-    calc(); // Cálculo inicial al cargar
+      if (isNaN(v)) {
+        display.innerText = "--";
+        subTexto.innerText = "Esperando datos...";
+        return;
+      }
+
+      let final;
+      if (tipo === "unidades") {
+        final = v * factor;
+        display.innerText = `${final.toLocaleString(undefined, { maximumFractionDigits: 4 })} ${destino}`;
+        subTexto.innerText = "Conversión realizada con éxito";
+      } else if (tipo === "finanzas") {
+        // Asumiendo que el 'valor' en finanzas es el porcentaje (ej: 15 para 15%)
+        // Y el input del usuario es el monto base
+        const ahorro = (v * factor) / 100;
+        final = v - ahorro;
+        display.innerText = `$${final.toLocaleString()}`;
+        subTexto.innerText = `Ahorrás $${ahorro.toLocaleString()} (Descuento del ${factor}%)`;
+      }
+    });
   </script>
 </Layout>
