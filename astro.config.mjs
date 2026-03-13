@@ -5,8 +5,10 @@ import tailwind from '@astrojs/tailwind';
 export default defineConfig({
   output: 'server',
   adapter: cloudflare({
-    // Eliminamos platformProxy y cualquier config extra que genere bindings
-    mode: 'advanced', 
+    mode: 'advanced',
+    // Desactivamos los servicios que fuerzan la creación de bindings
+    imageService: 'passthrough', 
+    runtime: { mode: 'off' }
   }),
   integrations: [tailwind()],
 });
