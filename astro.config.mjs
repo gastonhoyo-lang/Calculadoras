@@ -6,9 +6,15 @@ export default defineConfig({
   output: 'server',
   adapter: cloudflare({
     mode: 'advanced',
-    // Desactivamos los servicios que fuerzan la creación de bindings
-    imageService: 'passthrough', 
-    runtime: { mode: 'off' }
+    // Forzamos un nombre de binding que NO sea 'ASSETS'
+    platformProxy: {
+      enabled: true,
+    },
+    // Esto debería sobrescribir el valor por defecto que causa el error
+    assets: {
+      binding: 'CF_PAGES_ASSETS' 
+    },
+    imageService: 'passthrough',
   }),
   integrations: [tailwind()],
 });
