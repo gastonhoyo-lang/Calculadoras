@@ -3,10 +3,10 @@ import cloudflare from '@astrojs/cloudflare';
 import tailwind from '@astrojs/tailwind';
 
 export default defineConfig({
-  output: 'server', // Mantenemos el modo servidor
+  output: 'server',
   adapter: cloudflare({
-    platformProxy: { enabled: true },
-    mode: 'advanced', // Modo estándar
+    // Eliminamos platformProxy y cualquier config extra que genere bindings
+    mode: 'advanced', 
   }),
   integrations: [tailwind()],
 });
