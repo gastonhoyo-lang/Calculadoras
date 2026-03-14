@@ -1,22 +1,26 @@
 ---
-export const prerender = false; // SSR activo
+// 1. IMPORTANTE: SSR activo para que funcione el KV
+export const prerender = false;
 
 import Layout from "../../layouts/Layout.astro";
-import unidades from "../../data/unidades.json";
 
-// 1. Obtenemos el slug de la URL
+// Ya no importamos el JSON gigante, ahora leemos de la base de datos
 const { slug } = Astro.params;
 
-// 2. Buscamos la calculadora específica directamente en el JSON importado
-// Esto es mucho más rápido que hacer un fetch a uno mismo
-const info = unidades.find((u) => u.slug === slug);
+// 2. Conexión con Cloudflare KV
+const runtime = Astro.locals.runtime;
+const { CALCULADORAS } = runtime.env;
 
-// 3. Si no existe la herramienta, mandamos al 404
+// 3. Buscamos el dato por slug en la DB
+const rawData = await CALCULADORAS.get(slug);
+const info = rawData ? JSON.parse(rawData) : null;
+
+// 4. Si no existe la herramienta, mandamos al 404
 if (!info) {
   return Astro.redirect("/404");
 }
 
-// --- MEJORA DE CTR: Títulos y Descripciones dinámicas ---
+// --- Títulos y Descripciones dinámicas ---
 const displayTitle = info.h1 || info.titulo;
 const seoTitle = `${displayTitle} | Resultado Exacto (2026)`;
 const seoDescription = `Calculá gratis: ${displayTitle}. El resultado es ${info.resultado}. Herramienta rápida, precisa y fácil de usar en Chieffin.`;
