@@ -1,41 +1,35 @@
 ---
 export const prerender = false;
-import Layout from "../../layouts/Layout.astro";
-
 const { slug } = Astro.params;
 
-// Limpieza total: quitamos barras, espacios y tomamos el texto final
+// 1. Quitamos el ".html" si es que viene en la URL por accidente
 const cleanSlug = slug
   ? slug
       .toString()
+      .replace(/\.html$/, "")
       .replace(/\/$/, "")
       .split("/")
-      .filter(Boolean)
       .pop()
       .toLowerCase()
   : "";
 
 const runtime = Astro.locals.runtime;
-
-// Verificación de seguridad para logs
-if (!runtime || !runtime.env || !runtime.env.CALCULADORAS) {
-  console.error("Fallo crítico: No se detecta el Binding CALCULADORAS");
-  return new Response("Error de configuración en Cloudflare", { status: 500 });
-}
-
 const { CALCULADORAS } = runtime.env;
+
+// 2. Buscamos en el KV usando el nombre limpio (sin .html)
 const rawData = await CALCULADORAS.get(cleanSlug);
 
 if (!rawData) {
-  // En lugar de redirigir, mostramos qué llave falló para diagnosticar
-  return new Response(`Llave no encontrada en KV: [${cleanSlug}]`, {
-    status: 404,
-  });
+  return new Response(
+    `Error: No existe el dato para [${cleanSlug}] en el KV.`,
+    { status: 404 },
+  );
 }
 
 const info = JSON.parse(rawData);
 ---
 
+<h1>{info.titulo}</h1>
 <Layout title={seoTitle} description={seoDescription}>
   <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
 
