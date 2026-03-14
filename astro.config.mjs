@@ -1,10 +1,14 @@
-// astro.config.mjs
+import { defineConfig } from 'astro/config';
+import cloudflare from '@astrojs/cloudflare';
+import tailwind from '@astrojs/tailwind';
+
 export default defineConfig({
   output: 'server',
   adapter: cloudflare({
-    imageService: 'cloudflare',
     platformProxy: { enabled: true },
   }),
   integrations: [tailwind()],
-  trailingSlash: 'never', // CAMBIA DE 'always' A 'never'
+  base: '/',
+  // 'ignore' evita que Astro haga el 302 que vemos en tu log
+  trailingSlash: 'ignore', 
 });
