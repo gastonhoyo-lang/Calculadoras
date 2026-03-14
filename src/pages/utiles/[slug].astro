@@ -7,36 +7,42 @@ import Layout from "../../layouts/Layout.astro";
 // Obtenemos el slug
 let { slug } = Astro.params;
 
-// --- CORRECCIÓN: Limpieza total del slug para coincidir con la Key del KV ---
+// --- LIMPIEZA AGRESIVA DEL SLUG ---
+// Esto elimina barras al principio, al final y espacios.
 if (slug) {
-  slug = slug.replace(/\/$/, "").toLowerCase();
+  slug = slug
+    .trim()
+    .replace(/^\/+|\/+$/g, "")
+    .toLowerCase();
 }
 
 const runtime = Astro.locals.runtime;
 const { CALCULADORAS } = runtime.env;
 
-// Buscamos en el KV con el slug limpio
+// LOG PARA DEBUG (Lo verás en Real-time Logs)
+console.log(`Buscando en KV llave: "${slug}"`);
+
+// Consulta al KV
 const rawData = await CALCULADORAS.get(slug);
 const info = rawData ? JSON.parse(rawData) : null;
 
-// Si no existe la entrada en el KV, redirigimos al 404
+// Si no hay info, redirigir
 if (!info) {
+  console.log(`No se encontró data para: "${slug}"`);
   return Astro.redirect("/404");
 }
 
-// --- PREPARACIÓN DE DATOS PARA LA UI ---
+// Datos para la UI
 const displayTitle = info.h1 || info.titulo || "Calculadora";
 const seoTitle = info.meta_titulo || displayTitle;
 const seoDescription =
   info.meta_descripcion || `Calculadora gratuita para ${displayTitle}`;
 
-// Preparación de JSON-LD para SEO
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
   name: displayTitle,
   description: seoDescription,
-  applicationCategory: "Utility",
 };
 ---
 
@@ -97,9 +103,9 @@ const jsonLd = {
               </p>
               <div class="text-4xl sm:text-5xl font-black">
                 {info.resultado}
-                <span class="text-xl opacity-70 font-normal">
-                  {info.dest || info.unidad_destino}
-                </span>
+                <span class="text-xl opacity-70 font-normal"
+                  >{info.dest || info.unidad_destino}</span
+                >
               </div>
             </div>
 
@@ -140,29 +146,23 @@ const jsonLd = {
               </div>
             </div>
 
-            <div id="panel-resultado" class="relative group">
-              <div
-                class="absolute -inset-1 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl blur opacity-20 group-hover:opacity-30 transition duration-1000"
+            <div
+              class="relative p-8 bg-white border border-slate-100 rounded-2xl text-center"
+            >
+              <p
+                class="text-sm font-bold text-slate-500 uppercase tracking-widest mb-2"
               >
-              </div>
+                Nuevo Resultado
+              </p>
               <div
-                class="relative p-8 bg-white border border-slate-100 rounded-2xl text-center"
+                id="resultado-texto"
+                class="text-4xl sm:text-5xl font-black text-blue-600 italic"
               >
-                <p
-                  class="text-sm font-bold text-slate-500 uppercase tracking-widest mb-2"
-                >
-                  Nuevo Resultado
-                </p>
-                <div
-                  id="resultado-texto"
-                  class="text-4xl sm:text-5xl font-black text-blue-600 italic"
-                >
-                  --
-                </div>
-                <p id="sub-texto" class="mt-2 text-slate-400 font-medium">
-                  Esperando datos...
-                </p>
+                --
               </div>
+              <p id="sub-texto" class="mt-2 text-slate-400 font-medium">
+                Esperando datos...
+              </p>
             </div>
           </div>
         </div>
@@ -170,23 +170,8 @@ const jsonLd = {
         <div class="bg-slate-50 border-t border-slate-100 p-8">
           <h3 class="font-bold text-slate-900 mb-2">¿Cómo se calcula?</h3>
           <p class="text-slate-600 leading-relaxed text-sm">
-            {
-              info.faq_respuesta ||
-                "Utiliza nuestra herramienta para obtener resultados precisos al instante."
-            }
+            {info.faq_respuesta}
           </p>
-          <div class="mt-4 p-4 bg-white rounded-lg border border-slate-200">
-            <p class="text-[10px] font-bold text-slate-400 uppercase mb-1">
-              Fórmula:
-            </p>
-            <code class="text-blue-600 font-mono font-bold">
-              {
-                info.tipo === "unidades"
-                  ? `Valor × ${info.valor}`
-                  : `(Valor × ${info.valor}) / 100`
-              }
-            </code>
-          </div>
         </div>
       </div>
     </div>
@@ -198,7 +183,6 @@ const jsonLd = {
       const factor = parseFloat(meta.dataset.valor || "0");
       const tipo = meta.dataset.tipo;
       const destino = meta.dataset.destino || "";
-
       const input = document.getElementById("input-main") as HTMLInputElement;
       const display = document.getElementById("resultado-texto");
       const subTexto = document.getElementById("sub-texto");
@@ -211,16 +195,12 @@ const jsonLd = {
             subTexto.innerText = "Esperando datos...";
             return;
           }
-
           if (tipo === "unidades") {
             const final = v * factor;
             display.innerText = `${final.toLocaleString(undefined, { maximumFractionDigits: 4 })} ${destino}`;
-            subTexto.innerText = "Conversión realizada con éxito";
-          } else if (tipo === "finanzas") {
+          } else {
             const ahorro = (v * factor) / 100;
-            const final = v - ahorro;
-            display.innerText = `$${final.toLocaleString()}`;
-            subTexto.innerText = `Ahorrás $${ahorro.toLocaleString()} (Descuento del ${factor}%)`;
+            display.innerText = `$${(v - ahorro).toLocaleString()}`;
           }
         });
       }
