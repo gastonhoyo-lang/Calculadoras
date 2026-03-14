@@ -2,28 +2,44 @@
 export const prerender = false;
 import Layout from "../../layouts/Layout.astro";
 
-let { slug } = Astro.params;
+const { slug } = Astro.params;
 
-// Limpieza total: quitamos barras al inicio o al final y pasamos a minúsculas
-if (slug) {
-  slug = slug.replace(/^\/|\/$/g, "").toLowerCase();
-}
+// 1. Limpieza total de la llave
+const cleanSlug = slug ? slug.replace(/^\/|\/$/g, "").toLowerCase() : "";
 
 const runtime = Astro.locals.runtime;
+
+// 2. DIAGNÓSTICO DE BINDING
+if (!runtime || !runtime.env || !runtime.env.CALCULADORAS) {
+  return new Response(
+    `ERROR DE BINDING: El servidor no ve 'CALCULADORAS'. 
+  Revisá en el panel de Cloudflare (Settings > Functions) si el binding está en 'Production'.`,
+    { status: 500 },
+  );
+}
+
 const { CALCULADORAS } = runtime.env;
 
-// Buscamos en el KV
-const rawData = await CALCULADORAS.get(slug);
+// 3. INTENTO DE OBTENCIÓN
+const rawData = await CALCULADORAS.get(cleanSlug);
 
-// Si no hay data, redirigimos o mostramos error para saber qué pasó
+// 4. DIAGNÓSTICO DE LLAVE
 if (!rawData) {
-  return new Response(`No se encontró la llave "${slug}" en el KV.`, {
-    status: 404,
-  });
+  // Esto nos dirá qué llave está intentando buscar exactamente
+  return new Response(
+    `404: No existe la llave [${cleanSlug}] en el KV. 
+  Asegurate de que en el panel de Cloudflare la llave sea exactamente esa.`,
+    { status: 404 },
+  );
 }
 
 const info = JSON.parse(rawData);
-// ... resto de tu código de Layout
+
+// Variables para el resto del código
+const displayTitle = info.titulo || "Calculadora";
+const seoTitle = info.seo_titulo || displayTitle;
+const seoDescription = info.seo_descripcion || "";
+const jsonLd = info.json_ld || {};
 ---
 
 <Layout title={seoTitle} description={seoDescription}>
