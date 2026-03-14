@@ -2,9 +2,10 @@
 export const prerender = false;
 import Layout from "../../layouts/Layout.astro";
 
-let { slug } = Astro.params;
+// Obtenemos el slug de los parámetros de Astro
+const { slug } = Astro.params;
 
-// Esta lógica quita cualquier barra al final antes de procesar
+// FORZAMOS la limpieza: quitamos barras, espacios y tomamos el último segmento
 const cleanSlug = slug
   ? slug
       .toString()
@@ -18,14 +19,14 @@ const cleanSlug = slug
 const runtime = Astro.locals.runtime;
 const { CALCULADORAS } = runtime.env;
 
+// BUSQUEDA EN KV
 const rawData = await CALCULADORAS.get(cleanSlug);
 
+// Si no hay data, NO redirijas al 404 de inmediato, imprime el error para verlo
 if (!rawData) {
-  // Diagnóstico visual para que sepas qué falló
-  return new Response(
-    `Error de KV: No se encontró la llave [${cleanSlug}]. Verifica que en el panel de Cloudflare KV la llave NO tenga barras ni espacios.`,
-    { status: 404 },
-  );
+  return new Response(`Error: No existe la llave [${cleanSlug}] en el KV.`, {
+    status: 404,
+  });
 }
 
 const info = JSON.parse(rawData);
