@@ -1,26 +1,17 @@
 ---
-export const prerender = false; // SSR activado para manejar las 60k variantes
+export const prerender = false; // SSR activo
 
 import Layout from "../../layouts/Layout.astro";
+import unidades from "../../data/unidades.json";
 
 // 1. Obtenemos el slug de la URL
 const { slug } = Astro.params;
 
-// 2. Leemos el JSON vía fetch (Compatible con Cloudflare Workers)
-let info = null;
-try {
-  // Usamos Astro.url.origin para que funcione tanto en local como en producción
-  const response = await fetch(`${Astro.url.origin}/unidades.json`);
-  if (response.ok) {
-    const unidades = await response.json();
-    // 3. Buscamos la calculadora específica
-    info = unidades.find((u) => u.slug === slug);
-  }
-} catch (error) {
-  console.error("Error al recuperar datos para el slug:", slug, error);
-}
+// 2. Buscamos la calculadora específica directamente en el JSON importado
+// Esto es mucho más rápido que hacer un fetch a uno mismo
+const info = unidades.find((u) => u.slug === slug);
 
-// 4. Si no existe la herramienta, mandamos al 404
+// 3. Si no existe la herramienta, mandamos al 404
 if (!info) {
   return Astro.redirect("/404");
 }
@@ -34,11 +25,11 @@ const seoDescription = `Calculá gratis: ${displayTitle}. El resultado es ${info
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": displayTitle,
-  "description": seoDescription,
-  "url": Astro.url.href,
-  "applicationCategory": "EducationalApplication",
-  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  name: displayTitle,
+  description: seoDescription,
+  url: Astro.url.href,
+  applicationCategory: "EducationalApplication",
+  offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
 };
 ---
 
@@ -65,7 +56,8 @@ const jsonLd = {
       >
         <a href="/" class="hover:text-blue-600 transition">Inicio</a>
         <span class="mx-2">/</span>
-        <a href="/utiles" class="hover:text-blue-600 transition">Herramientas</a>
+        <a href="/utiles" class="hover:text-blue-600 transition">Herramientas</a
+        >
         <span class="mx-2">/</span>
         <span class="text-slate-900 truncate">{displayTitle}</span>
       </nav>
@@ -88,11 +80,20 @@ const jsonLd = {
           </header>
 
           <div class="grid gap-6">
-            <div class="mb-4 p-8 bg-blue-600 rounded-2xl text-center text-white shadow-lg">
-               <p class="text-xs font-bold uppercase tracking-widest mb-1 opacity-80">Resultado Actual:</p>
-               <div class="text-4xl sm:text-5xl font-black">
-                  {info.resultado} <span class="text-xl opacity-70 font-normal">{info.dest || info.unidad_destino}</span>
-               </div>
+            <div
+              class="mb-4 p-8 bg-blue-600 rounded-2xl text-center text-white shadow-lg"
+            >
+              <p
+                class="text-xs font-bold uppercase tracking-widest mb-1 opacity-80"
+              >
+                Resultado Actual:
+              </p>
+              <div class="text-4xl sm:text-5xl font-black">
+                {info.resultado}
+                <span class="text-xl opacity-70 font-normal"
+                  >{info.dest || info.unidad_destino}</span
+                >
+              </div>
             </div>
 
             <div class="relative">
@@ -165,10 +166,16 @@ const jsonLd = {
             {info.faq_respuesta}
           </p>
           <div class="mt-4 p-4 bg-white rounded-lg border border-slate-200">
-             <p class="text-[10px] font-bold text-slate-400 uppercase mb-1">Fórmula:</p>
-             <code class="text-blue-600 font-mono font-bold">
-                {info.tipo === 'unidades' ? `Valor × ${info.valor}` : `(Valor × ${info.valor}) / 100`}
-             </code>
+            <p class="text-[10px] font-bold text-slate-400 uppercase mb-1">
+              Fórmula:
+            </p>
+            <code class="text-blue-600 font-mono font-bold">
+              {
+                info.tipo === "unidades"
+                  ? `Valor × ${info.valor}`
+                  : `(Valor × ${info.valor}) / 100`
+              }
+            </code>
           </div>
         </div>
       </div>
